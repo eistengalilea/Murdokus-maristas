@@ -27,7 +27,7 @@ export interface ResolvedRoomColor {
 }
 
 /**
- * Paleta pericial oficial para habitaciones y zonas del juego (Murdoku Bíblico).
+ * Paleta pericial oficial para habitaciones y zonas del juego (Murdoku Marista).
  * Mapea directamente los códigos de color de las leyendas a valores RGB precisos.
  */
 export const PALETA_ESTANCIAS_OFICIAL: Record<string, { rgb: [number, number, number]; hex: string; tagClass: string }> = {

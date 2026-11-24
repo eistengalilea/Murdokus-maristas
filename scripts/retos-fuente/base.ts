@@ -40,6 +40,8 @@ export interface RetoF {
   nivel: Nivel;
   nombre: T3;
   categoria: T3;
+  /** Rasgos del estilo marista (ids de src/data/rasgos.ts); al menos uno. */
+  rasgos: string[];
   /** «Etapa · fuente». La etapa (antes de « · ») alimenta el filtro del buscador. */
   fuente: T3;
   textoClave: T3;

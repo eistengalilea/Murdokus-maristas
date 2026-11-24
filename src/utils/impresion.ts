@@ -58,7 +58,7 @@ export function ejecutarImpresionConTryCatch(nivelActualParam?: PuzzleCase | nul
       console.error("[PDF] Error al generar archivo con jsPDF, continuando con vista de impresión nativa:", pdfErr);
     }
 
-    const biblia = nivelActual.citasBiblicas ? ` (${nivelActual.citasBiblicas})` : '';
+    const biblia = nivelActual.fuenteHistorica ? ` (${nivelActual.fuenteHistorica})` : '';
     const tituloNivel = (nivelActual as unknown as { Titulo?: string }).Titulo || nivelActual.title || 'Reto sin título';
     const dificultad = (nivelActual.difficulty || 'Normal').toUpperCase();
     const badgeCaso = nivelActual.badge || '#N-01';
@@ -69,10 +69,10 @@ export function ejecutarImpresionConTryCatch(nivelActualParam?: PuzzleCase | nul
       <div class="cabecera-impresion impresion-cabecera">
         <div class="impresion-cabecera-top">
           <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 3px; flex-wrap: wrap;">
-            <span style="background: #8c2a2a; color: white; font-family: monospace; font-size: 8px; font-weight: bold; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">CONFIDENCIAL</span>
+            <span style="background: #c6007e; color: white; font-family: monospace; font-size: 8px; font-weight: bold; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">CONFIDENCIAL</span>
             <span style="background: #f5f5f4; color: #1c1917; border: 1px solid #d6d3d1; font-family: monospace; font-size: 8px; font-weight: bold; padding: 1px 4px; border-radius: 2px;">${badgeCaso}</span>
             <span style="background: #fef3c7; color: #92400e; border: 1px solid #f59e0b; font-size: 8px; font-weight: bold; padding: 1px 5px; border-radius: 2px;">DIF: ${dificultad}</span>
-            ${nivelActual.citasBiblicas ? `<span style="background: #e0f2fe; color: #0369a1; border: 1px solid #38bdf8; font-size: 8px; font-weight: bold; padding: 1px 5px; border-radius: 2px;">📖 ${nivelActual.citasBiblicas}</span>` : ''}
+            ${nivelActual.fuenteHistorica ? `<span style="background: #e0f2fe; color: #0369a1; border: 1px solid #38bdf8; font-size: 8px; font-weight: bold; padding: 1px 5px; border-radius: 2px;">📖 ${nivelActual.fuenteHistorica}</span>` : ''}
           </div>
           <h2 style="font-size: 15px; font-weight: 800; color: #1c1917; margin: 0;">Murdoku: ${tituloNivel}</h2>
           <p style="font-size: 9px; margin-top: 1px; color: #57534e; font-style: italic;">${nivelActual.subtitle || 'Dossier oficial de deducción criminológica y lógica didáctica'}</p>

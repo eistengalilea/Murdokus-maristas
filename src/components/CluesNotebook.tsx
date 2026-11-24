@@ -268,12 +268,12 @@ export const CluesNotebook: React.FC<CluesNotebookProps> = ({
         {/* TAB 3: BIBLE & THEOLOGY DOSSIER */}
         {activeTab === 'bible' && (
           <div className="space-y-4 text-xs text-theme-primary">
-            {/* Biblical References and Category */}
+            {/* Historical sources and category */}
             <div className="p-3.5 bg-theme-card rounded-lg border border-theme/30 space-y-2">
               <div className="flex items-center justify-between flex-wrap gap-2">
                 <span className="font-bold font-murdoku-sans text-theme-title uppercase tracking-wide text-xs flex items-center gap-1.5">
                   <BookOpen className="w-4 h-4 text-theme-title-accent" />
-                  <span>{porIdioma(language, { es: 'Fuentes Bíblicas Consultadas', gl: 'Fontes Bíblicas Consultadas', pt: 'Fontes Bíblicas Consultadas' })}</span>
+                  <span>{porIdioma(language, { es: 'Fuentes Históricas Consultadas', gl: 'Fontes Históricas Consultadas', pt: 'Fontes Históricas Consultadas' })}</span>
                 </span>
                 {currentCase.categoria && (
                   <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-600/40 font-bold uppercase">
@@ -282,30 +282,30 @@ export const CluesNotebook: React.FC<CluesNotebookProps> = ({
                 )}
               </div>
               <p className="font-mono text-xs font-semibold text-sky-800 dark:text-sky-300 bg-sky-50 dark:bg-sky-950/40 px-2.5 py-1.5 rounded border border-sky-300 dark:border-sky-800/40">
-                📖 {currentCase.citasBiblicas || (porIdioma(language, { es: 'Libro de Génesis', gl: 'Libro da Xénese', pt: 'Livro do Génesis' }))}
+                📖 {currentCase.fuenteHistorica || (porIdioma(language, { es: 'Historia marista', gl: 'Historia marista', pt: 'História marista' }))}
               </p>
             </div>
 
-            {/* Key Biblical Verse */}
-            {currentCase.textoBiblicoClave && (
+            {/* Key historical text */}
+            {currentCase.textoClave && (
               <div className="p-4 bg-amber-50/80 dark:bg-amber-950/30 border-l-4 border-amber-500 rounded-r-lg shadow-inner">
                 <h5 className="font-typewriter text-[11px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-400 mb-1.5">
-                  📜 {t.cluesBiblePassage || (porIdioma(language, { es: 'Pasaje Bíblico Clave:', gl: 'Pasaxe Bíblica Clave:', pt: 'Passagem Bíblica Chave:' }))}
+                  📜 {t.cluesBiblePassage || (porIdioma(language, { es: 'Texto Clave:', gl: 'Texto Clave:', pt: 'Texto-Chave:' }))}
                 </h5>
                 <blockquote className="font-serif italic text-sm text-theme-title leading-relaxed">
-                  «{currentCase.textoBiblicoClave}»
+                  «{currentCase.textoClave}»
                 </blockquote>
               </div>
             )}
 
             {/* Theological & Historical Context */}
-            {currentCase.contextoTeologico && (
+            {currentCase.contextoHistorico && (
               <div className="p-3.5 bg-theme-card rounded-lg border border-theme/30 space-y-1.5">
                 <h5 className="font-bold font-murdoku-sans text-theme-title uppercase tracking-wide text-xs flex items-center gap-1">
-                  <span>🕊️ {t.cluesTheologicalContext || (porIdioma(language, { es: 'Contexto Teológico e Histórico:', gl: 'Contexto Teolóxico e Histórico:', pt: 'Contexto Teológico e Histórico:' }))}</span>
+                  <span>🕊️ {t.cluesTheologicalContext || (porIdioma(language, { es: 'Contexto Histórico:', gl: 'Contexto Histórico:', pt: 'Contexto Histórico:' }))}</span>
                 </h5>
                 <p className="text-xs font-sans text-theme-secondary leading-relaxed">
-                  {currentCase.contextoTeologico}
+                  {currentCase.contextoHistorico}
                 </p>
               </div>
             )}

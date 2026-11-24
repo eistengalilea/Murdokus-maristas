@@ -38,9 +38,9 @@ export const DescargarPdfModal: React.FC<DescargarPdfModalProps> = ({
       titulo: t.pdfOptionEsTitle,
       descripcion: t.pdfOptionEsDesc,
       boton: t.pdfOptionEsBtn,
-      claseActiva: 'border-[#8c2a2a] bg-[#8c2a2a]/10 dark:bg-[#8c2a2a]/20 shadow-md ring-2 ring-[#8c2a2a]/30',
-      claseEtiqueta: 'bg-[#8c2a2a]',
-      claseBoton: 'bg-[#8c2a2a] hover:bg-[#a63434]'
+      claseActiva: 'border-[#c6007e] bg-[#c6007e]/10 dark:bg-[#c6007e]/20 shadow-md ring-2 ring-[#c6007e]/30',
+      claseEtiqueta: 'bg-[#c6007e]',
+      claseBoton: 'bg-[#c6007e] hover:bg-[#a63434]'
     },
     {
       idioma: 'gl',

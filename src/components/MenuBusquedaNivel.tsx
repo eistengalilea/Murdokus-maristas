@@ -25,7 +25,7 @@ export const MenuBusquedaNivel: React.FC<MenuBusquedaNivelProps> = ({
   retosFiltrados,
   onResetFilters
 }) => {
-  const { t, translateBook, language } = useLanguage();
+  const { t, translateStage, language } = useLanguage();
   const hasActiveFilters = searchTerm.trim() !== '' || selectedBook !== 'todos';
 
   return (
@@ -62,43 +62,43 @@ export const MenuBusquedaNivel: React.FC<MenuBusquedaNivelProps> = ({
           )}
         </div>
 
-        {/* Selector de libro bíblico (Dropdown para móviles / compacto) */}
+        {/* Selector de etapa (Dropdown para móviles / compacto) */}
         <div className="flex items-center gap-2 min-w-[220px]">
           <div className="flex items-center gap-1.5 text-xs font-mono text-theme-title-accent shrink-0">
             <BookOpen className="w-4 h-4" />
             <span className="font-bold hidden sm:inline">
-              {porIdioma(language, { es: 'Libro:', gl: 'Libro:', pt: 'Livro:' })}
+              {porIdioma(language, { es: 'Etapa:', gl: 'Etapa:', pt: 'Etapa:' })}
             </span>
           </div>
           <select
-            id="select-libro-biblico-nivel"
+            id="select-etapa-nivel"
             value={selectedBook}
             onChange={(e) => {
               sounds.playClick();
               onSelectBook(e.target.value);
             }}
-            aria-label={porIdioma(language, { es: 'Filtrar por libro bíblico', gl: 'Filtrar por libro bíblico', pt: 'Filtrar por livro bíblico' })}
+            aria-label={porIdioma(language, { es: 'Filtrar por etapa', gl: 'Filtrar por etapa', pt: 'Filtrar por etapa' })}
             className="w-full py-2.5 px-3 rounded-xl bg-theme-card border border-theme/50 focus:border-theme-title-accent text-xs sm:text-sm text-theme-primary font-sans cursor-pointer outline-none"
           >
             <option value="todos">
-              {porIdioma(language, { es: `Todos los libros (${totalRetos})`, gl: `Todos os libros (${totalRetos})`, pt: `Todos os livros (${totalRetos})` })}
+              {porIdioma(language, { es: `Todas las etapas (${totalRetos})`, gl: `Todas as etapas (${totalRetos})`, pt: `Todas as etapas (${totalRetos})` })}
             </option>
             {availableBooks.map((b) => (
               <option key={b.libro} value={b.libro}>
-                {translateBook(b.libro)} ({b.cantidad})
+                {translateStage(b.libro)} ({b.cantidad})
               </option>
             ))}
           </select>
         </div>
       </div>
 
-      {/* Chips horizontales de libros bíblicos para acceso rápido en escritorio */}
+      {/* Chips horizontales de etapas de la historia marista para acceso rápido en escritorio */}
       <div className="space-y-2 pt-1 border-t border-theme/20">
         <div className="flex items-center justify-between gap-2 flex-wrap text-[11px] font-mono">
           <span className="text-theme-secondary font-semibold flex items-center gap-1">
             <Filter className="w-3.5 h-3.5 text-theme-title-accent" />
             <span>
-              {porIdioma(language, { es: 'Filtrar por libro bíblico:', gl: 'Filtrar por libro bíblico:', pt: 'Filtrar por livro bíblico:' })}
+              {porIdioma(language, { es: 'Filtrar por etapa:', gl: 'Filtrar por etapa:', pt: 'Filtrar por etapa:' })}
             </span>
           </span>
 
@@ -136,7 +136,7 @@ export const MenuBusquedaNivel: React.FC<MenuBusquedaNivelProps> = ({
           </div>
         </div>
 
-        {/* Lista de botones pills de libros */}
+        {/* Lista de botones pills de etapas */}
         <div className="flex items-center gap-1.5 flex-wrap">
           <button
             onClick={() => {
@@ -167,7 +167,7 @@ export const MenuBusquedaNivel: React.FC<MenuBusquedaNivelProps> = ({
                     : 'bg-theme-card hover:bg-theme-tools border border-theme/40 text-theme-secondary hover:text-theme-primary'
                 }`}
               >
-                <span>{translateBook(b.libro)}</span>
+                <span>{translateStage(b.libro)}</span>
                 <span
                   className={`text-[10px] px-1.5 py-0.2 rounded-full ${
                     isSelected ? 'bg-white/20 text-white' : 'bg-black/10 dark:bg-white/10 text-theme-secondary'

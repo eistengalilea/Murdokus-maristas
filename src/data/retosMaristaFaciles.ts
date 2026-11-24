@@ -12,6 +12,10 @@ export const RETOS_MARISTA_FACILES: Reto[] = [
       "Tamano_Cuadricula": "5x5",
       "gridSize": 5,
       "categoria": "Infancia y escuela",
+      "rasgos": [
+        "presencia",
+        "sencillez"
+      ],
       "fuenteHistorica": "Marlhes · Lanfrey T. 1, cap. 1; Tras las huellas, §3-5",
       "textoClave": "Marcelino nació en Marlhes el 20 de mayo de 1789 y fue tarde a la escuela, donde estuvo poco tiempo.",
       "contextoHistorico": "Marlhes era un pueblo rural donde la mayoría de adultos y jóvenes apenas sabían leer. Los maestros eran poco competentes y a veces maltrataban a los alumnos. Años después, Marcelino se esforzará por crear un clima de buen trato con los niños.",
@@ -283,6 +287,9 @@ export const RETOS_MARISTA_FACILES: Reto[] = [
       "Tamano_Cuadricula": "5x5",
       "gridSize": 5,
       "categoria": "Vocación y estudios",
+      "rasgos": [
+        "espiritu_familia"
+      ],
       "fuenteHistorica": "Marlhes · Lanfrey T. 1, cap. 1",
       "textoClave": "Por la Pascua de 1804, un presbítero visitó a la familia Champagnat y animó a Marcelino a estudiar latín.",
       "contextoHistorico": "Tras el Concordato de 1801 se crearon seminarios menores en zonas rurales, y sus profesores recorrían los pueblos en vacaciones buscando alumnos. La visita llegó tras la muerte de dos hermanos de Marcelino; su padre murió en junio de 1804. El proyecto de estudiar siguió adelante.",
@@ -551,6 +558,10 @@ export const RETOS_MARISTA_FACILES: Reto[] = [
       "Tamano_Cuadricula": "5x5",
       "gridSize": 5,
       "categoria": "Vocación y estudios",
+      "rasgos": [
+        "espiritu_familia",
+        "amor_trabajo"
+      ],
       "fuenteHistorica": "Marlhes · Lanfrey T. 1, cap. 1",
       "textoClave": "Tras un año de estudios flojos, la madre de Marcelino propuso una peregrinación a La Louvesc.",
       "contextoHistorico": "Marcelino comenzó estudiando con su cuñado Benoît Arnaud, que dirigía un pequeño colegio con una docena de alumnos. Los resultados parecieron insuficientes. Este fracaso inicial marcó toda su vida: él mismo lo recordó varias veces.",
@@ -819,6 +830,9 @@ export const RETOS_MARISTA_FACILES: Reto[] = [
       "Tamano_Cuadricula": "5x5",
       "gridSize": 5,
       "categoria": "Orígenes de la Sociedad de María",
+      "rasgos": [
+        "estilo_maria"
+      ],
       "fuenteHistorica": "Lyon · Lanfrey T. 1, cap. 1; Tras las huellas, §7",
       "textoClave": "El 23 de julio de 1816, un día después de su ordenación, una docena de aspirantes subió a Fourvière para prometer fundar la Sociedad de María.",
       "contextoHistorico": "Jean-Claude Courveille creyó recibir en 1812, en la catedral del Puy, la inspiración de fundar una Sociedad de María. Ya en Saint-Irénée reunió a unos doce compañeros, entre ellos Marcelino. La Sociedad se imaginó con sacerdotes, hermanas y laicos, y Marcelino insistió en una rama de Hermanos para educar.",
@@ -1100,6 +1114,10 @@ export const RETOS_MARISTA_FACILES: Reto[] = [
       "Tamano_Cuadricula": "5x5",
       "gridSize": 5,
       "categoria": "Los primeros discípulos",
+      "rasgos": [
+        "presencia",
+        "sencillez"
+      ],
       "fuenteHistorica": "La Valla · Lanfrey T. 1, cap. 3",
       "textoClave": "Marcelino llegó a La Valla el 12 de agosto de 1816 y el 26 de octubre conoció a Jean-Marie Granjon.",
       "contextoHistorico": "Granjon, huérfano y antiguo soldado de la Guardia Imperial, trabajaba de criado en un molino de la aldea de La Rive. Marcelino lo vio como un signo del cielo. Al día siguiente le llevó un Manual del Cristiano y se ofreció a enseñarle a leer.",
@@ -1368,6 +1386,10 @@ export const RETOS_MARISTA_FACILES: Reto[] = [
       "Tamano_Cuadricula": "5x5",
       "gridSize": 5,
       "categoria": "Los primeros discípulos",
+      "rasgos": [
+        "amor_trabajo",
+        "sencillez"
+      ],
       "fuenteHistorica": "La Valla · Lanfrey T. 1, cap. 3; Tras las huellas, §10",
       "textoClave": "El 2 de enero de 1817, Marcelino instaló a sus dos primeros discípulos en una casa alquilada de La Valla.",
       "contextoHistorico": "Para vivir, los jóvenes hacían clavos con barritas de hierro («verges») que producía la metalurgia del valle del Gier. Un huerto y un terreno vecino les daban comida. El resto del tiempo era para la oración y el estudio. Era una vida sencilla, de laicos piadosos.",
@@ -1637,6 +1659,10 @@ export const RETOS_MARISTA_FACILES: Reto[] = [
       "Tamano_Cuadricula": "5x5",
       "gridSize": 5,
       "categoria": "Los primeros discípulos",
+      "rasgos": [
+        "espiritu_familia",
+        "sencillez"
+      ],
       "fuenteHistorica": "La Valla · Lanfrey T. 1, cap. 3; Tras las huellas, §11",
       "textoClave": "Por Navidad de 1817 se unió Jean-Claude Audras y el 1 de enero, Antoine Couturier, de La Valla.",
       "contextoHistorico": "El grupo creció pronto: a los dos primeros se sumaron un hermano de Jean-Baptiste y un joven de 17 años sin instrucción. Marcelino les dio un hábito que no era religioso: levita azul o negra, pantalón negro, pequeña capa y sombrero redondo. Eran laicos un poco aparte.",
@@ -1907,6 +1933,10 @@ export const RETOS_MARISTA_FACILES: Reto[] = [
       "Tamano_Cuadricula": "5x5",
       "gridSize": 5,
       "categoria": "Misión en las aldeas",
+      "rasgos": [
+        "presencia",
+        "amor_trabajo"
+      ],
       "fuenteHistorica": "La Valla · Lanfrey T. 1, cap. 3",
       "textoClave": "Desde Todos los Santos de 1819, el hermano Laurent catequizaba en El Bessat, un rincón alejado de la parroquia.",
       "contextoHistorico": "El Bessat era un lugar de paso y de ferias, pero con poca instrucción religiosa. Jean-Claude Audras (hermano Laurent) bajaba cada jueves a La Valla a por patatas, queso y pan. Con una campanilla, como las cofradías de la Doctrina Cristiana, reunía a los niños para enseñarles oraciones, catecismo y lectura.",
@@ -2095,7 +2125,7 @@ export const RETOS_MARISTA_FACILES: Reto[] = [
           "role": "Viajero de paso",
           "avatar": "🧑‍🌾",
           "color": "from-purple-600 to-purple-800",
-          "clueText": "Pasaba por el Bessat camino de Saint-Étienne.",
+          "clueText": "Iba de paso hacia Saint-Étienne, de feria en feria.",
           "pistasPosicion": [
             {
               "tipo": "estancia",
@@ -2175,6 +2205,10 @@ export const RETOS_MARISTA_FACILES: Reto[] = [
       "Tamano_Cuadricula": "5x5",
       "gridSize": 5,
       "categoria": "L’Hermitage y la tradición oral",
+      "rasgos": [
+        "estilo_maria",
+        "sencillez"
+      ],
       "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, cap. 6",
       "textoClave": "Una tradición oral cuenta que Marcelino halló una estatua de la Virgen entre las rocas del Gier.",
       "contextoHistorico": "La historia no aparece en las fuentes maristas antiguas. Se recogió en la «Monographie» de 1925 y se atribuye a un octogenario de Izieux. El papa Benedicto XV la evocó en 1920. Tiene su parte realista: pedir una escalera al carretero explica cómo se buscaba el lugar de L’Hermitage.",

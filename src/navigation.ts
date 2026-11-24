@@ -1,11 +1,12 @@
 import { NIVELES_DATABASE, DIFFICULTY_TO_KEY, retoToPuzzleCase, removeCoordinateHints } from './data/niveles';
 import { Reto, RetoDatosJuego, PuzzleCase, DifficultyKey, DifficultyLevel, parseTamanoCuadricula } from './types';
 import { sounds } from './audio';
-import { coincideFiltrosReto, obtenerLibroBiblico } from './utils/searchEngine';
-import { aplicarTraduccionReto, traducirLibroBiblico } from './i18n/translateContent';
+import { coincideFiltrosReto, obtenerEtapa } from './utils/searchEngine';
+import { aplicarTraduccionReto, traducirEtapa } from './i18n/translateContent';
 import { Language } from './i18n/types';
 import { leerPreferencia } from './utils/almacenamiento';
 import { porIdioma } from './i18n/porIdioma';
+import { rasgosHtml } from './data/rasgos';
 
 export interface GameEngineCallbacks {
   onCargarNivel: (caseData: PuzzleCase) => void;
@@ -130,7 +131,7 @@ export function cargarNivel(
   // Caso 4: Se pasa directamente el sub-objeto RetoDatosJuego (como pide la especificación pericial)
   else {
     const dj = datos_juego as RetoDatosJuego;
-    // Buscar en la base de datos si coincide con algún reto conocido para heredar todos los metadatos teológicos y forenses
+    // Buscar en la base de datos si coincide con algún reto conocido para heredar todos los metadatos históricos y forenses
     const foundEntry = allRetoEntries.find(
       (entry) =>
         entry.reto.datos_juego === dj ||
@@ -163,9 +164,10 @@ export function cargarNivel(
         subtitle: dj.subtitle || `Misterio de deducción · Nivel ${diff}`,
         badge: dj.badge || `${retoNombre.toUpperCase()} · ${label}`,
         categoria: dj.categoria,
-        citasBiblicas: dj.citasBiblicas,
-        textoBiblicoClave: dj.textoBiblicoClave,
-        contextoTeologico: dj.contextoTeologico,
+        rasgos: dj.rasgos || [],
+        fuenteHistorica: dj.fuenteHistorica,
+        textoClave: dj.textoClave,
+        contextoHistorico: dj.contextoHistorico,
         solucionExplicacion: dj.solucionExplicacion,
         difficulty: diff,
         gridSize: size,
@@ -238,7 +240,7 @@ export function cargarNivel(
  * Lee la base de datos JSON (NIVELES_DATABASE) para la categoría especificada
  * y genera dinámicamente una lista de botones interactivos para cada reto,
  * inyectándolos en el contenedor de pantalla-seleccion-nivel, con soporte para
- * filtrado por palabras clave y libro bíblico.
+ * filtrado por palabras clave y etapa.
  */
 export function generarBotonesNiveles(
   categoria: DifficultyKey | DifficultyLevel | string,
@@ -308,8 +310,8 @@ export function generarBotonesNiveles(
     const blockedCount = Object.keys(dj.blockedObjects || {}).length;
     const roomsCount = Object.keys(dj.rooms || {}).length;
     const diffLabel: DifficultyLevel = currentSelectedDifficulty;
-    const rawLibro = obtenerLibroBiblico(dj.citasBiblicas, reto.id, reto.nombre);
-    const libro = traducirLibroBiblico(rawLibro, lang);
+    const rawLibro = obtenerEtapa(dj.fuenteHistorica);
+    const libro = traducirEtapa(rawLibro, lang);
 
     // Crear elemento tarjeta
     const tarjeta = document.createElement('div');
@@ -345,20 +347,21 @@ export function generarBotonesNiveles(
           </div>
         </div>
 
-        <!-- 2. Título del caso y Referencia de Escritura -->
+        <!-- 2. Título del caso y Fuente histórica -->
         <div class="space-y-1">
           <h3 class="text-xl font-bold font-murdoku-sans text-theme-title group-hover:text-theme-title-accent transition-colors leading-snug">
             ${reto.nombre}
           </h3>
-          ${dj.citasBiblicas ? `
+          ${rasgosHtml(dj.rasgos, lang)}
+          ${dj.fuenteHistorica ? `
             <div class="flex items-center gap-1.5 text-xs text-sky-700 dark:text-sky-300 font-mono font-semibold">
               <span class="text-xs">📖</span>
-              <span>${dj.citasBiblicas}</span>
+              <span>${dj.fuenteHistorica}</span>
             </div>
           ` : ''}
         </div>
 
-        <!-- 3. Contenedor de Sinopsis Pericial y Pasaje Bíblico Clave -->
+        <!-- 3. Contenedor de Sinopsis Pericial y Texto Clave -->
         <div class="bg-theme-card/85 dark:bg-stone-900/60 p-3.5 sm:p-4 rounded-xl border border-theme/30 shadow-2xs space-y-2.5 flex-1 flex flex-col justify-between">
           <div>
             <div class="flex items-center gap-1.5 mb-1.5 text-theme-title-accent">
@@ -371,10 +374,10 @@ export function generarBotonesNiveles(
               ${dj.storyIntro}
             </p>
           </div>
-          ${dj.textoBiblicoClave ? `
+          ${dj.textoClave ? `
             <div class="pt-2 border-t border-theme/20 flex items-start gap-2 text-xs italic text-theme-secondary font-serif leading-relaxed">
               <span class="text-amber-500 dark:text-amber-400 font-serif font-bold text-sm leading-none shrink-0 mt-0.5">❝</span>
-              <p class="line-clamp-2">${dj.textoBiblicoClave}</p>
+              <p class="line-clamp-2">${dj.textoClave}</p>
             </div>
           ` : ''}
         </div>

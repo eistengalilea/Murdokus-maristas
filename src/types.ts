@@ -133,9 +133,11 @@ export interface RetoDatosJuego {
   Tamano_Cuadricula?: string; // e.g. '5x5', '7x7', '9x9'
   gridSize: number;
   categoria?: string;
-  citasBiblicas?: string;
-  textoBiblicoClave?: string;
-  contextoTeologico?: string;
+  /** Rasgos del estilo marista (ids de data/rasgos.ts). */
+  rasgos?: string[];
+  fuenteHistorica?: string;
+  textoClave?: string;
+  contextoHistorico?: string;
   solucionExplicacion?: string;
   rooms: Record<RoomId, RoomInfo>;
   cellRooms: RoomId[][];
@@ -177,9 +179,11 @@ export interface PuzzleCase {
   subtitle: string;
   badge: string;
   categoria?: string;
-  citasBiblicas?: string;
-  textoBiblicoClave?: string;
-  contextoTeologico?: string;
+  /** Rasgos del estilo marista (ids de data/rasgos.ts). */
+  rasgos?: string[];
+  fuenteHistorica?: string;
+  textoClave?: string;
+  contextoHistorico?: string;
   solucionExplicacion?: string;
   difficulty: DifficultyLevel;
   Tamano_Cuadricula: string; // e.g. '5x5', '7x7', '9x9'

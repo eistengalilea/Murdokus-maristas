@@ -1,4 +1,4 @@
-# Instrucciones Permanentes del Proyecto: Murdoku Bíblico
+# Instrucciones Permanentes del Proyecto: Murdoku Marista
 
 ## Regla Pericial de Colores de Estancias y Planos de la Escena del Crimen
 
@@ -54,3 +54,14 @@ El validador (`scripts/validar-retos.ts`) exige:
 
 ### Flujo de juego
 El alumno coloca a todos los personajes y pulsa «Resolver / Comprobar Caso». Si las posiciones son correctas, se desbloquea «Acusar al Culpable»; la victoria llega al acusar a la persona correcta. Cualquier cambio posterior en el tablero vuelve a bloquear la acusación.
+
+
+---
+
+## Proyecto Murdoku Marista (historia de Marcelino Champagnat)
+
+- **Temática**: retos de deducción sobre la vida de Marcelino Champagnat, los primeros hermanos y L'Hermitage (Lanfrey, *Historia del Instituto*, T. 1; *Tras las huellas de Marcelino Champagnat*). Las menciones bíblicas de las reglas anteriores se leen como «históricas»: los campos son `fuenteHistorica`, `textoClave` y `contextoHistorico`.
+- **Fuente de verdad de los retos**: `scripts/retos-fuente/{faciles,medios,dificiles}.ts`, escritos una sola vez en `[castellano, gallego, portugués]`. **No editar a mano** `src/data/retosMarista*.ts` ni `src/i18n/retos/retosMaristaGl.ts` / `pt/retosMaristaPt.ts`: se regeneran con `npm run generar` (el plano y las pistas de posición salen con solución única, semilla = id del reto). Después, `npm run validar`.
+- **Rasgos del estilo marista**: cada reto lleva al menos uno en `rasgos` (ids de `src/data/rasgos.ts`: `espiritu_familia`, `presencia`, `sencillez`, `amor_trabajo`, `estilo_maria`). Se muestran como chips y son buscables.
+- **Etapa**: la parte de `fuente` anterior a « · » (Marlhes, Lyon, La Valla, L’Hermitage…) alimenta el filtro del buscador; usa siempre la misma grafía.
+- **Identidad visual** (marchacompostela.org, sin logotipo): Montserrat para títulos y Roboto para el texto; índigo `#312A4E`, magenta `#C6007E`, dorado `#D5A53C`, azul `#4E639E`.

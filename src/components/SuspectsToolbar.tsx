@@ -93,7 +93,7 @@ export const SuspectsToolbar: React.FC<SuspectsToolbarProps> = ({
               key={suspect.id}
               className={`relative flex flex-col items-center text-center p-2 rounded-lg border-2 transition-all duration-150 ${
                 isSelected
-                  ? 'bg-amber-100 dark:bg-amber-950/60 border-[#8c2a2a] shadow-md scale-[1.02] ring-2 ring-[#8c2a2a]/50 text-stone-900 dark:text-amber-100'
+                  ? 'bg-amber-100 dark:bg-amber-950/60 border-[#c6007e] shadow-md scale-[1.02] ring-2 ring-[#c6007e]/50 text-stone-900 dark:text-amber-100'
                   : isPlaced
                   ? 'bg-theme-tools border-theme/50 shadow-inner text-theme-secondary'
                   : 'bg-theme-card hover:bg-theme-panel border-theme/40 hover:border-theme shadow-xs text-theme-primary'
@@ -155,7 +155,7 @@ export const SuspectsToolbar: React.FC<SuspectsToolbarProps> = ({
               {/* Action Buttons: Selected state or Unplace button */}
               <div className="w-full mt-2 pt-1.5 border-t border-theme/20 flex items-center justify-center">
                 {isSelected ? (
-                  <span className="text-[9px] font-typewriter font-bold text-[#8c2a2a] dark:text-amber-300 animate-pulse">
+                  <span className="text-[9px] font-typewriter font-bold text-[#c6007e] dark:text-amber-300 animate-pulse">
                     ● {porIdioma(language, { es: 'LISTO P/ COLOCAR', gl: 'LISTO P/ SITUAR', pt: 'PRONTO A COLOCAR' })}
                   </span>
                 ) : isPlaced ? (

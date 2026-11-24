@@ -11,6 +11,7 @@ export const FACILES: RetoF[] = [
   {
     id: '001-HM',
     nivel: 'easy',
+    rasgos: ['presencia', 'sencillez'],
     nombre: ['El maestro de Marlhes', 'O mestre de Marlhes', 'O mestre de Marlhes'],
     categoria: ['Infancia y escuela', 'Infancia e escola', 'Infância e escola'],
     fuente: ['Marlhes · Lanfrey T. 1, cap. 1; Tras las huellas, §3-5', 'Marlhes · Lanfrey T. 1, cap. 1; Tras las huellas, §3-5', 'Marlhes · Lanfrey T. 1, cap. 1; Tras las huellas, §3-5'],
@@ -69,6 +70,7 @@ export const FACILES: RetoF[] = [
   {
     id: '002-HM',
     nivel: 'easy',
+    rasgos: ['espiritu_familia'],
     nombre: ['La visita de Pascua', 'A visita de Pascua', 'A visita da Páscoa'],
     categoria: ['Vocación y estudios', 'Vocación e estudos', 'Vocação e estudos'],
     fuente: ['Marlhes · Lanfrey T. 1, cap. 1', 'Marlhes · Lanfrey T. 1, cap. 1', 'Marlhes · Lanfrey T. 1, cap. 1'],
@@ -127,6 +129,7 @@ export const FACILES: RetoF[] = [
   {
     id: '003-HM',
     nivel: 'easy',
+    rasgos: ['espiritu_familia', 'amor_trabajo'],
     nombre: ['La peregrinación a La Louvesc', 'A peregrinación a La Louvesc', 'A peregrinação a La Louvesc'],
     categoria: ['Vocación y estudios', 'Vocación e estudos', 'Vocação e estudos'],
     fuente: ['Marlhes · Lanfrey T. 1, cap. 1', 'Marlhes · Lanfrey T. 1, cap. 1', 'Marlhes · Lanfrey T. 1, cap. 1'],
@@ -185,6 +188,7 @@ export const FACILES: RetoF[] = [
   {
     id: '004-HM',
     nivel: 'easy',
+    rasgos: ['estilo_maria'],
     nombre: ['El juramento de Fourvière', 'O xuramento de Fourvière', 'O juramento de Fourvière'],
     categoria: ['Orígenes de la Sociedad de María', 'Orixes da Sociedade de María', 'Origens da Sociedade de Maria'],
     fuente: ['Lyon · Lanfrey T. 1, cap. 1; Tras las huellas, §7', 'Lyon · Lanfrey T. 1, cap. 1; Tras las huellas, §7', 'Lyon · Lanfrey T. 1, cap. 1; Tras las huellas, §7'],
@@ -243,6 +247,7 @@ export const FACILES: RetoF[] = [
   {
     id: '005-HM',
     nivel: 'easy',
+    rasgos: ['presencia', 'sencillez'],
     nombre: ['El granadero de La Rive', 'O granadeiro de La Rive', 'O granadeiro de La Rive'],
     categoria: ['Los primeros discípulos', 'Os primeiros discípulos', 'Os primeiros discípulos'],
     fuente: ['La Valla · Lanfrey T. 1, cap. 3', 'La Valla · Lanfrey T. 1, cap. 3', 'La Valla · Lanfrey T. 1, cap. 3'],
@@ -301,6 +306,7 @@ export const FACILES: RetoF[] = [
   {
     id: '006-HM',
     nivel: 'easy',
+    rasgos: ['amor_trabajo', 'sencillez'],
     nombre: ['Clavos para vivir', 'Cravos para vivir', 'Pregos para viver'],
     categoria: ['Los primeros discípulos', 'Os primeiros discípulos', 'Os primeiros discípulos'],
     fuente: ['La Valla · Lanfrey T. 1, cap. 3; Tras las huellas, §10', 'La Valla · Lanfrey T. 1, cap. 3; Tras las huellas, §10', 'La Valla · Lanfrey T. 1, cap. 3; Tras las huellas, §10'],
@@ -359,6 +365,7 @@ export const FACILES: RetoF[] = [
   {
     id: '007-HM',
     nivel: 'easy',
+    rasgos: ['espiritu_familia', 'sencillez'],
     nombre: ['Cuatro y un hábito', 'Catro e un hábito', 'Quatro e um hábito'],
     categoria: ['Los primeros discípulos', 'Os primeiros discípulos', 'Os primeiros discípulos'],
     fuente: ['La Valla · Lanfrey T. 1, cap. 3; Tras las huellas, §11', 'La Valla · Lanfrey T. 1, cap. 3; Tras las huellas, §11', 'La Valla · Lanfrey T. 1, cap. 3; Tras las huellas, §11'],
@@ -417,6 +424,7 @@ export const FACILES: RetoF[] = [
   {
     id: '008-HM',
     nivel: 'easy',
+    rasgos: ['presencia', 'amor_trabajo'],
     nombre: ['La campanilla del Bessat', 'A campaíña do Bessat', 'A campainha do Bessat'],
     categoria: ['Misión en las aldeas', 'Misión nas aldeas', 'Missão nas aldeias'],
     fuente: ['La Valla · Lanfrey T. 1, cap. 3', 'La Valla · Lanfrey T. 1, cap. 3', 'La Valla · Lanfrey T. 1, cap. 3'],
@@ -462,7 +470,7 @@ export const FACILES: RetoF[] = [
       pers('MC', 'la_valla', 'M', '🧑‍🏫', ['Marcelino Champagnat', 'Vicario y fundador', 'Le había confiado la misión de catequizar la aldea alejada.'], ['Marcelino Champagnat', 'Vicario e fundador', 'Confiáralle a misión de catequizar a aldea afastada.'], ['Marcelino Champagnat', 'Vigário e fundador', 'Confiara-lhe a missão de catequizar a aldeia afastada.']),
       pers('NI', 'aldea_bessat', '', '🧒', ['Niño del Bessat', 'Alumno de catequesis', 'Salía a escuchar la campanilla para aprender las oraciones.'], ['Neno do Bessat', 'Alumno de catequese', 'Saía a escoitar a campaíña para aprender as oracións.'], ['Menino de Le Bessat', 'Aluno de catequese', 'Saía para ouvir a campainha e aprender as orações.']),
       pers('FA', 'casa_acogida', '', '👨‍👩‍👧', ['Familia anfitriona', 'Vecinos del Bessat', 'Lo alojaba mientras él preparaba su propio sustento.'], ['Familia anfitrioa', 'Veciños do Bessat', 'Aloxábao mentres el preparaba o seu propio sustento.'], ['Família anfitriã', 'Vizinhos de Le Bessat', 'Alojava-o enquanto ele preparava o seu próprio sustento.']),
-      pers('FE', 'camino_feria', '', '🧑‍🌾', ['Feriante', 'Viajero de paso', 'Pasaba por el Bessat camino de Saint-Étienne.'], ['Feirante', 'Viaxeiro de paso', 'Pasaba polo Bessat camiño de Saint-Étienne.'], ['Feirante', 'Viajante de passagem', 'Passava por Le Bessat a caminho de Saint-Étienne.'])
+      pers('FE', 'camino_feria', '', '🧑‍🌾', ['Feriante', 'Viajero de paso', 'Iba de paso hacia Saint-Étienne, de feria en feria.'], ['Feirante', 'Viaxeiro de paso', 'Ía de paso cara a Saint-Étienne, de feira en feira.'], ['Feirante', 'Viajante de passagem', 'Ia de passagem para Saint-Étienne, de feira em feira.'])
     ],
     pistas: [
       pista('El Bessat es un rincón muerto de la parroquia, pero un lugar de paso y de ferias.', 'O Bessat é un currunchiño morto da parroquia, pero un lugar de paso e de feiras.', 'Le Bessat é um canto morto da paróquia, mas um lugar de passagem e de feiras.', 'FE'),
@@ -475,6 +483,7 @@ export const FACILES: RetoF[] = [
   {
     id: '009-HM',
     nivel: 'easy',
+    rasgos: ['estilo_maria', 'sencillez'],
     nombre: ['El tesoro del Gier', 'O tesouro do Gier', 'O tesouro do Gier'],
     categoria: ['L’Hermitage y la tradición oral', 'L’Hermitage e a tradición oral', 'L’Hermitage e a tradição oral'],
     fuente: ['L’Hermitage · Lanfrey T. 1, cap. 6', 'L’Hermitage · Lanfrey T. 1, cap. 6', 'L’Hermitage · Lanfrey T. 1, cap. 6'],

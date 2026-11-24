@@ -10,7 +10,7 @@ interface LanguageToggleProps {
 
 /** Idiomas del juego: castellano, gallego y portugués de Portugal. */
 const OPCIONES: { idioma: Language; bandera: string; nombre: string; corto: string; titulo: string; color: string }[] = [
-  { idioma: 'es', bandera: '🇪🇸', nombre: 'Castellano', corto: 'ES', titulo: 'Cambiar idioma a Castellano', color: 'bg-[#8c2a2a]' },
+  { idioma: 'es', bandera: '🇪🇸', nombre: 'Castellano', corto: 'ES', titulo: 'Cambiar idioma a Castellano', color: 'bg-[#c6007e]' },
   { idioma: 'gl', bandera: '🟦', nombre: 'Galego', corto: 'GL', titulo: 'Cambiar idioma a Galego', color: 'bg-[#0070b8]' },
   { idioma: 'pt', bandera: '🇵🇹', nombre: 'Português', corto: 'PT', titulo: 'Mudar o idioma para Português', color: 'bg-[#046a38]' }
 ];

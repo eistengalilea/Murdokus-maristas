@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit",
-    "validar": "tsx scripts/validar-retos.ts"
+    "validar": "tsx scripts/validar-retos.ts",
+    "generar": "tsx scripts/generar-retos.ts"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

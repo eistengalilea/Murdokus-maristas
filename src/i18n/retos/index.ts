@@ -1,33 +1,13 @@
 import { Reto, RetoDatosJuego, PuzzleCase, Suspect, RoomInfo, Clue, InanimateObject } from '../../types';
 import { Language } from '../types';
 import { RetoTraduccion } from './types';
-import { RETOS_FACILES_GENESIS_GL } from './retosFacilesGenesisGl';
-import { RETOS_FACILES_NUEVOS_GL } from './retosFacilesNuevosGl';
-import { RETOS_FACILES_MONARQUIA_GL } from './retosFacilesMonarquiaGl';
-import { RETOS_FACILES_EVANGELIOS_GL } from './retosFacilesEvangeliosGl';
-import { RETOS_FACILES_HECHOS_GL } from './retosFacilesHechosGl';
-import { RETOS_MEDIOS_GENESIS_GL } from './retosMediosGenesisGl';
-import { RETOS_MEDIOS_PROFETAS_GL } from './retosMediosProfetasGl';
-import { RETOS_MEDIOS_MONARQUIA_GL } from './retosMediosMonarquiaGl';
-import { RETOS_MEDIOS_EVANGELIOS_GL } from './retosMediosEvangeliosGl';
-import { RETOS_MEDIOS_HECHOS_GL } from './retosMediosHechosGl';
-import { RETOS_DIFICILES_GL } from './retosDificilesGl';
+import { RETOS_MARISTA_GL } from './retosMaristaGl';
 import { RETOS_TRADUCCIONES_PT } from './pt';
 
 export * from './types';
 
 export const RETOS_TRADUCCIONES_GL: Record<string, RetoTraduccion> = {
-  ...RETOS_FACILES_GENESIS_GL,
-  ...RETOS_FACILES_NUEVOS_GL,
-  ...RETOS_FACILES_MONARQUIA_GL,
-  ...RETOS_FACILES_EVANGELIOS_GL,
-  ...RETOS_FACILES_HECHOS_GL,
-  ...RETOS_MEDIOS_GENESIS_GL,
-  ...RETOS_MEDIOS_PROFETAS_GL,
-  ...RETOS_MEDIOS_MONARQUIA_GL,
-  ...RETOS_MEDIOS_EVANGELIOS_GL,
-  ...RETOS_MEDIOS_HECHOS_GL,
-  ...RETOS_DIFICILES_GL,
+  ...RETOS_MARISTA_GL,
 };
 
 export { RETOS_TRADUCCIONES_PT };
@@ -104,9 +84,9 @@ export function aplicarTraduccionDatosJuego(
   return {
     ...dj,
     categoria: tr.categoria || dj.categoria,
-    citasBiblicas: tr.citasBiblicas || dj.citasBiblicas,
-    textoBiblicoClave: tr.textoBiblicoClave || dj.textoBiblicoClave,
-    contextoTeologico: tr.contextoTeologico || dj.contextoTeologico,
+    fuenteHistorica: tr.fuenteHistorica || dj.fuenteHistorica,
+    textoClave: tr.textoClave || dj.textoClave,
+    contextoHistorico: tr.contextoHistorico || dj.contextoHistorico,
     solucionExplicacion: tr.solucionExplicacion || dj.solucionExplicacion,
     storyIntro: tr.storyIntro || dj.storyIntro,
     epilogue: tr.epilogue || dj.epilogue,
@@ -195,9 +175,9 @@ export function aplicarTraduccionPuzzleCase(caso: PuzzleCase, lang: Language): P
         : `Caso ${id}: ${tr.nombre}`
       : caso.title,
     categoria: tr.categoria || caso.categoria,
-    citasBiblicas: tr.citasBiblicas || caso.citasBiblicas,
-    textoBiblicoClave: tr.textoBiblicoClave || caso.textoBiblicoClave,
-    contextoTeologico: tr.contextoTeologico || caso.contextoTeologico,
+    fuenteHistorica: tr.fuenteHistorica || caso.fuenteHistorica,
+    textoClave: tr.textoClave || caso.textoClave,
+    contextoHistorico: tr.contextoHistorico || caso.contextoHistorico,
     solucionExplicacion: tr.solucionExplicacion || caso.solucionExplicacion,
     storyIntro: tr.storyIntro || caso.storyIntro,
     epilogue: tr.epilogue || caso.epilogue,

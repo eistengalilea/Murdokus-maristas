@@ -736,7 +736,7 @@ export const RETOS_MARISTA_PT: Record<string, RetoTraduccion> = {
       "FE": {
         "name": "Feirante",
         "role": "Viajante de passagem",
-        "clueText": "Passava por Le Bessat a caminho de Saint-Étienne."
+        "clueText": "Ia de passagem para Saint-Étienne, de feira em feira."
       }
     },
     "clues": {

@@ -5,6 +5,7 @@ import { sounds } from '../audio';
 import { useLanguage } from '../i18n/LanguageContext';
 import { Clock, CheckCircle2, RotateCcw, ArrowRight, ShieldCheck } from 'lucide-react';
 import { porIdioma } from '../i18n/porIdioma';
+import { RasgosChips } from './RasgosChips';
 
 interface VictoryModalProps {
   isOpen: boolean;
@@ -152,20 +153,22 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
           </div>
         )}
 
-        {/* Biblical Solution Explanation */}
-        {(currentCase.solucionExplicacion || currentCase.textoBiblicoClave) && (
+        {/* Historical solution explanation */}
+        {(currentCase.solucionExplicacion || currentCase.textoClave) && (
           <div className="p-3.5 bg-amber-50/90 border border-amber-300 rounded-xl text-left mb-3.5 space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
                 <span>📖</span>
-                <span>{porIdioma(language, { es: 'Resolución Bíblica & Teológica', gl: 'Resolución Bíblica & Teolóxica', pt: 'Resolução Bíblica & Teológica' })}</span>
+                <span>{porIdioma(language, { es: 'Resolución Histórica', gl: 'Resolución Histórica', pt: 'Resolução Histórica' })}</span>
               </span>
-              {currentCase.citasBiblicas && (
+              {currentCase.fuenteHistorica && (
                 <span className="text-[10px] font-mono px-2 py-0.5 bg-amber-200/80 text-amber-950 font-bold rounded">
-                  {currentCase.citasBiblicas}
+                  {currentCase.fuenteHistorica}
                 </span>
               )}
             </div>
+
+            <RasgosChips rasgos={currentCase.rasgos} />
 
             {currentCase.solucionExplicacion && (
               <p className="text-xs font-sans text-stone-800 leading-relaxed">
@@ -173,19 +176,19 @@ export const VictoryModal: React.FC<VictoryModalProps> = ({
               </p>
             )}
 
-            {currentCase.textoBiblicoClave && (
+            {currentCase.textoClave && (
               <blockquote className="font-serif italic text-xs text-amber-950 bg-white/80 p-2.5 rounded border border-amber-200">
-                «{currentCase.textoBiblicoClave}»
+                «{currentCase.textoClave}»
               </blockquote>
             )}
 
-            {currentCase.contextoTeologico && (
+            {currentCase.contextoHistorico && (
               <div className="pt-1.5 border-t border-amber-200/80">
                 <span className="block text-[10px] font-mono text-amber-800 uppercase font-bold mb-0.5">
-                  {porIdioma(language, { es: 'Contexto Teológico (Fe Adulta / Magisterio):', gl: 'Contexto Teolóxico (Fe Adulta / Maxisterio):', pt: 'Contexto Teológico (Fé Adulta / Magistério):' })}
+                  {porIdioma(language, { es: 'Contexto Histórico:', gl: 'Contexto Histórico:', pt: 'Contexto Histórico:' })}
                 </span>
                 <p className="text-[11px] font-sans text-stone-600 leading-relaxed">
-                  {currentCase.contextoTeologico}
+                  {currentCase.contextoHistorico}
                 </p>
               </div>
             )}

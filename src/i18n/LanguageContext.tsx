@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { Language, TranslationDictionary } from './types';
 import { TRANSLATIONS } from './translations';
-import { obtenerCasoTraducido, traducirLibroBiblico, traducirHabitacion, traducirRol } from './translateContent';
+import { obtenerCasoTraducido, traducirEtapa, traducirHabitacion, traducirRol } from './translateContent';
 import { PuzzleCase } from '../types';
 import { leerPreferencia, guardarPreferencia } from '../utils/almacenamiento';
 
@@ -11,7 +11,7 @@ interface LanguageContextType {
   toggleLanguage: () => void;
   t: TranslationDictionary;
   translateCase: (caso: PuzzleCase) => PuzzleCase;
-  translateBook: (book: string) => string;
+  translateStage: (book: string) => string;
   translateRoom: (room: string) => string;
   translateRole: (role: string) => string;
 }
@@ -54,8 +54,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return obtenerCasoTraducido(caso, language);
   };
 
-  const translateBook = (book: string) => {
-    return traducirLibroBiblico(book, language);
+  const translateStage = (book: string) => {
+    return traducirEtapa(book, language);
   };
 
   const translateRoom = (room: string) => {
@@ -74,7 +74,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         toggleLanguage,
         t,
         translateCase,
-        translateBook,
+        translateStage,
         translateRoom,
         translateRole
       }}

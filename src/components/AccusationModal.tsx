@@ -36,7 +36,7 @@ export const AccusationModal: React.FC<AccusationModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs">
-      <div className="relative w-full max-w-lg bg-theme-panel text-theme-primary border-4 border-[#8c2a2a] rounded-xl shadow-2xl p-4 sm:p-6 overflow-hidden transition-colors">
+      <div className="relative w-full max-w-lg bg-theme-panel text-theme-primary border-4 border-[#c6007e] rounded-xl shadow-2xl p-4 sm:p-6 overflow-hidden transition-colors">
         
         {/* Crime Tape Header */}
         <div className="absolute top-0 left-0 right-0 h-3 bg-police-tape" />

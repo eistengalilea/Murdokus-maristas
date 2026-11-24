@@ -120,7 +120,7 @@ export const PantallaDificultad: React.FC<PantallaDificultadProps> = ({
         </p>
       </div>
 
-      {/* Menú de Búsqueda por Palabras y Libros Bíblicos */}
+      {/* Menú de Búsqueda por Palabras y Etapas */}
       <MenuBusquedaGlobal onSelectCase={handleCaseSelection} />
 
       {/* Difficulty Cards Grid */}

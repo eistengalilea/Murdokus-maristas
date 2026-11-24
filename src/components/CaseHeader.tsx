@@ -19,6 +19,7 @@ import { sounds } from '../audio';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageToggle } from './LanguageToggle';
 import { useLanguage } from '../i18n/LanguageContext';
+import { RasgosChips } from './RasgosChips';
 
 interface CaseHeaderProps {
   currentCase: PuzzleCase;
@@ -68,7 +69,7 @@ export const CaseHeader: React.FC<CaseHeaderProps> = ({
   };
 
   return (
-    <header className="relative w-full bg-theme-panel text-theme-primary border-b-4 border-[#8c2a2a] shadow-md transition-colors">
+    <header className="relative w-full bg-theme-panel text-theme-primary border-b-4 border-[#c6007e] shadow-md transition-colors">
       {/* Top Police Warning Tape Line */}
       <div className="h-2 w-full bg-police-tape opacity-90" />
 
@@ -83,7 +84,7 @@ export const CaseHeader: React.FC<CaseHeaderProps> = ({
             
             <div>
               <div className="flex items-center gap-2 flex-wrap">
-                <span className="font-stamp tracking-wider text-xs px-2 py-0.5 bg-[#8c2a2a] text-white rounded font-bold uppercase shadow-xs">
+                <span className="font-stamp tracking-wider text-xs px-2 py-0.5 bg-[#c6007e] text-white rounded font-bold uppercase shadow-xs">
                   {t.confidential}
                 </span>
                 <span className="font-typewriter text-xs font-semibold px-2 py-0.5 bg-theme-card text-theme-title border border-theme/40 rounded">
@@ -97,13 +98,15 @@ export const CaseHeader: React.FC<CaseHeaderProps> = ({
                     {currentCase.categoria}
                   </span>
                 )}
-                {currentCase.citasBiblicas && (
+                {currentCase.fuenteHistorica && (
                   <span className="font-mono text-xs px-2 py-0.5 bg-sky-100 dark:bg-sky-950/50 text-sky-800 dark:text-sky-200 border border-sky-300 dark:border-sky-600/40 rounded font-semibold flex items-center gap-1">
                     <span>📖</span>
-                    <span>{currentCase.citasBiblicas}</span>
+                    <span>{currentCase.fuenteHistorica}</span>
                   </span>
                 )}
               </div>
+
+              <RasgosChips rasgos={currentCase.rasgos} className="mt-1" />
 
               <h1 className="text-xl sm:text-2xl font-bold font-murdoku-sans tracking-tight text-theme-title mt-1">
                 {currentCase.title}
@@ -271,7 +274,7 @@ export const CaseHeader: React.FC<CaseHeaderProps> = ({
                 sounds.playClick();
                 onOpenRules();
               }}
-              className="flex items-center gap-1 px-3 py-1.5 rounded bg-[#8c2a2a] hover:bg-[#a63434] text-white text-xs font-typewriter font-bold shadow transition-colors cursor-pointer"
+              className="flex items-center gap-1 px-3 py-1.5 rounded bg-[#c6007e] hover:bg-[#a63434] text-white text-xs font-typewriter font-bold shadow transition-colors cursor-pointer"
             >
               <BookOpen className="w-4 h-4" />
               <span>{t.headerRules}</span>

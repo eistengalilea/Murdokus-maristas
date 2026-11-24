@@ -1,32 +1,21 @@
 import { DatabaseNiveles, Reto, PuzzleCase, DifficultyLevel, DifficultyKey, parseTamanoCuadricula } from '../types';
-import { CASOS_FACILES } from './casosFaciles';
-import { CASOS_MEDIOS } from './casosMedios';
-import { CASOS_DIFICILES } from './casosDificiles';
-import { RETOS_NUEVOS_FACILES } from './retosNuevosFaciles';
-import { RETOS_NUEVOS_MEDIOS } from './retosNuevosMedios';
-import { RETOS_MONARQUIA_FACILES } from './retosMonarquiaFaciles';
-import { RETOS_MONARQUIA_MEDIOS } from './retosMonarquiaMedios';
-import { RETOS_MONARQUIA_DIFICILES } from './retosMonarquiaDificiles';
-import { RETOS_EVANGELIOS_FACILES } from './retosEvangeliosFaciles';
-import { RETOS_EVANGELIOS_MEDIOS } from './retosEvangeliosMedios';
-import { RETOS_EVANGELIOS_DIFICILES } from './retosEvangeliosDificiles';
-import { RETOS_HECHOS_FACILES } from './retosHechosFaciles';
-import { RETOS_HECHOS_MEDIOS } from './retosHechosMedios';
-import { RETOS_HECHOS_DIFICILES } from './retosHechosDificiles';
+import { RETOS_MARISTA_FACILES } from './retosMaristaFaciles';
+import { RETOS_MARISTA_MEDIOS } from './retosMaristaMedios';
+import { RETOS_MARISTA_DIFICILES } from './retosMaristaDificiles';
 
 /**
- * BASE DE DATOS ESTRUCTURADA DE RETOS DE DEDUCCIÓN BÍBLICA (MURDOKU)
- * 
- * Compendio de casos de investigación basados en el libro de Génesis, Daniel, Ester, Ezequiel, Tobías, Jeremías, Samuel, Reyes, Evangelios y Hechos de los Apóstoles:
+ * BASE DE DATOS ESTRUCTURADA DE RETOS DE DEDUCCIÓN (MURDOKU) DE HISTORIA MARISTA
+ *
+ * Retos sobre la vida de Marcelino Champagnat, los primeros hermanos y la construcción de L'Hermitage,
+ * generados por scripts/generar-retos.ts:
  * - easy: Cuadrícula 5x5 (25 celdas)
  * - medium: Cuadrícula 7x7 (49 celdas)
  * - hard: Cuadrícula 9x9 (81 celdas)
- *   (la antigua clave 'medium-hard' era una copia exacta de 'hard' y se ha eliminado)
  */
 export const NIVELES_DATABASE: DatabaseNiveles = {
-  easy: [...CASOS_FACILES, ...RETOS_NUEVOS_FACILES, ...RETOS_MONARQUIA_FACILES, ...RETOS_EVANGELIOS_FACILES, ...RETOS_HECHOS_FACILES],
-  medium: [...CASOS_MEDIOS, ...RETOS_NUEVOS_MEDIOS, ...RETOS_MONARQUIA_MEDIOS, ...RETOS_EVANGELIOS_MEDIOS, ...RETOS_HECHOS_MEDIOS],
-  hard: [...CASOS_DIFICILES, ...RETOS_MONARQUIA_DIFICILES, ...RETOS_EVANGELIOS_DIFICILES, ...RETOS_HECHOS_DIFICILES]
+  easy: [...RETOS_MARISTA_FACILES],
+  medium: [...RETOS_MARISTA_MEDIOS],
+  hard: [...RETOS_MARISTA_DIFICILES]
 };
 
 /**
@@ -66,12 +55,13 @@ export function retoToPuzzleCase(reto: Reto, difficulty: DifficultyLevel): Puzzl
     id: reto.id,
     retoId: reto.id,
     title: `Caso ${reto.id}: ${reto.nombre}`,
-    subtitle: d.subtitle || `${d.categoria || 'Misterio de deducción'} · ${d.citasBiblicas || 'Génesis'}`,
+    subtitle: d.subtitle || `${d.categoria || 'Misterio de deducción'} · ${d.fuenteHistorica || 'Historia marista'}`,
     badge: d.badge || `${reto.nombre.toUpperCase()} · ${label}`,
     categoria: d.categoria,
-    citasBiblicas: d.citasBiblicas,
-    textoBiblicoClave: d.textoBiblicoClave,
-    contextoTeologico: d.contextoTeologico,
+    rasgos: d.rasgos || [],
+    fuenteHistorica: d.fuenteHistorica,
+    textoClave: d.textoClave,
+    contextoHistorico: d.contextoHistorico,
     solucionExplicacion: d.solucionExplicacion,
     difficulty,
     Tamano_Cuadricula: label,

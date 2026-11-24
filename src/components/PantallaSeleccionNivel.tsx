@@ -4,7 +4,7 @@ import { DifficultyLevel } from '../types';
 import { sounds } from '../audio';
 import { generarBotonesNiveles } from '../navigation';
 import { NIVELES_DATABASE } from '../data/niveles';
-import { coincideFiltrosReto, obtenerLibrosDisponibles, obtenerLibroBiblico } from '../utils/searchEngine';
+import { coincideFiltrosReto, obtenerLibrosDisponibles, obtenerEtapa } from '../utils/searchEngine';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageToggle } from './LanguageToggle';
 import { MenuBusquedaNivel } from './MenuBusquedaNivel';
@@ -34,11 +34,11 @@ export const PantallaSeleccionNivel: React.FC<PantallaSeleccionNivelProps> = ({
 
   const retosNivel = useMemo(() => NIVELES_DATABASE[catKey] || [], [catKey]);
 
-  // Libros bíblicos presentes en este nivel con sus cantidades
+  // Etapas presentes en este nivel con sus cantidades
   const availableBooks = useMemo(() => {
     return obtenerLibrosDisponibles(
       retosNivel.map((r) => ({
-        libroBiblico: obtenerLibroBiblico(r.datos_juego.citasBiblicas, r.id, r.nombre)
+        etapa: obtenerEtapa(r.datos_juego.fuenteHistorica)
       }))
     );
   }, [retosNivel]);
@@ -125,7 +125,7 @@ export const PantallaSeleccionNivel: React.FC<PantallaSeleccionNivelProps> = ({
           </p>
         </div>
 
-        {/* Menú de Búsqueda de Retos por Palabras e Libros Bíblicos */}
+        {/* Menú de Búsqueda de Retos por Palabras e Etapas */}
         <MenuBusquedaNivel
           searchTerm={searchTerm}
           onSearchTermChange={setSearchTerm}

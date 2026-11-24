@@ -13,6 +13,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { contarSoluciones } from '../src/utils/pistasPosicion';
+import { RASGO_IDS } from '../src/data/rasgos';
 import { RETOS_FUENTE } from './retos-fuente';
 import type { RetoF, Nivel } from './retos-fuente/base';
 
@@ -53,6 +54,8 @@ function revisarFuente(r: RetoF) {
   const err = (m: string) => {
     throw new Error(`[${r.id}] ${m}`);
   };
+  if (!r.rasgos || r.rasgos.length === 0) err('falta al menos un rasgo marista');
+  for (const g of r.rasgos || []) if (!RASGO_IDS.includes(g)) err(`rasgo desconocido ${g}`);
   if (r.personajes.length !== N) err(`hay ${r.personajes.length} personajes y el nivel pide ${N}`);
   const salas = new Set(r.salas.map((s) => s.id));
   if (salas.size !== r.salas.length) err('ids de estancia repetidos');
@@ -317,6 +320,7 @@ function construir(r: RetoF) {
       Tamano_Cuadricula: `${N}x${N}`,
       gridSize: N,
       categoria: es.textos.categoria,
+      rasgos: r.rasgos,
       fuenteHistorica: es.textos.fuenteHistorica,
       textoClave: es.textos.textoClave,
       contextoHistorico: es.textos.contextoHistorico,

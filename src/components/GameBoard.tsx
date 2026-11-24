@@ -186,9 +186,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         </div>
 
         {/* Evidence Tape Stamp */}
-        <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-[#8c2a2a]/10 border border-[#8c2a2a]/40 rounded">
-          <span className="w-2 h-2 rounded-full bg-[#8c2a2a] animate-pulse" />
-          <span className="text-[10px] font-stamp text-[#8c2a2a] uppercase font-bold tracking-widest">
+        <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-[#c6007e]/10 border border-[#c6007e]/40 rounded">
+          <span className="w-2 h-2 rounded-full bg-[#c6007e] animate-pulse" />
+          <span className="text-[10px] font-stamp text-[#c6007e] uppercase font-bold tracking-widest">
             {tamanoLabel} · ACORDONADO
           </span>
         </div>
@@ -336,7 +336,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                       : ''
                   } ${
                     isExactHovered && !isBlocked
-                      ? 'ring-2 ring-[#8c2a2a] shadow-lg scale-[1.03] z-10'
+                      ? 'ring-2 ring-[#c6007e] shadow-lg scale-[1.03] z-10'
                       : ''
                   } ${
                     isLegendHovered && !isBlocked
@@ -484,7 +484,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
 
                         return (
                           <div className="w-full h-full flex flex-col items-center justify-center opacity-0 group-hover:opacity-90 transition-opacity">
-                            <div className="w-[82%] h-[82%] rounded-full border-2 border-dashed border-[#8c2a2a] bg-amber-100/70 flex flex-col items-center justify-center shadow-xs scale-95 animate-pulse">
+                            <div className="w-[82%] h-[82%] rounded-full border-2 border-dashed border-[#c6007e] bg-amber-100/70 flex flex-col items-center justify-center shadow-xs scale-95 animate-pulse">
                               <span className={`${scaleStyles.suspectAvatar} leading-none`}>
                                 {activeSuspect?.avatar}
                               </span>

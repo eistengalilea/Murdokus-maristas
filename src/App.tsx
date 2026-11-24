@@ -660,7 +660,7 @@ export default function App() {
   }, [currentCase, sounds, currentScreen]);
 
   return (
-    <div className="no-imprimir min-h-screen bg-theme-app text-theme-primary flex flex-col font-sans transition-colors selection:bg-[#8c2a2a] selection:text-white">
+    <div className="no-imprimir min-h-screen bg-theme-app text-theme-primary flex flex-col font-sans transition-colors selection:bg-[#c6007e] selection:text-white">
       
       {/* ========================================================================= */}
       {/* 1. PANTALLA DIFICULTAD (Visible por defecto)                              */}
@@ -807,10 +807,10 @@ export default function App() {
           )}
 
           {/* Story Intro Tag */}
-          <div className="bg-theme-card border border-theme/30 border-l-4 border-l-[#8c2a2a] p-3 rounded-r-lg text-xs font-sans text-theme-primary flex items-start gap-2 shadow-xs transition-colors">
+          <div className="bg-theme-card border border-theme/30 border-l-4 border-l-[#c6007e] p-3 rounded-r-lg text-xs font-sans text-theme-primary flex items-start gap-2 shadow-xs transition-colors">
             <span className="text-base leading-none">📂</span>
             <p className="leading-relaxed">
-              <strong className="text-[#8c2a2a] dark:text-amber-300 font-typewriter">{M.informePolicial}</strong> {displayCase.storyIntro}
+              <strong className="text-[#c6007e] dark:text-amber-300 font-typewriter">{M.informePolicial}</strong> {displayCase.storyIntro}
             </p>
           </div>
 
@@ -879,7 +879,7 @@ export default function App() {
                     setIsAccusationOpen(true);
                   }}
                   aria-disabled={!posicionesVerificadas}
-                  className={`flex items-center justify-center gap-2 px-3.5 py-3 rounded-lg bg-[#8c2a2a] hover:bg-[#a83232] text-white font-typewriter text-xs sm:text-sm font-bold shadow-lg transition-all ring-2 cursor-pointer ${
+                  className={`flex items-center justify-center gap-2 px-3.5 py-3 rounded-lg bg-[#c6007e] hover:bg-[#a8006a] text-white font-typewriter text-xs sm:text-sm font-bold shadow-lg transition-all ring-2 cursor-pointer ${
                     posicionesVerificadas ? 'ring-amber-400/80 animate-pulse' : 'ring-red-500/30 opacity-60'
                   }`}
                   title={posicionesVerificadas ? t.headerAccuse : M.acusacionBloqueada}

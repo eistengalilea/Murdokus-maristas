@@ -409,7 +409,7 @@ function renderizarPaginaReto(doc: jsPDF, casoOrig: PuzzleCase, idioma: Language
   doc.setFontSize(6.8);
   doc.setTextColor(28, 25, 23);
   doc.text(t.pdfGrade, colFichaB, alumnoBoxY + 13.0);
-  doc.setTextColor(140, 42, 42);
+  doc.setTextColor(198, 0, 126);
   doc.text('____ / 10', alumnoBoxX + alumnoBoxW - 2.5, alumnoBoxY + 13.0, { align: 'right' });
 
   // Etiquetas informativas en la cabecera (x = badgeX + 13)
@@ -417,7 +417,7 @@ function renderizarPaginaReto(doc: jsPDF, casoOrig: PuzzleCase, idioma: Language
   const tagY = headerTop;
 
   // Sello CONFIDENCIAL
-  doc.setFillColor(140, 42, 42);
+  doc.setFillColor(198, 0, 126);
   doc.roundedRect(tagX, tagY, 21, 3.8, 0.6, 0.6, 'F');
   doc.setTextColor(255, 255, 255);
   doc.setFont('courier', 'bold');
@@ -455,12 +455,12 @@ function renderizarPaginaReto(doc: jsPDF, casoOrig: PuzzleCase, idioma: Language
     tagX += diffW + 2;
   }
 
-  // Cita bíblica
-  if (caso.citasBiblicas && tagX < alumnoBoxX - 15) {
+  // Fuente histórica
+  if (caso.fuenteHistorica && tagX < alumnoBoxX - 15) {
     const maxBibW = alumnoBoxX - tagX - 4;
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(5.8);
-    let bibLabel = `Cita: ${caso.citasBiblicas}`;
+    let bibLabel = `Fuente: ${caso.fuenteHistorica}`;
     if (doc.getTextWidth(bibLabel) + 4 > maxBibW) {
       while (bibLabel.length > 6 && doc.getTextWidth(bibLabel + '…') + 4 > maxBibW) {
         bibLabel = bibLabel.slice(0, -1);
@@ -828,7 +828,7 @@ function renderizarPaginaReto(doc: jsPDF, casoOrig: PuzzleCase, idioma: Language
     const lh = fsCuaderno * PT_MM * 1.2;
     doc.setFont('courier', 'bold');
     doc.setFontSize(5.4);
-    doc.setTextColor(140, 42, 42);
+    doc.setTextColor(198, 0, 126);
     doc.text(titulo, colLeftX + 3.0, y + 2.2);
     y += 3.4;
     for (const it of items) {
@@ -904,7 +904,7 @@ function renderizarPaginaReto(doc: jsPDF, casoOrig: PuzzleCase, idioma: Language
   doc.setFont('courier', 'bold');
   doc.setFontSize(5.6);
   const reglaW = doc.getTextWidth(reglaTxt) + 3.0;
-  doc.setFillColor(140, 42, 42);
+  doc.setFillColor(198, 0, 126);
   doc.roundedRect(colRightX + colRightWidth - reglaW - 2, boardHeaderY - 1.4, reglaW, 3.2, 0.5, 0.5, 'F');
   doc.setTextColor(255, 255, 255);
   doc.text(reglaTxt, colRightX + colRightWidth - 2 - reglaW / 2, boardHeaderY + 0.2, { align: 'center', baseline: 'middle' });
@@ -1197,7 +1197,7 @@ function renderizarPaginaReto(doc: jsPDF, casoOrig: PuzzleCase, idioma: Language
     const badgeBoxW = Math.max(38, badgeTxtW + 4.0);
     const badgeBoxX = colRightX + colRightWidth - badgeBoxW - 2.0;
 
-    doc.setFillColor(140, 42, 42);
+    doc.setFillColor(198, 0, 126);
     doc.roundedRect(badgeBoxX, dictamenY + 0.6, badgeBoxW, 3.2, 0.5, 0.5, 'F');
     doc.setTextColor(255, 255, 255);
     doc.text(badgeTxt, badgeBoxX + badgeBoxW / 2, dictamenY + 2.2 + 0.5, { align: 'center', baseline: 'middle' });
@@ -1426,7 +1426,7 @@ function renderizarPaginaSolucion(doc: jsPDF, casoOrig: PuzzleCase, idioma: Lang
   const badgeH = 13.5;
 
   // Escudo dorado de Solución
-  doc.setFillColor(140, 42, 42);
+  doc.setFillColor(198, 0, 126);
   doc.roundedRect(badgeX, badgeY, badgeW, badgeH, 1.2, 1.2, 'F');
   doc.setDrawColor(254, 240, 138);
   doc.setLineWidth(0.4);
@@ -1508,10 +1508,10 @@ function renderizarPaginaSolucion(doc: jsPDF, casoOrig: PuzzleCase, idioma: Lang
   doc.text(diffLabel, tagX + 2.0, tagY + 2.7);
   tagX += diffW + 2;
 
-  if (caso.citasBiblicas && tagX < docenteBoxX - 25) {
+  if (caso.fuenteHistorica && tagX < docenteBoxX - 25) {
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(6.0);
-    const rawBib = ajustarTexto(doc, `Cita: ${caso.citasBiblicas}`, docenteBoxX - tagX - 8);
+    const rawBib = ajustarTexto(doc, `Fuente: ${caso.fuenteHistorica}`, docenteBoxX - tagX - 8);
     const bibW = doc.getTextWidth(rawBib) + 4;
     doc.setFillColor(224, 242, 254);
     doc.setDrawColor(2, 132, 199);
@@ -1987,15 +1987,15 @@ function renderizarPaginaSolucion(doc: jsPDF, casoOrig: PuzzleCase, idioma: Lang
   ] });
   const preguntasDebate = porIdioma(idioma, { es: [
     { cat: '• Lógica y deducción:', txt: '¿Cuál fue la pista decisiva que permitió descartar a la mayoría de los sospechosos?' },
-    { cat: '• Historia y contexto:', txt: '¿Qué motivó la conducta de los personajes según el texto bíblico?' },
+    { cat: '• Historia y contexto:', txt: '¿Qué motivó la conducta de los personajes según las fuentes históricas?' },
     { cat: '• Valores y fe:', txt: '¿Qué lección de valentía, lealtad o integridad nos deja este relato?' }
   ], gl: [
     { cat: '• Lóxica e dedución:', txt: 'Cal foi a pista decisiva que permitiu descartar á maioría dos sospeitosos?' },
-    { cat: '• Historia e contexto:', txt: 'Que motivou a conduta dos personaxes segundo o texto bíblico?' },
+    { cat: '• Historia e contexto:', txt: 'Que motivou a conduta dos personaxes segundo as fontes históricas?' },
     { cat: '• Valores e fe:', txt: 'Que lección de valentía, lealdade ou integridade nos deixa este relato?' }
   ], pt: [
     { cat: '• Lógica e dedução:', txt: 'Qual foi a pista decisiva que permitiu excluir a maioria dos suspeitos?' },
-    { cat: '• História e contexto:', txt: 'O que motivou a conduta das personagens segundo o texto bíblico?' },
+    { cat: '• História e contexto:', txt: 'O que motivou a conduta das personagens segundo as fontes históricas?' },
     { cat: '• Valores e fé:', txt: 'Que lição de coragem, lealdade ou integridade nos deixa este relato?' }
   ] });
 
@@ -2006,8 +2006,8 @@ function renderizarPaginaSolucion(doc: jsPDF, casoOrig: PuzzleCase, idioma: Lang
   pasos.forEach((p, i) => caja3.push({ titulo: i === 0 ? t.pdfPage2Sec3MethodSteps : undefined, texto: p, estilo: 'paso', color: [55, 65, 81] }));
   const caja4: Parrafo[] = [];
   if (caso.epilogue) caja4.push({ titulo: t.pdfPage2Sec4Relato, texto: `"${caso.epilogue}"`, estilo: 'italic', color: [68, 64, 60] });
-  if (caso.textoBiblicoClave) caja4.push({ titulo: t.pdfPage2Sec4Passage, texto: `«${caso.textoBiblicoClave}» (${caso.citasBiblicas || 'Biblia'})`, estilo: 'cita', color: [120, 53, 15] });
-  if (caso.contextoTeologico) caja4.push({ titulo: t.pdfPage2Sec4Theology, texto: caso.contextoTeologico, estilo: 'normal', color: [41, 37, 36] });
+  if (caso.textoClave) caja4.push({ titulo: t.pdfPage2Sec4Passage, texto: `«${caso.textoClave}» (${caso.fuenteHistorica || 'Historia marista'})`, estilo: 'cita', color: [120, 53, 15] });
+  if (caso.contextoHistorico) caja4.push({ titulo: t.pdfPage2Sec4Theology, texto: caso.contextoHistorico, estilo: 'normal', color: [41, 37, 36] });
 
   const fuentePara = (p: Parrafo, fs: number) => {
     if (p.estilo === 'cita') doc.setFont('times', 'bolditalic');
@@ -2031,7 +2031,7 @@ function renderizarPaginaSolucion(doc: jsPDF, casoOrig: PuzzleCase, idioma: Lang
   while (fsDer > 4.6 && altoCaja(caja3, fsDer) + altoCaja(caja4, fsDer) + altoDebateMin > disponible) fsDer -= 0.2;
   let h3 = altoCaja(caja3, fsDer);
   let h4 = altoCaja(caja4, fsDer);
-  // Si aun así no cabe, se limita el contexto teológico (último párrafo) con «…»
+  // Si aun así no cabe, se limita el contexto histórico (último párrafo) con «…»
   const exceso = h3 + h4 + altoDebateMin - disponible;
   let maxLineasUltimo = Infinity;
   if (exceso > 0 && caja4.length) {

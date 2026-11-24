@@ -23,9 +23,9 @@ export interface ClueTranslation {
 export interface RetoTraduccion {
   nombre: string;
   categoria?: string;
-  citasBiblicas?: string;
-  textoBiblicoClave?: string;
-  contextoTeologico?: string;
+  fuenteHistorica?: string;
+  textoClave?: string;
+  contextoHistorico?: string;
   solucionExplicacion?: string;
   storyIntro?: string;
   epilogue?: string;

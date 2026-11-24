@@ -1,6 +1,7 @@
 import { Reto, PuzzleCase, DifficultyLevel } from '../types';
 import { NIVELES_DATABASE, retoToPuzzleCase } from '../data/niveles';
 import { RETOS_TRADUCCIONES } from '../i18n/retos';
+import { textoRasgos } from '../data/rasgos';
 
 /** Texto de las traducciones (gallego y portugués) de un reto, para poder buscar en cualquier idioma. */
 function textoTraducciones(retoId: string): string {
@@ -29,93 +30,23 @@ export function normalizarTexto(texto: string): string {
 }
 
 /**
- * Lista canónica ordenada de libros bíblicos conocidos en la base de datos de Murdoku.
+ * Lista canónica ordenada de etapas de la historia marista (orden cronológico).
+ * Las etapas que no figuren aquí se añaden después, por orden alfabético.
  */
-export const LIBROS_BIBLICOS_CONOCIDOS = [
-  'Génesis',
-  '1 Samuel',
-  '2 Samuel',
-  '1 Reyes',
-  '2 Reyes',
-  'Tobías',
-  'Ester',
-  'Daniel',
-  'Jeremías',
-  'Ezequiel',
-  'Mateo',
-  'Marcos',
-  'Lucas',
-  'Juan',
-  'Hechos de los Apóstoles'
+export const ETAPAS_CONOCIDAS = [
+  'Marlhes',
+  'Lyon',
+  'La Valla',
+  'L’Hermitage'
 ] as const;
 
 /**
- * Extrae o detecta el libro bíblico al que pertenece un reto o cita.
+ * Extrae la etapa de la fuente histórica de un reto: es el texto anterior a « · »
+ * (p. ej. «La Valla · Lanfrey T. 1, cap. 3» → «La Valla»).
  */
-export function obtenerLibroBiblico(cita?: string, id?: string, nombre?: string): string {
-  const normalizada = normalizarTexto(`${cita || ''} ${id || ''} ${nombre || ''}`);
-
-  if (normalizada.includes('hechos') || normalizada.includes('hch')) {
-    return 'Hechos de los Apóstoles';
-  }
-  if (normalizada.includes('genesis') || normalizada.includes('gn')) {
-    return 'Génesis';
-  }
-  if (normalizada.includes('1 samuel') || normalizada.includes('1 sam') || normalizada.includes('1sam')) {
-    return '1 Samuel';
-  }
-  if (normalizada.includes('2 samuel') || normalizada.includes('2 sam') || normalizada.includes('2sam')) {
-    return '2 Samuel';
-  }
-  if (normalizada.includes('samuel') || normalizada.includes('sam')) {
-    return '1 Samuel';
-  }
-  if (normalizada.includes('1 reyes') || normalizada.includes('1 re') || normalizada.includes('1re')) {
-    return '1 Reyes';
-  }
-  if (normalizada.includes('2 reyes') || normalizada.includes('2 re') || normalizada.includes('2re')) {
-    return '2 Reyes';
-  }
-  if (normalizada.includes('reyes') || normalizada.includes('re')) {
-    return '1 Reyes';
-  }
-  if (normalizada.includes('daniel') || normalizada.includes('dn')) {
-    return 'Daniel';
-  }
-  if (normalizada.includes('ester') || normalizada.includes('est')) {
-    return 'Ester';
-  }
-  if (normalizada.includes('tobias') || normalizada.includes('tb')) {
-    return 'Tobías';
-  }
-  if (normalizada.includes('jeremias') || normalizada.includes('jr')) {
-    return 'Jeremías';
-  }
-  if (normalizada.includes('ezequiel') || normalizada.includes('ez')) {
-    return 'Ezequiel';
-  }
-  if (normalizada.includes('mateo') || normalizada.includes('mt')) {
-    return 'Mateo';
-  }
-  if (normalizada.includes('marcos') || normalizada.includes('mc')) {
-    return 'Marcos';
-  }
-  if (normalizada.includes('lucas') || normalizada.includes('lc')) {
-    return 'Lucas';
-  }
-  if (normalizada.includes('juan') || normalizada.includes('jn')) {
-    return 'Juan';
-  }
-
-  // Fallback si la cita empieza por el nombre del libro antes de los números
-  if (cita) {
-    const primerSegmento = cita.split(/\d+/)[0].trim();
-    if (primerSegmento.length > 2) {
-      return primerSegmento;
-    }
-  }
-
-  return 'Otros Escritos Bíblicos';
+export function obtenerEtapa(fuente?: string): string {
+  const etapa = (fuente || '').split(' · ')[0].trim();
+  return etapa || 'Otras etapas';
 }
 
 /**
@@ -123,7 +54,7 @@ export function obtenerLibroBiblico(cita?: string, id?: string, nombre?: string)
  */
 export function obtenerTextoIndexableReto(reto: Reto): string {
   const dj = reto.datos_juego;
-  const libro = obtenerLibroBiblico(dj.citasBiblicas, reto.id, reto.nombre);
+  const libro = obtenerEtapa(dj.fuenteHistorica);
 
   const personajes = (dj.suspects || []).map((s) => `${s.name} ${s.role || ''} ${s.clueText || ''}`).join(' ');
   const estancias = dj.rooms ? Object.values(dj.rooms).map((r) => `${r.name} ${r.description || ''}`).join(' ') : '';
@@ -134,11 +65,12 @@ export function obtenerTextoIndexableReto(reto: Reto): string {
       reto.id,
       reto.nombre,
       libro,
-      dj.citasBiblicas || '',
+      textoRasgos(dj.rasgos),
+      dj.fuenteHistorica || '',
       dj.categoria || '',
       dj.storyIntro || '',
-      dj.textoBiblicoClave || '',
-      dj.contextoTeologico || '',
+      dj.textoClave || '',
+      dj.contextoHistorico || '',
       dj.solucionExplicacion || '',
       dj.epilogue || '',
       personajes,
@@ -153,7 +85,7 @@ export function obtenerTextoIndexableReto(reto: Reto): string {
  * Obtiene el corpus de texto completo indexable para un PuzzleCase.
  */
 export function obtenerTextoIndexableCase(pCase: PuzzleCase): string {
-  const libro = obtenerLibroBiblico(pCase.citasBiblicas, pCase.id, pCase.title);
+  const libro = obtenerEtapa(pCase.fuenteHistorica);
 
   const personajes = (pCase.suspects || []).map((s) => `${s.name} ${s.role || ''} ${s.clueText || ''}`).join(' ');
   const estancias = pCase.rooms ? Object.values(pCase.rooms).map((r) => `${r.name} ${r.description || ''}`).join(' ') : '';
@@ -167,11 +99,12 @@ export function obtenerTextoIndexableCase(pCase: PuzzleCase): string {
       pCase.subtitle || '',
       pCase.badge || '',
       libro,
-      pCase.citasBiblicas || '',
+      textoRasgos(pCase.rasgos),
+      pCase.fuenteHistorica || '',
       pCase.categoria || '',
       pCase.storyIntro || '',
-      pCase.textoBiblicoClave || '',
-      pCase.contextoTeologico || '',
+      pCase.textoClave || '',
+      pCase.contextoHistorico || '',
       pCase.solucionExplicacion || '',
       pCase.epilogue || '',
       personajes,
@@ -184,16 +117,16 @@ export function obtenerTextoIndexableCase(pCase: PuzzleCase): string {
 }
 
 /**
- * Comprueba si un reto coincide con los términos de búsqueda y el filtro de libro bíblico.
+ * Comprueba si un reto coincide con los términos de búsqueda y el filtro de etapa.
  */
 export function coincideFiltrosReto(reto: Reto, queryTexto: string, filtroLibro: string): boolean {
-  const libroReto = obtenerLibroBiblico(reto.datos_juego.citasBiblicas, reto.id, reto.nombre);
+  const libroReto = obtenerEtapa(reto.datos_juego.fuenteHistorica);
 
-  // 1. Filtro por libro bíblico
+  // 1. Filtro por etapa
   if (filtroLibro && filtroLibro !== 'todos' && filtroLibro !== 'Todos') {
     const libroFiltroNorm = normalizarTexto(filtroLibro);
     const libroRetoNorm = normalizarTexto(libroReto);
-    const citaNorm = normalizarTexto(reto.datos_juego.citasBiblicas || '');
+    const citaNorm = normalizarTexto(reto.datos_juego.fuenteHistorica || '');
 
     const coincideLibro =
       libroRetoNorm === libroFiltroNorm ||
@@ -222,12 +155,12 @@ export function coincideFiltrosReto(reto: Reto, queryTexto: string, filtroLibro:
  * Comprueba si un PuzzleCase coincide con los filtros.
  */
 export function coincideFiltrosCase(pCase: PuzzleCase, queryTexto: string, filtroLibro: string): boolean {
-  const libroCase = obtenerLibroBiblico(pCase.citasBiblicas, pCase.id, pCase.title);
+  const libroCase = obtenerEtapa(pCase.fuenteHistorica);
 
   if (filtroLibro && filtroLibro !== 'todos' && filtroLibro !== 'Todos') {
     const libroFiltroNorm = normalizarTexto(filtroLibro);
     const libroCaseNorm = normalizarTexto(libroCase);
-    const citaNorm = normalizarTexto(pCase.citasBiblicas || '');
+    const citaNorm = normalizarTexto(pCase.fuenteHistorica || '');
 
     const coincideLibro =
       libroCaseNorm === libroFiltroNorm ||
@@ -254,11 +187,11 @@ export interface EntradaCatalogoReto {
   reto: Reto;
   puzzleCase: PuzzleCase;
   dificultad: DifficultyLevel;
-  libroBiblico: string;
+  etapa: string;
 }
 
 /**
- * Retorna el catálogo consolidado completo de todos los retos con sus metadatos y libro bíblico.
+ * Retorna el catálogo consolidado completo de todos los retos con sus metadatos y etapa.
  */
 export function obtenerCatalogoCompleto(): EntradaCatalogoReto[] {
   const catalogo: EntradaCatalogoReto[] = [];
@@ -269,7 +202,7 @@ export function obtenerCatalogoCompleto(): EntradaCatalogoReto[] {
       reto: r,
       puzzleCase: pc,
       dificultad: 'Fácil',
-      libroBiblico: obtenerLibroBiblico(r.datos_juego.citasBiblicas, r.id, r.nombre)
+      etapa: obtenerEtapa(r.datos_juego.fuenteHistorica)
     });
   });
 
@@ -279,7 +212,7 @@ export function obtenerCatalogoCompleto(): EntradaCatalogoReto[] {
       reto: r,
       puzzleCase: pc,
       dificultad: 'Medio',
-      libroBiblico: obtenerLibroBiblico(r.datos_juego.citasBiblicas, r.id, r.nombre)
+      etapa: obtenerEtapa(r.datos_juego.fuenteHistorica)
     });
   });
 
@@ -289,7 +222,7 @@ export function obtenerCatalogoCompleto(): EntradaCatalogoReto[] {
       reto: r,
       puzzleCase: pc,
       dificultad: 'Difícil',
-      libroBiblico: obtenerLibroBiblico(r.datos_juego.citasBiblicas, r.id, r.nombre)
+      etapa: obtenerEtapa(r.datos_juego.fuenteHistorica)
     });
   });
 
@@ -297,22 +230,22 @@ export function obtenerCatalogoCompleto(): EntradaCatalogoReto[] {
 }
 
 /**
- * Obtiene la lista ordenada de libros bíblicos disponibles para un conjunto dado de retos,
+ * Obtiene la lista ordenada de etapas disponibles para un conjunto dado de retos,
  * calculando la cantidad de retos por libro.
  */
 export function obtenerLibrosDisponibles(
-  entradas: { libroBiblico: string }[]
+  entradas: { etapa: string }[]
 ): { libro: string; cantidad: number }[] {
   const contador = new Map<string, number>();
 
   entradas.forEach((e) => {
-    contador.set(e.libroBiblico, (contador.get(e.libroBiblico) || 0) + 1);
+    contador.set(e.etapa, (contador.get(e.etapa) || 0) + 1);
   });
 
-  // Ordenar respetando el orden canónico en LIBROS_BIBLICOS_CONOCIDOS, y luego los restantes alfabéticamente
+  // Ordenar respetando el orden canónico en ETAPAS_CONOCIDAS, y luego los restantes alfabéticamente
   const resultado: { libro: string; cantidad: number }[] = [];
 
-  LIBROS_BIBLICOS_CONOCIDOS.forEach((libroConocido) => {
+  ETAPAS_CONOCIDAS.forEach((libroConocido) => {
     if (contador.has(libroConocido)) {
       resultado.push({
         libro: libroConocido,

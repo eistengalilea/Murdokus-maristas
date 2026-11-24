@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Search, X, BookOpen, Filter, ArrowRight, RotateCcw } from 'lucide-react';
 import { PuzzleCase, DifficultyLevel } from '../types';
 import { sounds } from '../audio';
+import { RasgosChips } from './RasgosChips';
 import {
   obtenerCatalogoCompleto,
   coincideFiltrosReto,
@@ -21,19 +22,19 @@ export const MenuBusquedaGlobal: React.FC<MenuBusquedaGlobalProps> = ({ onSelect
   // Catálogo completo de retos de todas las dificultades
   const catalogo = useMemo(() => obtenerCatalogoCompleto(), []);
 
-  // Libros bíblicos disponibles con sus cantidades totales
+  // Etapas disponibles con sus cantidades totales
   const librosDisponibles = useMemo(() => {
     return obtenerLibrosDisponibles(catalogo);
   }, [catalogo]);
 
-  // Filtrado de retos según términos de búsqueda, libro bíblico y dificultad
+  // Filtrado de retos según términos de búsqueda, etapa y dificultad
   const retosFiltrados = useMemo(() => {
     return catalogo.filter((entry) => {
       // Filtro de dificultad
       if (selectedDifficulty !== 'todos' && entry.dificultad !== selectedDifficulty) {
         return false;
       }
-      // Filtro de texto y libro bíblico
+      // Filtro de texto y etapa
       return coincideFiltrosReto(entry.reto, searchTerm, selectedBook);
     });
   }, [catalogo, searchTerm, selectedBook, selectedDifficulty]);
@@ -84,10 +85,10 @@ export const MenuBusquedaGlobal: React.FC<MenuBusquedaGlobalProps> = ({ onSelect
             </div>
             <div>
               <h3 className="font-murdoku-sans font-bold text-base sm:text-lg text-theme-title">
-                Buscador de Retos Bíblicos
+                Buscador de Retos Maristas
               </h3>
               <p className="text-xs text-theme-secondary font-sans">
-                Filtra por palabras clave, personajes o explora libros bíblicos en todas las dificultades.
+                Filtra por palabras clave, personajes o explora etapas de la historia marista en todas las dificultades.
               </p>
             </div>
           </div>
@@ -133,22 +134,22 @@ export const MenuBusquedaGlobal: React.FC<MenuBusquedaGlobalProps> = ({ onSelect
             )}
           </div>
 
-          {/* Selector de libro bíblico */}
+          {/* Selector de etapa */}
           <div className="relative md:col-span-3">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-theme-title-accent">
               <BookOpen className="w-4 h-4" />
             </div>
             <select
-              id="select-libro-biblico-global"
+              id="select-etapa-global"
               value={selectedBook}
               onChange={(e) => {
                 sounds.playClick();
                 setSelectedBook(e.target.value);
               }}
-              aria-label="Seleccionar libro bíblico"
+              aria-label="Seleccionar etapa"
               className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-theme-card border border-theme/50 focus:border-theme-title-accent text-xs sm:text-sm text-theme-primary font-sans cursor-pointer outline-none"
             >
-              <option value="todos">Todos los libros ({catalogo.length})</option>
+              <option value="todos">Todas las etapas ({catalogo.length})</option>
               {librosDisponibles.map((b) => (
                 <option key={b.libro} value={b.libro}>
                   {b.libro} ({b.cantidad})
@@ -180,11 +181,11 @@ export const MenuBusquedaGlobal: React.FC<MenuBusquedaGlobalProps> = ({ onSelect
           </div>
         </div>
 
-        {/* Chips de acceso rápido por libro bíblico */}
+        {/* Chips de acceso rápido por etapa */}
         <div className="pt-2 border-t border-theme/20">
           <div className="flex items-center gap-1.5 flex-wrap">
             <span className="text-[11px] font-mono text-theme-secondary font-semibold mr-1">
-              Libros:
+              Etapas:
             </span>
             <button
               onClick={() => {
@@ -253,7 +254,7 @@ export const MenuBusquedaGlobal: React.FC<MenuBusquedaGlobalProps> = ({ onSelect
                 No se encontraron retos coincidentes
               </h4>
               <p className="text-xs text-theme-secondary max-w-md mx-auto font-sans leading-relaxed">
-                No hay ningún caso que coincida con los criterios de búsqueda actuales. Intenta con otras palabras o selecciona &quot;Todos los libros&quot;.
+                No hay ningún caso que coincida con los criterios de búsqueda actuales. Intenta con otras palabras o selecciona &quot;Todas las etapas&quot;.
               </p>
               <button
                 onClick={handleResetFilters}
@@ -284,7 +285,7 @@ export const MenuBusquedaGlobal: React.FC<MenuBusquedaGlobalProps> = ({ onSelect
                     className={`group relative flex flex-col justify-between h-full bg-theme-panel rounded-2xl border-2 ${badgeInfo.border} shadow-md hover:shadow-xl transition-all duration-200 p-5 sm:p-6 cursor-pointer hover:-translate-y-0.5`}
                   >
                     <div className="flex flex-col gap-4 flex-1">
-                      {/* 1. Cabecera con Dificultad, Caso y Libro Bíblico */}
+                      {/* 1. Cabecera con Dificultad, Caso y Etapa */}
                       <div className="flex items-center justify-between gap-2 flex-wrap pb-3 border-b border-theme/20">
                         <div className="flex items-center gap-1.5 flex-wrap">
                           <span className={`px-2.5 py-0.5 rounded-full border text-[11px] font-mono font-bold tracking-wider ${badgeInfo.badge}`}>
@@ -294,7 +295,7 @@ export const MenuBusquedaGlobal: React.FC<MenuBusquedaGlobalProps> = ({ onSelect
                             Caso {entry.reto.id}
                           </span>
                           <span className="inline-block text-[10.5px] font-mono px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950/60 text-blue-800 dark:text-blue-200 border border-blue-300 dark:border-blue-700/50 font-bold">
-                            📜 {entry.libroBiblico}
+                            📜 {entry.etapa}
                           </span>
                           {dj.categoria && (
                             <span className="inline-block text-[10px] font-mono px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-600/40 font-bold uppercase">
@@ -314,15 +315,16 @@ export const MenuBusquedaGlobal: React.FC<MenuBusquedaGlobalProps> = ({ onSelect
                         <h4 className="text-xl font-bold font-murdoku-sans text-theme-title group-hover:text-theme-title-accent transition-colors leading-snug">
                           {entry.reto.nombre}
                         </h4>
-                        {dj.citasBiblicas && (
+                        <RasgosChips rasgos={dj.rasgos} />
+                        {dj.fuenteHistorica && (
                           <div className="flex items-center gap-1.5 text-xs text-sky-700 dark:text-sky-300 font-mono font-semibold">
                             <span className="text-xs">📖</span>
-                            <span>{dj.citasBiblicas}</span>
+                            <span>{dj.fuenteHistorica}</span>
                           </div>
                         )}
                       </div>
 
-                      {/* 3. Sinopsis Pericial y Texto Bíblico */}
+                      {/* 3. Sinopsis Pericial y Texto Histórico */}
                       <div className="bg-theme-card/85 dark:bg-stone-900/60 p-3.5 sm:p-4 rounded-xl border border-theme/30 shadow-2xs space-y-2.5 flex-1 flex flex-col justify-between">
                         <div>
                           <div className="flex items-center gap-1.5 mb-1.5 text-theme-title-accent">
@@ -335,10 +337,10 @@ export const MenuBusquedaGlobal: React.FC<MenuBusquedaGlobalProps> = ({ onSelect
                             {dj.storyIntro}
                           </p>
                         </div>
-                        {dj.textoBiblicoClave && (
+                        {dj.textoClave && (
                           <div className="pt-2 border-t border-theme/20 flex items-start gap-2 text-xs italic text-theme-secondary font-serif leading-relaxed">
                             <span className="text-amber-500 dark:text-amber-400 font-serif font-bold text-sm leading-none shrink-0 mt-0.5">❝</span>
-                            <p className="line-clamp-2">{dj.textoBiblicoClave}</p>
+                            <p className="line-clamp-2">{dj.textoClave}</p>
                           </div>
                         )}
                       </div>
