@@ -1,0 +1,713 @@
+@import "tailwindcss";
+
+:root {
+  /* ========================================================================= */
+  /* MODO CLARO (DEFAULT)                                                      */
+  /* ========================================================================= */
+  --bg-app: #f5f5f5;
+  --bg-panel: #ffffff;
+  --bg-tools: #ffffff;
+  --bg-card: #ffffff;
+  --bg-clue: #ece9e2;
+  --bg-header: #ffffff;
+  --bg-secondary: #faf8f5;
+
+  /* Textos */
+  --text-primary: #1a181b;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --text-title: #111827;            /* Negro carbón nítido de alto contraste para modo claro */
+  --text-title-accent: #8c2a2a;     /* Burdeos criminal distintivo para títulos destacados */
+  --text-title-secondary: #374151;  /* Gris oscuro definido para subtítulos en modo claro */
+
+  /* Bordes */
+  --border-color: #1a181b;
+  --border-thick: #1a181b;
+  --border-subtle: #d1d5db;
+
+  /* Botones */
+  --btn-bg: #ffffff;
+  --btn-text: #1a181b;
+  --btn-border: #1a181b;
+  --btn-hover: #f3f4f6;
+
+  /* Colores de Habitaciones / Zonas en el Tablero (Pasteles vibrantes) */
+  --room-jardin: #a9dfbf;
+  --room-patio: #76d7c4;
+  --room-estanque: #6bc2e8;
+  --room-salon: #fad7a0;
+  --room-cocina: #f9e79f;
+  --room-biblioteca: #d7bde2;
+  --room-despacho: #fadbd8;
+  --room-cobertizo: #edbb99;
+  --room-porche: #d4cee8;
+  --room-lab: #e5e8e8;
+  --room-default: #f3f4f6;
+}
+
+/* ========================================================================= */
+/* MODO OSCURO                                                               */
+/* ========================================================================= */
+.dark-mode, html.dark-mode, body.dark-mode {
+  --bg-app: #121212;
+  --bg-panel: #1e1e1e;
+  --bg-tools: #242424;
+  --bg-card: #2c2c2c;
+  --bg-clue: #363636;
+  --bg-header: #1e1e1e;
+  --bg-secondary: #1a1a1a;
+
+  /* Textos */
+  --text-primary: #e0e0e0;
+  --text-secondary: #9e9e9e;
+  --text-muted: #757575;
+  --text-title: #f8fafc;            /* Blanco roto luminoso para modo oscuro */
+  --text-title-accent: #f59e0b;     /* Ámbar luminoso para acentos en modo oscuro */
+  --text-title-secondary: #d1d5db;  /* Gris claro para subtítulos en modo oscuro */
+
+  /* Bordes */
+  --border-color: #555555;
+  --border-thick: #666666;
+  --border-subtle: #3a3a3a;
+
+  /* Botones */
+  --btn-bg: #2a2a2a;
+  --btn-text: #e0e0e0;
+  --btn-border: #555555;
+  --btn-hover: #383838;
+
+  /* Colores de Habitaciones / Zonas en el Tablero (Tonos oscuros y desaturados) */
+  --room-jardin: #234d3d;
+  --room-patio: #1f4547;
+  --room-estanque: #1c3b52;
+  --room-salon: #4a3528;
+  --room-cocina: #4d4022;
+  --room-biblioteca: #3e2f47;
+  --room-despacho: #472b2f;
+  --room-cobertizo: #453429;
+  --room-porche: #332f45;
+  --room-lab: #293238;
+  --room-default: #262626;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+@layer utilities {
+  .font-typewriter {
+    font-family: 'Courier Prime', monospace;
+  }
+  .font-stamp {
+    font-family: 'Special Elite', cursive, monospace;
+  }
+  .font-murdoku-sans {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Utility classes mapped to variables */
+  .bg-theme-app {
+    background-color: var(--bg-app);
+  }
+  .bg-theme-panel {
+    background-color: var(--bg-panel);
+  }
+  .bg-theme-card {
+    background-color: var(--bg-card);
+  }
+  .bg-theme-clue {
+    background-color: var(--bg-clue);
+  }
+  .bg-theme-tools {
+    background-color: var(--bg-tools);
+  }
+  .text-theme-primary {
+    color: var(--text-primary);
+  }
+  .text-theme-secondary {
+    color: var(--text-secondary);
+  }
+  .text-theme-title {
+    color: var(--text-title);
+  }
+  .text-theme-title-accent {
+    color: var(--text-title-accent);
+  }
+  .text-theme-title-secondary {
+    color: var(--text-title-secondary);
+  }
+  .border-theme {
+    border-color: var(--border-color);
+  }
+
+  .bg-crime-stripes {
+    background: repeating-linear-gradient(
+      -45deg,
+      rgba(200, 160, 80, 0.15),
+      rgba(200, 160, 80, 0.15) 10px,
+      rgba(230, 200, 130, 0.05) 10px,
+      rgba(230, 200, 130, 0.05) 20px
+    );
+  }
+  .bg-blocked-hatch {
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(120, 113, 108, 0.12),
+      rgba(120, 113, 108, 0.12) 6px,
+      transparent 6px,
+      transparent 12px
+    );
+  }
+  .bg-police-tape {
+    background: repeating-linear-gradient(
+      -45deg,
+      #eab308,
+      #eab308 16px,
+      #18181b 16px,
+      #18181b 32px
+    );
+  }
+  .bg-paper-texture {
+    background-color: #f7f3ea;
+    background-image: radial-gradient(#d6cdba 0.75px, transparent 0.75px);
+    background-size: 16px 16px;
+  }
+
+  @keyframes flashConflict {
+    0%, 100% {
+      background-color: rgba(239, 68, 68, 0.25);
+      outline: 3px solid rgba(220, 38, 38, 0.85);
+      outline-offset: -2px;
+    }
+    50% {
+      background-color: rgba(220, 38, 38, 0.55);
+      outline: 4px solid rgba(185, 28, 28, 1);
+      outline-offset: -2px;
+    }
+  }
+
+  .animate-conflict-flash {
+    animation: flashConflict 0.28s ease-in-out infinite;
+  }
+
+  /* Cuadrícula Dinámica del Tablero Murdoku (5x5, 7x7, 9x9) */
+  .murdoku-board-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size, 5), minmax(0, 1fr));
+    grid-template-rows: repeat(var(--grid-size, 5), minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .murdoku-header-cols {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size, 5), minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .murdoku-header-rows {
+    display: grid;
+    grid-template-rows: repeat(var(--grid-size, 5), minmax(0, 1fr));
+    height: 100%;
+  }
+
+  /* Ajuste responsivo de escala del tablero: encaje óptimo garantizado para 9x9 en móvil y escritorio */
+  .murdoku-board-wrapper {
+    width: 100%;
+    max-width: min(96vw, 760px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Contenedores SPA: Por defecto ocultos en CSS */
+  #pantalla-seleccion-nivel {
+    display: none;
+  }
+  #pantalla-juego {
+    display: none;
+  }
+}
+
+/* =========================================================================== */
+/* CONFIGURACIÓN A4 APAISADO / IMPRESIÓN NATIVA Y PDF                          */
+/* =========================================================================== */
+
+/* Ocultar la vista de impresión en la pantalla normal */
+#vista-impresion {
+    display: none;
+}
+
+/* Reglas exclusivas para cuando se lanza la impresión o guardado como PDF */
+@media print {
+    @page {
+        size: 297mm 210mm;
+        margin: 0;
+    }
+    
+    html, body {
+        width: 297mm !important;
+        height: 210mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        overflow: hidden !important;
+    }
+
+    /* Ocultar toda la interfaz del juego web */
+    #root,
+    .no-imprimir,
+    #menu-herramientas {
+        display: none !important;
+    }
+    
+    /* Mostrar solo nuestra plantilla de papel con dimensiones fijas absolutas de A4 horizontal */
+    #vista-impresion {
+        width: 297mm !important;
+        height: 210mm !important;
+        padding: 10mm !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        background-color: white !important;
+        color: #1c1917 !important;
+        font-family: 'Plus Jakarta Sans', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif !important;
+    }
+    
+    /* Forzar a los navegadores a imprimir los colores de fondo de las habitaciones */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Garantizar que los pseudo-elementos ::before y ::after no se bloqueen ni oculten al imprimir */
+    #vista-impresion *::before,
+    #vista-impresion *::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Asegurar que las cuadrículas y tarjetas no se corten entre páginas ni por la mitad */
+    .tarjeta-personaje,
+    .celda-tablero,
+    .impresion-personaje-card {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+  /* Cabecera pensada para el trabajo de los alumnos */
+  .impresion-cabecera,
+  .cabecera-impresion {
+    border-bottom: 2px solid #1c1917;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .cabecera-impresion h2 {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #1c1917;
+    margin: 0 0 2px 0;
+  }
+
+  .cabecera-impresion p {
+    font-size: 10px;
+    color: #1c1917;
+    margin: 0;
+    font-family: 'Courier Prime', monospace;
+  }
+
+  .impresion-cabecera-top {
+    flex: 1;
+  }
+
+  .impresion-badge-expediente {
+    font-size: 8.5px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #78716c;
+    margin-bottom: 2px;
+  }
+
+  .impresion-titulo {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #1c1917;
+    margin: 0 0 2px 0;
+  }
+
+  .impresion-subtitulo {
+    font-size: 9.5px;
+    color: #57534e;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .impresion-datos-alumno {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 270px;
+    font-size: 10.5px;
+    color: #1c1917;
+    background-color: #f5f5f4;
+    border: 1px solid #d6d3d1;
+    border-radius: 4px;
+    padding: 5px 8px;
+  }
+
+  .impresion-campo {
+    font-family: 'Courier Prime', monospace;
+    white-space: nowrap;
+  }
+
+  /* Contenedor que agrupa el contenido usando un Grid estricto al 50% */
+  .contenido-impresion {
+    flex: 1 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10mm !important;
+    align-items: stretch !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    height: calc(100% - 38px) !important;
+  }
+
+  /* Dos columnas distintas para encajar en el Grid */
+  .columna-info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    font-size: 10pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .columna-tablero {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+    max-height: 180mm !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Pistas y personajes dentro de .columna-info */
+  .columna-info #character-panel {
+    background: #ffffff !important;
+    color: #1c1917 !important;
+    border: 1.5px solid #1c1917 !important;
+    border-radius: 6px !important;
+    padding: 3mm !important;
+    margin-bottom: 2mm !important;
+    box-shadow: none !important;
+    font-size: 10pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .columna-info #character-panel * {
+    color: #1c1917 !important;
+    background-color: transparent !important;
+  }
+
+  .columna-info #character-panel .border-t-2 {
+    display: none !important;
+  }
+
+  .columna-info #character-panel .grid {
+    gap: 2mm !important;
+  }
+
+  .columna-info #character-panel [id^="btn-select-character-"],
+  .columna-info #character-panel .group,
+  .columna-info .impresion-personaje-card {
+    display: flex !important;
+    border: 1px solid #d6d3d1 !important;
+    border-radius: 4px !important;
+    padding: 3mm !important;
+    margin-bottom: 2mm !important;
+    pointer-events: none !important;
+    box-shadow: none !important;
+    background: #fafaf9 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .columna-info #contenedor-pistas {
+    flex: 1 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: 100% !important;
+    background: #ffffff !important;
+    color: #1c1917 !important;
+    border: 1.5px solid #1c1917 !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 3mm !important;
+    font-size: 10pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .columna-info #contenedor-pistas * {
+    color: #1c1917 !important;
+    background-color: transparent !important;
+  }
+
+  .columna-info #contenedor-pistas p,
+  .columna-info #contenedor-pistas span,
+  .columna-info #contenedor-pistas li {
+    font-size: 10pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .columna-info #contenedor-pistas > div:first-child {
+    display: none !important;
+  }
+
+  .columna-info #contenedor-pistas .border-b-2 {
+    display: none !important;
+  }
+
+  .columna-info #contenedor-pistas .bg-theme-card.border.border-amber-400\/40 {
+    display: none !important;
+  }
+
+  .columna-info #contenedor-pistas button {
+    display: inline-flex !important;
+    pointer-events: none !important;
+  }
+
+  /* Tablero dentro de .columna-tablero */
+  .columna-tablero #contenedor-tablero {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    background: #ffffff !important;
+    color: #1c1917 !important;
+    border: 1.5px solid #1c1917 !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    padding: 4px !important;
+    margin: 0 !important;
+  }
+
+  .columna-tablero .bg-police-tape {
+    display: none !important;
+  }
+
+  .columna-tablero #contenedor-tablero * {
+    box-shadow: none !important;
+  }
+
+  /* Columna 1: Pistas y personajes (texto grande y legible) */
+  .impresion-columna-texto {
+    flex: 1.15;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .impresion-bloque {
+    background-color: #ffffff;
+    border: 1.5px solid #1c1917;
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+
+  .impresion-bloque-titulo {
+    font-size: 11.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1c1917;
+    margin: 0 0 6px 0;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #e7e5e4;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* Personajes con texto grande y claro */
+  .impresion-personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 8px;
+  }
+
+  .impresion-personaje-card {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background-color: #fbfbfa;
+    border: 1px solid #e7e5e4;
+    font-size: 11.5px;
+  }
+
+  .impresion-personaje-id {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: #292524;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 11px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .impresion-personaje-nombre {
+    font-weight: 700;
+    color: #1c1917;
+    font-size: 11.5px;
+  }
+
+  .impresion-personaje-rol {
+    font-size: 10px;
+    color: #57534e;
+  }
+
+  /* Pistas de deducción con texto grande, espacioso y casilla de verificación */
+  .impresion-lista-pistas {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .impresion-pista-item {
+    font-size: 11px;
+    line-height: 1.35;
+    color: #1c1917;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 2px 0;
+    border-bottom: 1px dashed #e7e5e4;
+  }
+
+  .impresion-pista-item:last-child {
+    border-bottom: none;
+  }
+
+  .impresion-pista-check {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid #78716c;
+    border-radius: 2px;
+    display: inline-block;
+    flex-shrink: 0;
+    margin-top: 2px;
+    background-color: #ffffff;
+  }
+
+  .impresion-pista-num {
+    font-weight: 800;
+    color: #292524;
+    min-width: 16px;
+  }
+
+  .impresion-pista-texto {
+    font-size: 11.5px;
+    color: #1c1917;
+    font-weight: 500;
+  }
+
+  /* Columna 2: Tablero del juego */
+  .impresion-columna-tablero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .impresion-tablero-wrap {
+    display: inline-block;
+    border: 2px solid #1c1917;
+    background-color: #ffffff;
+    padding: 0;
+  }
+
+  .impresion-tablero-grid {
+    display: grid;
+    background-color: #1c1917;
+  }
+
+  .impresion-celda {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .impresion-celda-room-tag {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 6.5px;
+    font-weight: 700;
+    color: #44403c;
+    opacity: 0.7;
+    text-transform: uppercase;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .impresion-estancias-leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    margin-top: 6px;
+    justify-content: center;
+    max-width: 420px;
+  }
+
+  .impresion-estancia-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 9.5px;
+    color: #292524;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .impresion-estancia-color {
+    width: 11px;
+    height: 11px;
+    border: 1px solid #78716c;
+    border-radius: 2px;
+    display: inline-block;
+    flex-shrink: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
