@@ -851,9 +851,9 @@ export const RETOS_MARISTA_GL: Record<string, RetoTraduccion> = {
   "010-HM": {
     "nombre": "O mozo de Les Palais",
     "categoria": "Fundación",
-    "fuenteHistorica": "La Valla · Lanfrey T. 1, cap. 3",
+    "fuenteHistorica": "La Valla · Lanfrey T. 1, cap. 3; Tras las huellas, 1.5",
     "textoClave": "A finais de outubro de 1816, Marcelino asistiu en Les Palais a un mozo moribundo, Jean-Baptiste Montagne, que non sabía nada de Deus.",
-    "contextoHistorico": "Les Palais era unha aldea da parroquia de La Valla, nas ladeiras do Pilat. Segundo a biografía do irmán Jean-Baptiste (1856), aquel encontro convenceu a Marcelino de que non podía agardar máis para fundar irmáns que educasen os nenos do rural. A data tradicional é o 28 de outubro de 1816, aínda que o relato se escribiu décadas despois.",
+    "contextoHistorico": "Les Palais era unha aldea da parroquia de La Valla, nas ladeiras do Pilat. Segundo a biografía do irmán Jean-Baptiste (1856), aquel encontro convenceu a Marcelino de que non podía agardar máis para fundar irmáns que educasen os nenos do rural. A data tradicional é o 28 de outubro de 1816.",
     "solucionExplicacion": "O responsable daquela última lección foi o propio Marcelino: pasou preto de dúas horas ensinándolle ao mozo as verdades da fe e confesouno. Logo foi ver outro enfermo e, ao volver, Montagne morrera. De aí naceu a súa convicción: «Precisamos irmáns!».",
     "storyIntro": "La Valla, outono de 1816. Chaman con urxencia o novo vigario: nun caserío da montaña, un rapaz morre sen saber quen é Deus. Reconstrúe onde estaba cada quen aquela tarde para descubrir quen lle deu a súa primeira e última lección.",
     "epilogue": "Caso resolto! Marcelino non chegou a tempo de salvar a vida de Montagne, pero si de acompañalo. Dous meses despois, o 2 de xaneiro de 1817, instalaba os seus primeiros discípulos en La Valla.",
@@ -964,7 +964,7 @@ export const RETOS_MARISTA_GL: Record<string, RetoTraduccion> = {
   "011-HM": {
     "nombre": "A febre de L’Hermitage",
     "categoria": "Crise e crecemento",
-    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, cap. 7",
+    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, cap. 6",
     "textoClave": "A finais de 1825, Marcelino caeu gravemente enfermo en L’Hermitage, unha casa recén construída e cargada de débedas.",
     "contextoHistorico": "Jean-Claude Courveille, que propuxera o proxecto marista en Fourvière, vivía en L’Hermitage e considerábase superior da obra. Durante a enfermidade do fundador intentou dirixir os irmáns con severidade, mentres os acredores temían perder os seus cartos. Os irmáns permaneceron fieis a Marcelino, e en 1826 Courveille retirouse á trapa de Aiguebelle. O padre Terraillon tamén deixou a casa.",
     "solucionExplicacion": "O responsable da crise foi Jean-Claude Courveille: aproveitou a enfermidade de Marcelino para impoñerse aos irmáns con dureza. Eles non o aceptaron como guía, Marcelino recuperouse en 1826 e a comunidade saíu da proba máis unida arredor do seu fundador.",
@@ -1050,12 +1050,12 @@ export const RETOS_MARISTA_GL: Record<string, RetoTraduccion> = {
       "ST": {
         "name": "Irmán Stanislas",
         "role": "Irmán da casa",
-        "clueText": "Moi unido ao fundador, preparáballe algo quente e rezaba por el."
+        "clueText": "Moi unido ao fundador, reprochoulle a Courveille a súa dureza e avisou a Marcelino."
       },
       "LU": {
         "name": "Irmán Louis (Jean-Baptiste Audras)",
         "role": "Un dos primeiros irmáns",
-        "clueText": "Seguía co traballo da casa e defendía a fidelidade ao fundador."
+        "clueText": "Seguía co traballo da casa, aínda que dubidaba se facerse sacerdote."
       },
       "DE": {
         "name": "Párroco Dervieux",
@@ -1081,10 +1081,10 @@ export const RETOS_MARISTA_GL: Record<string, RetoTraduccion> = {
   "012-HM": {
     "nombre": "Rumbo a Oceanía",
     "categoria": "Misión",
-    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1",
+    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, cap. 7; Tras las huellas, 1.8",
     "textoClave": "En 1836, Roma aprobou a Sociedade de María e confioulle Oceanía occidental; tres irmáns de Marcelino partiron cos primeiros padres maristas.",
-    "contextoHistorico": "O papa Gregorio XVI aprobou a Sociedade de María o 29 de abril de 1836. En setembro, Jean-Claude Colin foi elixido superior xeral e Marcelino fixo a súa profesión como padre marista. A primeira expedición, guiada polo bispo Pompallier, saíu de Le Havre a véspera de Nadal de 1836; nela viaxaba Pierre Chanel, que morrería mártir en Futuna en 1841.",
-    "solucionExplicacion": "O responsable de que os irmáns chegasen a Oceanía foi Marcelino: el mesmo soñara con ir ás misións, pero o seu lugar estaba cos seus irmáns, así que propuxo a tres deles. O irmán Marie-Nizier aceptou con alegría e partiu cos irmáns Michel e Joseph-Xavier.",
+    "contextoHistorico": "O papa Gregorio XVI aprobou a Sociedade de María o 29 de abril de 1836. O 24 de setembro, unha vintena de aspirantes maristas, Marcelino entre eles, elixiu a Jean-Claude Colin superior xeral. A primeira expedición, guiada polo bispo Pompallier, partiu o 24 de decembro de 1836 cos padres Servant, Bataillon, Bret e Chanel.",
+    "solucionExplicacion": "O responsable de que os irmáns chegasen a Oceanía foi Marcelino: pediulle a Colin ir el mesmo, pero Colin respondeulle que a súa misión era «prepararlles apóstolos», e Marcelino preparou a tres dos seus irmáns. O irmán Marie-Nizier aceptou con alegría e partiu cos irmáns Michel e Joseph-Xavier.",
     "storyIntro": "L’Hermitage, outono de 1836. Roma acaba de confiarlles aos maristas unhas illas afastadas e descoñecidas. Alguén ten que decidir que irmáns irán. Descobre onde estaba cada quen e quen escolleu os primeiros misioneiros.",
     "epilogue": "Caso resolto! Marcelino enviou os seus irmáns ao outro lado do mundo. Desde entón, os irmáns maristas están presentes en Oceanía.",
     "subtitle": "Misión · L’Hermitage · 7x7",
@@ -1110,10 +1110,10 @@ export const RETOS_MARISTA_GL: Record<string, RetoTraduccion> = {
         "shortName": "Belley",
         "description": "Casa onde residía o padre Colin."
       },
-      "puerto_havre": {
-        "name": "Porto de Le Havre",
-        "shortName": "Le Havre",
-        "description": "Porto atlántico desde o que zarpou a expedición."
+      "puerto": {
+        "name": "Porto de embarque",
+        "shortName": "Porto",
+        "description": "Peirao desde o que zarpou a expedición."
       },
       "navio": {
         "name": "Navío da expedición",
@@ -1136,7 +1136,7 @@ export const RETOS_MARISTA_GL: Record<string, RetoTraduccion> = {
       },
       "3,2": {
         "name": "Áncora",
-        "description": "Ferro do peirao atlántico."
+        "description": "Ferro do peirao."
       },
       "4,5": {
         "name": "Compás",
@@ -1152,7 +1152,7 @@ export const RETOS_MARISTA_GL: Record<string, RetoTraduccion> = {
       "MC": {
         "name": "Marcelino Champagnat",
         "role": "Superior dos irmáns",
-        "clueText": "Quixera ir el mesmo, pero o seu lugar estaba cos irmáns."
+        "clueText": "Pediu ir el mesmo a Oceanía, pero obedeceu cando lle dixeron que non."
       },
       "MI": {
         "name": "Irmán Michel (Antoine Colombon)",
@@ -1172,12 +1172,12 @@ export const RETOS_MARISTA_GL: Record<string, RetoTraduccion> = {
       "PO": {
         "name": "Bispo Pompallier",
         "role": "Vigario apostólico",
-        "clueText": "Encabezaba a expedición que zarpou de Le Havre."
+        "clueText": "Encabezaba a expedición que zarpou en Noiteboa."
       },
       "CH": {
         "name": "Padre Pierre Chanel",
         "role": "Sacerdote marista",
-        "clueText": "Morrería mártir na illa de Futuna en 1841."
+        "clueText": "Era un dos catro padres que acompañaban o bispo."
       }
     },
     "clues": {
@@ -1185,13 +1185,690 @@ export const RETOS_MARISTA_GL: Record<string, RetoTraduccion> = {
         "text": "Gregorio XVI aprobou a Sociedade de María o 29 de abril de 1836."
       },
       "c2": {
-        "text": "En setembro de 1836, Marcelino fixo a súa profesión como padre marista."
+        "text": "O 24 de setembro de 1836, Marcelino estivo entre os que elixiron a Colin superior xeral."
       },
       "c3": {
         "text": "Tres irmáns foron elixidos para acompañar os primeiros padres misioneiros."
       },
       "c4": {
         "text": "A expedición zarpou a véspera de Nadal de 1836 rumbo ao Pacífico."
+      }
+    }
+  },
+  "013-HM": {
+    "nombre": "O Acordádevos na neve",
+    "categoria": "Confianza en María",
+    "fuenteHistorica": "La Valla · Tras las huellas, 5.16 (Vida, VII); Lanfrey T. 1, cap. 11",
+    "textoClave": "En febreiro de 1823, ao volver de Bourg-Argental, Marcelino e o irmán Stanislas perdéronse na neve dos montes do Pilat.",
+    "contextoHistorico": "Un dos irmáns de Bourg-Argental estaba gravemente enfermo; segundo Lanfrey, era o novo irmán Jean-Baptiste Furet. Marcelino foi a pé bendicilo e quixo volver a La Valla aquel mesmo día, aínda que os irmáns e os seus amigos lle rogaron que non o fixese pola neve e o temporal.",
+    "solucionExplicacion": "O responsable da salvación foi o propio Marcelino: cando o irmán Stanislas caeu de cansazo, axeonllouse ao seu carón e rezou o Acordádevos. Aos poucos pasos viron unha luz e pasaron a noite nunha casa. Desde entón repetía que María os librara dunha morte segura.",
+    "storyIntro": "Montes do Pilat, febreiro de 1823. Cae a noite, a xistra non deixa ver o camiño e dous viaxeiros levan horas perdidos entre os bosques. Descobre onde estaba cada quen e quen sostivo o irmán esgotado ata atopar axuda.",
+    "epilogue": "Caso resolto! A oración de Marcelino e unha luz na noite salvaron os dous camiñantes. María era, como el dicía, o seu «Recurso ordinario».",
+    "subtitle": "Confianza en María · La Valla · 7x7",
+    "badge": "O ACORDÁDEVOS NA NEVE · 7x7",
+    "rooms": {
+      "bosque_pilat": {
+        "name": "Bosque do Pilat",
+        "shortName": "Bosque",
+        "description": "Ladeira nevada onde os camiñantes se perderon."
+      },
+      "cuarto_enfermo": {
+        "name": "Cuarto do irmán enfermo",
+        "shortName": "Cuarto",
+        "description": "Habitación da comunidade de Bourg-Argental."
+      },
+      "escuela_bourg": {
+        "name": "Escola de Bourg-Argental",
+        "shortName": "Escola",
+        "description": "Escola fundada polos irmáns o 2 de xaneiro de 1822."
+      },
+      "alcaldia": {
+        "name": "Alcaldía de Bourg-Argental",
+        "shortName": "Alcaldía",
+        "description": "Casa do alcalde que presidiu a chegada dos irmáns."
+      },
+      "casa_luz": {
+        "name": "Casa da luz",
+        "shortName": "Casa iluminada",
+        "description": "Vivenda illada cuxa luz viron na noite."
+      },
+      "casa_lavalla": {
+        "name": "Casa dos irmáns de La Valla",
+        "shortName": "Casa La Valla",
+        "description": "Comunidade que agardaba o regreso do Padre."
+      }
+    },
+    "blockedObjects": {
+      "0,0": {
+        "name": "Abeto nevado",
+        "description": "Árbore dos bosques do Pilat."
+      },
+      "3,5": {
+        "name": "Cama",
+        "description": "Leito do irmán enfermo."
+      },
+      "6,6": {
+        "name": "Farol",
+        "description": "A luz que brillaba non lonxe de alí."
+      },
+      "6,4": {
+        "name": "Engra de cravos",
+        "description": "Ferramenta coa que a comunidade gañaba o pan."
+      }
+    },
+    "suspects": {
+      "ST": {
+        "name": "Irmán Stanislas (Claude Fayol)",
+        "role": "Compañeiro de viaxe",
+        "clueText": "Esgotado e xeado, caeu sobre a neve."
+      },
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Fundador",
+        "clueText": "Colleuno do brazo para guialo e logo axeonllouse a rezar."
+      },
+      "JB": {
+        "name": "Irmán Jean-Baptiste Furet",
+        "role": "Irmán enfermo",
+        "clueText": "Mozo asmático chegado da Haute-Loire, recibira a bendición do Padre."
+      },
+      "JM": {
+        "name": "Irmán Jean-Marie Granjon",
+        "role": "Director da comunidade",
+        "clueText": "Antigo granadeiro, toda a parroquia admiraba a súa caridade."
+      },
+      "PL": {
+        "name": "Señor de Pleyné",
+        "role": "Alcalde de Bourg-Argental",
+        "clueText": "Coma outros amigos, aconselloulle ao Padre non poñerse en camiño."
+      },
+      "HC": {
+        "name": "Habitante da casa",
+        "role": "Labrego do Pilat",
+        "clueText": "A súa luz brillaba na escuridade cando ninguén a agardaba."
+      },
+      "LU": {
+        "name": "Irmán Louis (Jean-Baptiste Audras)",
+        "role": "Irmán de La Valla",
+        "clueText": "Agardaba con inquietude que o Padre volvese aquela noite."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "En febreiro de 1823, o Padre foi a pé a Bourg-Argental para bendicir un irmán gravemente enfermo."
+      },
+      "c2": {
+        "text": "Os irmáns e os seus amigos rogáronlle que non regresase con aquel temporal, pero non lles fixo caso."
+      },
+      "c3": {
+        "text": "Ás dúas horas de marcha perdéronse e o irmán xa non podía terse en pé."
+      },
+      "c4": {
+        "text": "Tras rezar o Acordádevos, aos dez pasos viron unha luz e chegaron a unha casa onde pasaron a noite."
+      }
+    }
+  },
+  "014-HM": {
+    "nombre": "Os oito da Haute-Loire",
+    "categoria": "Vocacións",
+    "fuenteHistorica": "La Valla · Lanfrey T. 1, cap. 4",
+    "textoClave": "Na primavera de 1822, co noviciado baleiro, chegaron a La Valla oito mozos da Haute-Loire que pedían ser irmáns.",
+    "contextoHistorico": "Entre 1819 e 1821 só catro postulantes tomaran o hábito. Cara a metade da Coresma de 1822, un mozo que dicía pasar seis anos cos Irmáns das Escolas Cristiás pediu entrar e fíxose dar unha carta de recomendación. Na súa comarca de Saint-Pal-en-Chalencon xuntou oito rapaces de 15 a 25 anos. O 26 de abril, o inspector Guillard atopou en La Valla de 12 a 15 mozos labregos en formación.",
+    "solucionExplicacion": "O responsable da sorpresa foi o antigo Irmán das Escolas Cristiás: prometeu traer media ducia de postulantes e volveu con oito. Marcelino convenceu os irmáns de admitilos, malia a opinión contraria dos seus amigos sacerdotes. Un deles, Jean-Baptiste Furet, sería o biógrafo do fundador. «É Nosa Señora do Puy quen os preparara», diría o irmán Jean-Baptiste.",
+    "storyIntro": "La Valla, Pascua de 1822. A casa está case baleira de novicios e, de súpeto, aparece na porta un grupo de rapaces do Velay pedindo quedar. Quen os trouxo? Ordena o plano para descubrilo.",
+    "epilogue": "Caso resolto! O ex-irmán cumpriu a súa promesa con creces. Desde entón Marcelino non se atreveu a rexeitar quen se presentaba: «considéroos como traídos pola mesma María».",
+    "subtitle": "Vocacións · La Valla · 7x7",
+    "badge": "OS OITO DA HAUTE-LOIRE · 7x7",
+    "rooms": {
+      "casa_hermanos": {
+        "name": "Casa dos irmáns",
+        "shortName": "Casa",
+        "description": "Vivenda comprada en La Valla para a comunidade."
+      },
+      "sala_capitulo": {
+        "name": "Sala de reunión",
+        "shortName": "Reunión",
+        "description": "Onde os irmáns votaron a admisión dos recén chegados."
+      },
+      "huerto": {
+        "name": "Horta",
+        "shortName": "Horta",
+        "description": "Terra que daba de comer á comunidade."
+      },
+      "aula": {
+        "name": "Aula de La Valla",
+        "shortName": "Aula",
+        "description": "Clase onde os mozos aprendían o método dos irmáns."
+      },
+      "casa_parroquial": {
+        "name": "Casa reitoral",
+        "shortName": "Reitoral",
+        "description": "Alí opinaban os sacerdotes amigos do vigario."
+      },
+      "camino_velay": {
+        "name": "Camiño do Velay",
+        "shortName": "Camiño",
+        "description": "Ruta duns 60 km desde Saint-Pal-en-Chalencon."
+      }
+    },
+    "blockedObjects": {
+      "0,1": {
+        "name": "Carta de recomendación",
+        "description": "A que o mozo se fixo entregar antes de partir."
+      },
+      "4,4": {
+        "name": "Urna",
+        "description": "Para votar a admisión dos postulantes."
+      },
+      "2,0": {
+        "name": "Verzas",
+        "description": "Comida sinxela para unha casa cada vez máis chea."
+      },
+      "5,4": {
+        "name": "Lousa",
+        "description": "Instrumento do método simultáneo."
+      },
+      "3,3": {
+        "name": "Fatelos",
+        "description": "Equipaxe dos oito rapaces."
+      }
+    },
+    "suspects": {
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Vigario de La Valla",
+        "clueText": "Ofreceralle hospitalidade sen imaxinar o que viría despois."
+      },
+      "EX": {
+        "name": "Antigo Irmán das Escolas Cristiás",
+        "role": "Reclutador",
+        "clueText": "Dicía pasar seis anos cos Irmáns da Salle."
+      },
+      "JB": {
+        "name": "Jean-Baptiste Furet",
+        "role": "Postulante de 15 anos",
+        "clueText": "Nado en Saint-Pal-en-Chalencon, a asma impedíalle o traballo do campo."
+      },
+      "PV": {
+        "name": "Outro postulante do Velay",
+        "role": "Mozo da Haute-Loire",
+        "clueText": "Un dos oito, de entre 15 e 25 anos."
+      },
+      "AN": {
+        "name": "Irmán Antoine (Antoine Couturier)",
+        "role": "Irmán antigo",
+        "clueText": "Convocado cos demais por Pascua para decidir."
+      },
+      "SA": {
+        "name": "Sacerdote amigo",
+        "role": "Conselleiro do vigario",
+        "clueText": "Opinaba que non había nin sitio nin cartos para tantos."
+      },
+      "GU": {
+        "name": "Inspector Guillard",
+        "role": "Inspector da Academia de Lyon",
+        "clueText": "Visitou La Valla o 26 de abril e tomou nota do que viu."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "Cara a metade da Coresma, un mozo pediu entrar e logrou que lle prometesen admitilo se traía media ducia de postulantes."
+      },
+      "c2": {
+        "text": "Volveu da súa comarca cunha tropa de oito rapaces."
+      },
+      "c3": {
+        "text": "Por Pascua, os irmáns reuníronse e Marcelino persuadiunos de admitilos."
+      },
+      "c4": {
+        "text": "Os seus amigos sacerdotes non estaban de acordo: faltaban sitio e cartos."
+      }
+    }
+  },
+  "015-HM": {
+    "nombre": "A obra en entredito",
+    "categoria": "Crise e crecemento",
+    "fuenteHistorica": "La Valla · Lanfrey T. 1, cap. 4",
+    "textoClave": "A finais de 1819 e comezos de 1820, o comité cantonal de escolas denunciou a obra de Champagnat ao arcebispado.",
+    "contextoHistorico": "Como Marcelino ensinaba latín a algúns alumnos, o director do colexio de Saint-Chamond sospeitou que La Valla agochaba un colexio clandestino. O comité cantonal, presidido polo párroco Dervieux, ameazou con pechar a casa cos xendarmes e afastar o vigario. Marcelino pensou en vender a casa e marchar; os irmáns decidiron seguilo en calquera circunstancia.",
+    "solucionExplicacion": "O responsable da ameaza foi o párroco Dervieux, que se encarnizou contra a obra. Salvárona os vigarios xerais: Courbon negouse a exiliar a Marcelino e animouno a perseverar, e Bochard, que pensaba nos seus propios «irmáns da Cruz de Xesús», tampouco seguiu a Dervieux. Anos despois, o mesmo Dervieux acollería a Marcelino enfermo na súa casa.",
+    "storyIntro": "La Valla, inverno de 1819. Corren rumores: din que o vigario dirixe un colexio ilegal e que pronto virán os xendarmes. Reconstrúe onde estaba cada quen para descubrir quen quería pechar a casa dos irmáns.",
+    "epilogue": "Caso resolto! Dervieux tivo que ceder ante os vigarios xerais. Marcelino non tivo que exiliarse e os seus irmáns, que decidiran seguilo onde fose, seguiron ensinando en La Valla.",
+    "subtitle": "Crise e crecemento · La Valla · 7x7",
+    "badge": "A OBRA EN ENTREDITO · 7x7",
+    "rooms": {
+      "casa_lavalla": {
+        "name": "Casa mercada de La Valla",
+        "shortName": "Casa mercada",
+        "description": "Casa dos irmáns e dos alumnos internos."
+      },
+      "aula_latin": {
+        "name": "Aula de latín",
+        "shortName": "Latín",
+        "description": "Onde algúns alumnos estudaban para o seminario."
+      },
+      "colegio_stchamond": {
+        "name": "Colexio de Saint-Chamond",
+        "shortName": "Colexio",
+        "description": "Centro de ensino que temía a competencia."
+      },
+      "vicaria_lyon": {
+        "name": "Vigairía xeral de Lyon",
+        "shortName": "Vigairía",
+        "description": "Oficinas desde onde se gobernaba a diocese."
+      },
+      "despacho_bochard": {
+        "name": "Despacho de Bochard",
+        "shortName": "Despacho",
+        "description": "Alí proxectábase unha congregación diocesana."
+      },
+      "posada": {
+        "name": "Pousada de Saint-Chamond",
+        "shortName": "Pousada",
+        "description": "Aloxamento dos viaxeiros de paso pola cidade."
+      }
+    },
+    "blockedObjects": {
+      "0,5": {
+        "name": "Chaves da casa",
+        "description": "Marcelino chegou a pensar en vendela."
+      },
+      "2,3": {
+        "name": "Gramática latina",
+        "description": "O libro que espertou as sospeitas."
+      },
+      "3,6": {
+        "name": "Pluma e tinteiro",
+        "description": "Para asinar os nomeamentos dos sacerdotes."
+      },
+      "6,1": {
+        "name": "Maleta",
+        "description": "Equipaxe do inspector de viaxe."
+      }
+    },
+    "suspects": {
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Vigario de La Valla",
+        "clueText": "Ante a ameaza, preparábase para vender a casa e partir ao exilio."
+      },
+      "DE": {
+        "name": "Párroco Dervieux",
+        "role": "Presidente do comité cantonal",
+        "clueText": "Ameazaba con facer pechar o centro polos xendarmes."
+      },
+      "JM": {
+        "name": "Irmán Jean-Marie Granjon",
+        "role": "Director dos irmáns",
+        "clueText": "Elixido polos seus compañeiros en votación secreta en 1819."
+      },
+      "CA": {
+        "name": "Señor Cathelin",
+        "role": "Director do colexio",
+        "clueText": "Cría que o vigario lle facía a competencia cun colexio clandestino."
+      },
+      "CO": {
+        "name": "Vigario xeral Courbon",
+        "role": "Encargado dos sacerdotes",
+        "clueText": "Negouse a exiliar a Marcelino e animouno a perseverar."
+      },
+      "BO": {
+        "name": "Vigario xeral Bochard",
+        "role": "Encargado da educación",
+        "clueText": "Soñaba cuns «irmáns da Cruz de Xesús» para toda a diocese."
+      },
+      "GU": {
+        "name": "Inspector Guillard",
+        "role": "Inspector da Academia",
+        "clueText": "De paso pola cidade en maio de 1820, oíu falar da casa do vigario e dos seus mestres."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "Como o vigario ensinaba latín a algúns alumnos, alguén supuxo que dirixía un colexio rival."
+      },
+      "c2": {
+        "text": "O comité cantonal de escolas decidiu denunciar a casa ao arcebispado."
+      },
+      "c3": {
+        "text": "Preguntados polas súas intencións, os irmáns decidiron seguir a Marcelino en calquera circunstancia."
+      },
+      "c4": {
+        "text": "Un dos vigarios xerais negouse a exilialo; outro prefería anexionar a obra ao seu propio proxecto."
+      }
+    }
+  },
+  "016-HM": {
+    "nombre": "O alumno de latín",
+    "categoria": "Vocacións",
+    "fuenteHistorica": "La Valla · Lanfrey T. 1, caps. 3-4",
+    "textoClave": "En maio de 1818, Marcelino recibiu a Gabriel Rivat, de 10 anos, para darlle clases de latín. O 8 de setembro de 1819 o neno tomou o hábito.",
+    "contextoHistorico": "Gabriel viña da aldea de Maisonnettes, dunha familia de labregos moi activa na resistencia á Revolución; o seu irmán maior, Jean-Antoine, preparábase para o sacerdocio. Entrou no grupo de La Valla ao mesmo tempo que Barthélemy Badard, fillo do sancristán. O día da súa toma de hábito celebrouse o primeiro retiro da asociación e os irmáns elixiron director a Jean-Marie Granjon en votación secreta.",
+    "solucionExplicacion": "O responsable de que Gabriel se fixese irmán foi o propio Gabriel. Marcelino recibírao para instruílo en latín, non para facelo irmán; segundo Lanfrey, a toma de hábito foi «menos por vontade de Champagnat que por decisión do adolescente». Aquel neno sería o irmán François, primeiro sucesor do fundador.",
+    "storyIntro": "La Valla, 1818-1819. Un neno de dez anos chega para aprender latín e, un ano despois, pide vestir o hábito dos irmáns. Quen tomou esa decisión? Ordena o plano para descubrilo.",
+    "epilogue": "Caso resolto! Gabriel escolleu o seu camiño. O irmán François acompañaría a Marcelino ata o final e gobernaría os irmáns durante vinte anos.",
+    "subtitle": "Vocacións · La Valla · 7x7",
+    "badge": "O ALUMNO DE LATÍN · 7x7",
+    "rooms": {
+      "sala_latin": {
+        "name": "Sala de latín",
+        "shortName": "Sala latín",
+        "description": "Recuncho da casa do vigario onde se estudaba latín."
+      },
+      "casa_rivat": {
+        "name": "Casa dos Rivat",
+        "shortName": "Casa Rivat",
+        "description": "Fogar de labregos na aldea de Maisonnettes."
+      },
+      "iglesia_lavalla": {
+        "name": "Igrexa de La Valla",
+        "shortName": "Igrexa",
+        "description": "Templo parroquial coa súa sancristía."
+      },
+      "sala_retiro": {
+        "name": "Sala do retiro",
+        "shortName": "Retiro",
+        "description": "Onde os irmáns votaron en segredo o seu director."
+      },
+      "taller_clavos": {
+        "name": "Obradoiro de cravos",
+        "shortName": "Obradoiro",
+        "description": "Onde os irmáns forxaban cravos para vivir."
+      }
+    },
+    "blockedObjects": {
+      "2,1": {
+        "name": "Gramática latina",
+        "description": "Libro das primeiras leccións de Gabriel."
+      },
+      "2,6": {
+        "name": "Monllos",
+        "description": "Colleita da familia de labregos."
+      },
+      "0,0": {
+        "name": "Campá",
+        "description": "Tocábaa o sancristán da vila."
+      },
+      "5,6": {
+        "name": "Engra",
+        "description": "Onde se golpeaban as barriñas de ferro."
+      }
+    },
+    "suspects": {
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Vigario e profesor",
+        "clueText": "Recibírao para instruílo, sobre todo en latín."
+      },
+      "GR": {
+        "name": "Gabriel Rivat",
+        "role": "Alumno de 10 anos",
+        "clueText": "O máis pequeno do grupo, tiña ideas propias sobre o seu futuro."
+      },
+      "JR": {
+        "name": "Jean-Baptiste Rivat",
+        "role": "Pai labrego",
+        "clueText": "Pai de catro rapaces e tres rapazas en Maisonnettes."
+      },
+      "JA": {
+        "name": "Jean-Antoine Rivat",
+        "role": "Irmán maior",
+        "clueText": "O primoxénito preparábase para ser sacerdote."
+      },
+      "BB": {
+        "name": "Barthélemy Badard",
+        "role": "Fillo do sancristán",
+        "clueText": "Entrou no grupo o mesmo mes ca Gabriel."
+      },
+      "JM": {
+        "name": "Jean-Marie Granjon",
+        "role": "Primeiro irmán",
+        "clueText": "Os seus compañeiros elixírono director por escrutinio secreto."
+      },
+      "AC": {
+        "name": "Antoine Couturier",
+        "role": "Irmán Antoine",
+        "clueText": "Nativo de La Valla, entrou o 1 de xaneiro de 1818 sen ningunha instrución."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "En maio de 1818, dous rapaces de La Valla uníronse ao grupo de irmáns."
+      },
+      "c2": {
+        "text": "Na casa dos Rivat, o fillo maior estudaba para o sacerdocio."
+      },
+      "c3": {
+        "text": "Marcelino non o recibira para facer del un irmán."
+      },
+      "c4": {
+        "text": "O 8 de setembro de 1819, con dúas tomas de hábito, os irmáns eran seis e elixiron director."
+      }
+    }
+  },
+  "017-HM": {
+    "nombre": "O sucesor",
+    "categoria": "Goberno e herdanza",
+    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, caps. 7, 8 y 10",
+    "textoClave": "O 12 de outubro de 1839, ante a rápida perda de saúde do fundador, 92 irmáns profesos elixiron o irmán François como director xeral.",
+    "contextoHistorico": "Aquel ano, o padre Colin, superior dos padres maristas, escribíralle a Champagnat que un irmán ao servizo dos padres facía «vinte veces máis o ben» ca nunha escola municipal. A asemblea de L’Hermitage elixiu tamén dous asistentes, os irmáns Jean-Baptiste e Louis-Marie, sen definir os seus poderes. Lanfrey advirte que, en teoría, foi un nomeamento tras consultar os irmáns.",
+    "solucionExplicacion": "O elixido foi o irmán François, Gabriel Rivat, que desde había anos era o «brazo dereito» do fundador. Con el, os irmáns aseguraban que a obra de Marcelino seguiría en mans dun irmán formado ao seu carón.",
+    "storyIntro": "L’Hermitage, outono de 1839. O fundador está cada vez máis débil e a comunidade reúnese para votar. Descobre onde estaba cada quen e quen foi elixido para tomar o relevo.",
+    "epilogue": "Caso resolto! O irmán François foi o primeiro superior saído de entre os irmáns. Marcelino puido ver, antes de morrer, que a súa obra quedaba en boas mans.",
+    "subtitle": "Goberno e herdanza · L’Hermitage · 7x7",
+    "badge": "O SUCESOR · 7x7",
+    "rooms": {
+      "sala_capitulo": {
+        "name": "Sala capitular",
+        "shortName": "Capitular",
+        "description": "Onde se reuniu a asemblea de irmáns profesos."
+      },
+      "capilla": {
+        "name": "Capela de L’Hermitage",
+        "shortName": "Capela",
+        "description": "Lugar de oración antes de votar."
+      },
+      "secretaria": {
+        "name": "Secretaría",
+        "shortName": "Secretaría",
+        "description": "Onde se levaba a correspondencia da casa."
+      },
+      "noviciado": {
+        "name": "Noviciado",
+        "shortName": "Noviciado",
+        "description": "Onde se formaban os mozos candidatos."
+      },
+      "casa_belley": {
+        "name": "Casa dos padres en Belley",
+        "shortName": "Belley",
+        "description": "Residencia do superior dos padres maristas."
+      },
+      "caminos": {
+        "name": "Camiños das escolas",
+        "shortName": "Camiños",
+        "description": "Rutas polas que os visitadores percorrían as escolas."
+      }
+    },
+    "blockedObjects": {
+      "0,6": {
+        "name": "Urna de votos",
+        "description": "Recolleu as papeletas dos 92 irmáns."
+      },
+      "3,3": {
+        "name": "Cirio",
+        "description": "Luz diante do sagrario."
+      },
+      "5,6": {
+        "name": "Rexistro de cartas",
+        "description": "Copias da correspondencia do fundador."
+      },
+      "6,2": {
+        "name": "Botas de viaxe",
+        "description": "Calzado gastado de tanto camiñar."
+      }
+    },
+    "suspects": {
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Fundador enfermo",
+        "clueText": "Apoiaba que un irmán fose elixido para sucederlle."
+      },
+      "FR": {
+        "name": "Irmán François (Gabriel Rivat)",
+        "role": "Brazo dereito do fundador",
+        "clueText": "Levaba anos axudando a Marcelino no goberno da casa."
+      },
+      "LM": {
+        "name": "Irmán Louis-Marie",
+        "role": "Elixido asistente",
+        "clueText": "Sería, anos despois, superior xeral."
+      },
+      "JB": {
+        "name": "Irmán Jean-Baptiste Furet",
+        "role": "Elixido asistente",
+        "clueText": "O seu nomeamento mostraba o prestixio que tiña entre os irmáns."
+      },
+      "MA": {
+        "name": "Padre Matricon",
+        "role": "Capelán de L’Hermitage",
+        "clueText": "Padre marista nado no Bessat, antigo alumno de latín."
+      },
+      "CO": {
+        "name": "Padre Jean-Claude Colin",
+        "role": "Superior dos padres maristas",
+        "clueText": "Quería irmáns ao servizo dos padres máis ca nas escolas."
+      },
+      "CS": {
+        "name": "Irmán Cassien (Louis Chomat)",
+        "role": "Irmán visitador",
+        "clueText": "Antigo mestre laico, percorría as escolas desde 1838."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "A rápida degradación da saúde do fundador obrigou a pensar na súa sucesión."
+      },
+      "c2": {
+        "text": "O 12 de outubro de 1839, unha asemblea de 92 irmáns profesos elixiu un director xeral."
+      },
+      "c3": {
+        "text": "Con el foron elixidos dous asistentes, sen que ninguén definise ben os seus poderes."
+      },
+      "c4": {
+        "text": "Meses antes, o superior dos padres escribira que un irmán ao servizo dos padres facía «vinte veces máis o ben»."
+      }
+    }
+  },
+  "018-HM": {
+    "nombre": "O testamento espiritual",
+    "categoria": "Goberno e herdanza",
+    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, cap. 7",
+    "textoClave": "O 18 de maio de 1840 leuse publicamente, en presenza de Marcelino, o testamento espiritual redactado segundo as súas instrucións.",
+    "contextoHistorico": "As relacións entre padres e irmáns maristas foran laboriosas entre 1836 e 1840. O 22 de marzo de 1840, Marcelino constituíu ante o notario Mioche, en Saint-Chamond, unha sociedade civil con seis dos principais irmáns, herdeira de todos os seus bens; ningún padre formaba parte dela. O testamento quería responder ás dúbidas de Colin: «O superior dos padres […] debe ser o lazo de unión entre uns e outros». O 24 de maio, Colin e Marcelino víronse por última vez; Marcelino morreu o 6 de xuño de 1840.",
+    "solucionExplicacion": "O responsable de poñer por escrito o testamento foi o irmán François, que o redactou co irmán Louis-Marie seguindo as instrucións do fundador. Marcelino pedíalles aos seus irmáns unión cos padres e entre eles; así deixou selada, antes de morrer, a unidade da familia marista.",
+    "storyIntro": "L’Hermitage, primavera de 1840. O fundador xa non pode erguerse e quere deixarlles aos seus irmáns unhas últimas palabras. Descobre onde estaba cada quen e quen escribiu o testamento xunto ao seu leito.",
+    "epilogue": "Caso resolto! O testamento espiritual leuse ante a comunidade. Tres semanas despois, o 6 de xuño de 1840, Marcelino morreu en L’Hermitage.",
+    "subtitle": "Goberno e herdanza · L’Hermitage · 7x7",
+    "badge": "O TESTAMENTO ESPIRITUAL · 7x7",
+    "rooms": {
+      "cuarto_fundador": {
+        "name": "Cuarto do fundador",
+        "shortName": "Cuarto",
+        "description": "Habitación onde Marcelino pasou as súas últimas semanas."
+      },
+      "secretaria": {
+        "name": "Secretaría",
+        "shortName": "Secretaría",
+        "description": "Onde se pasaban a limpo os escritos da casa."
+      },
+      "capilla": {
+        "name": "Capela de L’Hermitage",
+        "shortName": "Capela",
+        "description": "Alí a comunidade rezaba polo enfermo."
+      },
+      "notaria": {
+        "name": "Notaría de Saint-Chamond",
+        "shortName": "Notaría",
+        "description": "Despacho onde se asinou a sociedade civil."
+      },
+      "locutorio": {
+        "name": "Locutorio",
+        "shortName": "Locutorio",
+        "description": "Sala de visitas de L’Hermitage."
+      },
+      "huerto": {
+        "name": "Horta de L’Hermitage",
+        "shortName": "Horta",
+        "description": "Terra xunto ao Gier que coidaban os irmáns."
+      }
+    },
+    "blockedObjects": {
+      "2,0": {
+        "name": "Leito do enfermo",
+        "description": "Cama da que Marcelino xa non se erguía."
+      },
+      "4,6": {
+        "name": "Pluma e tinteiro",
+        "description": "Para a copia limpa do testamento."
+      },
+      "0,2": {
+        "name": "Crucifixo",
+        "description": "Cruz diante da que oraba a comunidade."
+      },
+      "6,4": {
+        "name": "Acta notarial",
+        "description": "Escritura da sociedade civil do 22 de marzo."
+      }
+    },
+    "suspects": {
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Fundador moribundo",
+        "clueText": "Daba as súas instrucións para deixar os seus irmáns unidos."
+      },
+      "FR": {
+        "name": "Irmán François (Gabriel Rivat)",
+        "role": "Director xeral",
+        "clueText": "Escribía ao ditado o que o fundador quería dicir."
+      },
+      "LM": {
+        "name": "Irmán Louis-Marie",
+        "role": "Asistente",
+        "clueText": "Axudaba a dar forma ao texto que se lería á comunidade."
+      },
+      "MA": {
+        "name": "Padre Matricon",
+        "role": "Capelán de L’Hermitage",
+        "clueText": "Aínda que era padre marista, non formaba parte da sociedade civil."
+      },
+      "MI": {
+        "name": "Notario Mioche",
+        "role": "Notario de Saint-Chamond",
+        "clueText": "Rexistrou a sociedade civil, para desgusto do padre Colin."
+      },
+      "CO": {
+        "name": "Padre Jean-Claude Colin",
+        "role": "Superior dos padres maristas",
+        "clueText": "O 24 de maio entrevistouse longamente co fundador."
+      },
+      "JB": {
+        "name": "Irmán Jean-Baptiste Furet",
+        "role": "Asistente",
+        "clueText": "Máis tarde escribiría a Vida do fundador cos recordos dos irmáns."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "O testamento redactouse segundo as instrucións do fundador, por dous irmáns."
+      },
+      "c2": {
+        "text": "O 22 de marzo, unha sociedade civil con seis irmáns quedou como herdeira de todos os seus bens."
+      },
+      "c3": {
+        "text": "Ningún padre formaba parte desa sociedade, nin sequera o capelán da casa."
+      },
+      "c4": {
+        "text": "Na súa última entrevista, o fundador encomendoulle os seus irmáns ao superior dos padres."
       }
     }
   }
