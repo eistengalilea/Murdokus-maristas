@@ -1871,5 +1871,533 @@ export const RETOS_MARISTA_PT: Record<string, RetoTraduccion> = {
         "text": "Na sua última conversa, o fundador confiou os seus irmãos ao superior dos padres."
       }
     }
+  },
+  "019-HM": {
+    "nombre": "O superior de 1830",
+    "categoria": "Origens da Sociedade de Maria",
+    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, caps. 6 e 7",
+    "textoClave": "A 18 de dezembro de 1830, em nome de D. de Pins, o vigário-geral Cattet nomeou Marcelino «superior titular da Sociedade de Maria» na diocese de Lyon.",
+    "contextoHistorico": "A revolução de Paris de 27 a 29 de julho de 1830 derrubou os Bourbons, desencadeou um violento anticlericalismo e deixou por assinar a autorização legal dos irmãos, que já estava preparada para o rei. Foi uma catástrofe para D. de Pins, legitimista convicto. Os maristas aproveitaram a confusão: a 22 de outubro, uma carta de Jean-Claude Colin anunciou que Belley era o «centro de unidade» e convidou os presbíteros de L’Hermitage a escolherem um superior. Entre 3 e 8 de dezembro escolheram Champagnat.",
+    "solucionExplicacion": "O responsável pela nomeação foi o vigário-geral Cattet. O arcebispado aceitou o facto consumado da eleição e, a 18 de dezembro de 1830, Cattet nomeou Champagnat superior titular em nome de D. de Pins, precisando que, como diretor de L’Hermitage, já era superior de facto. Os irmãos ficaram à margem dessas diligências.",
+    "storyIntro": "Outono de 1830. Paris derrubou o rei, a autorização dos irmãos ficou por assinar e em Lyon o arcebispo está abatido. Entretanto, em L’Hermitage, os presbíteros maristas escolhem um superior. Reconstrói onde estava cada um e descobre quem assinou a nomeação.",
+    "epilogue": "Caso resolvido! A nomeação compensou mal a vitória do modelo de Colin: o centro da Sociedade de Maria ficaria em Belley. Mesmo assim, a 8 de setembro de 1831 os aspirantes maristas renovaram a sua consagração a Maria, como em Fourvière.",
+    "subtitle": "Origens da Sociedade de Maria · L’Hermitage · 9x9",
+    "badge": "O SUPERIOR DE 1830 · 9x9",
+    "rooms": {
+      "arzobispado": {
+        "name": "Arcebispado de Lyon",
+        "shortName": "Arcebispado",
+        "description": "Gabinete dos vigários-gerais."
+      },
+      "oratorio_pins": {
+        "name": "Oratório do arcebispo",
+        "shortName": "Oratório",
+        "description": "Capela privada de D. de Pins."
+      },
+      "colegio_belley": {
+        "name": "Colégio de Belley",
+        "shortName": "Belley",
+        "description": "Colégio que Jean-Claude Colin dirigia desde 1829."
+      },
+      "fabrica_cintas": {
+        "name": "Fábrica de fitas",
+        "shortName": "Fábrica",
+        "description": "Oficina de L’Hermitage que o Sr. Séon vigiava."
+      },
+      "clase_novicios": {
+        "name": "Aula dos noviços",
+        "shortName": "Aula",
+        "description": "Sala de escrita, cálculo, canto e catecismo."
+      },
+      "escritorio": {
+        "name": "Escritório dos capelães",
+        "shortName": "Escritório",
+        "description": "Mesa onde se redigiam regras e estatutos."
+      },
+      "capilla_hermitage": {
+        "name": "Capela de L’Hermitage",
+        "shortName": "Capela",
+        "description": "Lugar de oração de irmãos e presbíteros."
+      }
+    },
+    "blockedObjects": {
+      "2,0": {
+        "name": "Nomeação",
+        "description": "Documento de 18 de dezembro de 1830."
+      },
+      "1,3": {
+        "name": "Carta de 22 de outubro",
+        "description": "Anuncia que Belley é o centro de unidade."
+      },
+      "5,4": {
+        "name": "Tear de fitas",
+        "description": "Trabalho que ajudava a sustentar a casa."
+      },
+      "4,2": {
+        "name": "Estatutos da Sociedade de Maria",
+        "description": "Dezasseis artigos com letra de Pompallier."
+      },
+      "7,6": {
+        "name": "Círio",
+        "description": "Luz diante da imagem de Maria."
+      }
+    },
+    "suspects": {
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Diretor de L’Hermitage",
+        "clueText": "Escolhido pelos seus confrades, aguardava a resposta da diocese."
+      },
+      "CA": {
+        "name": "Sr. Cattet",
+        "role": "Vigário-geral de Lyon",
+        "clueText": "Assinava em nome do arcebispo os assuntos da Sociedade de Maria."
+      },
+      "PI": {
+        "name": "D. de Pins",
+        "role": "Administrador apostólico de Lyon",
+        "clueText": "Fiel aos Bourbons, vivia a queda do rei como uma catástrofe."
+      },
+      "CO": {
+        "name": "Jean-Claude Colin",
+        "role": "Superior do colégio",
+        "clueText": "Queria que todos os maristas tivessem o seu centro na sua diocese."
+      },
+      "SE": {
+        "name": "Étienne Séon",
+        "role": "Presbítero de L’Hermitage",
+        "clueText": "Ocupava-se do espiritual e dos teares, e sonhava com missionar."
+      },
+      "BO": {
+        "name": "Sr. Bourdin",
+        "role": "Presbítero de L’Hermitage",
+        "clueText": "Ensinava aos noviços escrita, cálculo, canto e catecismo."
+      },
+      "PO": {
+        "name": "Jean-Baptiste Pompallier",
+        "role": "Diretor espiritual",
+        "clueText": "Fazia muitas regras e pôs por escrito uns estatutos da Sociedade."
+      },
+      "FR": {
+        "name": "Irmão François (Gabriel Rivat)",
+        "role": "Irmão de L’Hermitage",
+        "clueText": "Rezava pela casa sem saber o que se decidia entre os presbíteros."
+      },
+      "ST": {
+        "name": "Irmão Stanislas",
+        "role": "Irmão da casa",
+        "clueText": "Muito ligado ao fundador, usava havia um ano a sotaina nova de 1829."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "A revolução de julho impediu que o rei assinasse a autorização legal dos irmãos."
+      },
+      "c2": {
+        "text": "A 22 de outubro chegou uma carta: Belley seria o centro de unidade e L’Hermitage devia escolher superior."
+      },
+      "c3": {
+        "text": "Entre 3 e 8 de dezembro, os presbíteros de L’Hermitage escolheram um deles como reitor provincial."
+      },
+      "c4": {
+        "text": "Os irmãos foram deixados à margem da eleição do superior."
+      },
+      "c5": {
+        "text": "O arcebispado aceitou o facto consumado: um dos seus vigários-gerais assinou a nomeação."
+      }
+    }
+  },
+  "020-HM": {
+    "nombre": "Marcelino em Paris",
+    "categoria": "A autorização legal",
+    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, cap. 8; Tras las huellas, 5.11",
+    "textoClave": "Em 1838 Marcelino passou meses em Paris a procurar a autorização legal dos Irmãos Maristas, mas o ministro só os queria autorizar para os municípios pequenos.",
+    "contextoHistorico": "O Estado protegia os Irmãos das Escolas Cristãs e não queria reconhecer novas sociedades de irmãos. A 2 de agosto de 1838, o irmão Anaclet escreveu uma carta de aprovação prudente: desejava que o governo autorizasse os maristas «nas pequenas localidades». Marcelino recusou uma autorização limitada aos municípios com menos de 1.000 habitantes, porque ali não podia viver uma comunidade de três irmãos. Quase todas as suas escolas ficavam em povoações de 1.200 a 4.000 habitantes.",
+    "solucionExplicacion": "O responsável pelo fracasso foi o ministro da Instrução Pública: queria impor a autorização apenas para os pequenos municípios, enquanto um alto funcionário pedia a Marcelino que fundasse numa povoação maior. Ao aceitar isto, Marcelino deixou o ministro em contradição consigo mesmo, mas não obteve a autorização: a sua obra foi apenas tolerada.",
+    "storyIntro": "Paris, 1838. Um padre do campo, de sotaina e sem conhecimentos, percorre ministérios e gabinetes. Em L’Hermitage, os irmãos aguardam notícias. Alguém, no seu gabinete, está a fechar a porta aos Irmãos Maristas. Descobre onde estava cada um e quem bloqueou a autorização.",
+    "epilogue": "Caso resolvido! Marcelino regressou sem a autorização, mas não sem esperança: «na capital há muito mais religião do que as pessoas pensam». A autorização chegaria em 1851, onze anos depois da sua morte.",
+    "subtitle": "A autorização legal · L’Hermitage · 9x9",
+    "badge": "MARCELINO EM PARIS · 9x9",
+    "rooms": {
+      "ministerio": {
+        "name": "Ministério da Instrução Pública",
+        "shortName": "Ministério",
+        "description": "Gabinete do ministro em Paris."
+      },
+      "oficinas": {
+        "name": "Repartições do ministério",
+        "shortName": "Repartições",
+        "description": "Secretárias dos altos funcionários."
+      },
+      "casa_hec": {
+        "name": "Casa dos Irmãos das Escolas Cristãs",
+        "shortName": "Casa FEC",
+        "description": "Sede dos irmãos de La Salle."
+      },
+      "diligencia": {
+        "name": "Paragem da diligência",
+        "shortName": "Paragem",
+        "description": "Paragem no caminho para Paris."
+      },
+      "consejo": {
+        "name": "Sala do conselho de L’Hermitage",
+        "shortName": "Conselho",
+        "description": "Onde se reunia o conselho todos os domingos."
+      },
+      "capilla_hermitage": {
+        "name": "Capela de L’Hermitage",
+        "shortName": "Capela",
+        "description": "Lugar de oração da comunidade."
+      },
+      "bosque": {
+        "name": "Bosques de L’Hermitage",
+        "shortName": "Bosques",
+        "description": "Arvoredo nas margens do Gier."
+      }
+    },
+    "blockedObjects": {
+      "1,1": {
+        "name": "Processo de autorização",
+        "description": "Papéis do pedido dos Irmãos Maristas."
+      },
+      "2,8": {
+        "name": "Livros escolares",
+        "description": "Não lhos venderam ao preço das suas próprias escolas."
+      },
+      "2,1": {
+        "name": "Cêntimo",
+        "description": "Moeda prometida em troca de aprender o catecismo."
+      },
+      "4,0": {
+        "name": "Castanheiro",
+        "description": "Árvore dos bosques junto ao rio."
+      }
+    },
+    "suspects": {
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Fundador dos Irmãos Maristas",
+        "clueText": "Ia de visita em visita de sotaina, e ninguém o insultou."
+      },
+      "SA": {
+        "name": "Sr. de Salvandy",
+        "role": "Ministro da Instrução Pública",
+        "clueText": "Só admitia os novos irmãos nas terras mais pequenas."
+      },
+      "AF": {
+        "name": "Alto funcionário",
+        "role": "Funcionário do ministério",
+        "clueText": "Pedia a Marcelino que fundasse numa povoação mais importante."
+      },
+      "AN": {
+        "name": "Irmão Anaclet",
+        "role": "Irmão das Escolas Cristãs",
+        "clueText": "Escreveu uma aprovação prudente para as pequenas localidades."
+      },
+      "NI": {
+        "name": "Menino pobre",
+        "role": "Miúdo do caminho",
+        "clueText": "Marcelino prometeu-lhe um cêntimo se aprendesse o catecismo."
+      },
+      "FR": {
+        "name": "Irmão François (Gabriel Rivat)",
+        "role": "Braço direito do fundador",
+        "clueText": "Dirigia a casa durante a ausência de Marcelino."
+      },
+      "MT": {
+        "name": "Padre Matricon",
+        "role": "Capelão de L’Hermitage",
+        "clueText": "Nascido no Bessat, vivia como mais um irmão."
+      },
+      "BE": {
+        "name": "Padre Besson",
+        "role": "Padre marista",
+        "clueText": "Ajudava o capelão no acompanhamento dos irmãos."
+      },
+      "HI": {
+        "name": "Irmão Hilarion",
+        "role": "Irmão marista",
+        "clueText": "Recebeu uma carta em que Marcelino lhe falava da presença de Deus."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "«Fiz as minhas visitas de sotaina sem receber nenhum insulto; nem sequer me chamaram jesuíta» (carta de 27 de maio de 1838)."
+      },
+      "c2": {
+        "text": "Um queria limitar a autorização aos pequenos municípios; outro pedia-lhe que fundasse numa povoação maior."
+      },
+      "c3": {
+        "text": "A 2 de agosto de 1838 chegou uma carta dos Irmãos das Escolas Cristãs."
+      },
+      "c4": {
+        "text": "Nas ruas de Paris, Marcelino sentia-se como nos bosques de L’Hermitage, escreveu a 18 de março de 1838."
+      },
+      "c5": {
+        "text": "Um conselho reunia todos os domingos o fundador, o capelão e o irmão François."
+      }
+    }
+  },
+  "021-HM": {
+    "nombre": "Os irmãos de Viviers",
+    "categoria": "Assumir a herança",
+    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, cap. 10",
+    "textoClave": "A 23 de junho de 1842, D. Guibert, bispo de Viviers, propôs ao irmão François unir os seus irmãos aos Irmãos Maristas.",
+    "contextoHistorico": "Depois da morte de Champagnat, os Irmãos Maristas continuavam sem autorização legal, mas tinham uma identidade forte, enquanto outras congregações autorizadas definhavam. Desde março de 1842 tinham-se unido aos Irmãos da Instrução Cristã de Saint-Paul-Trois-Châteaux, do Sr. Mazelier: quatro maristas foram enviados para lá para transmitir o espírito de L’Hermitage a uns quarenta irmãos. A 15 de abril de 1844, D. Guibert assinou o contrato de união, aprovado pelo padre Colin, e abriu-se um noviciado em La Bégude.",
+    "solucionExplicacion": "O responsável pela união foi D. Guibert: mal assinado o acordo com Valence, propôs ao irmão François unir os irmãos de Viviers ao Instituto. Os acordos foram rápidos e, a 2 de outubro de 1844, 22 antigos irmãos de Viviers fizeram voto de obediência e 9 os votos perpétuos. O Instituto passou a ter quatro províncias e cinco noviciados.",
+    "storyIntro": "Verão de 1842. Há dois anos que o fundador morreu e a sua obra, sem autorização legal, cresce a toda a velocidade. Acaba de se assinar a união com Saint-Paul-Trois-Châteaux quando chega outra proposta do Ardèche. Descobre onde estava cada um e quem quis confiar os seus irmãos aos maristas.",
+    "epilogue": "Caso resolvido! Em 1844 o Instituto contava 610 membros: L’Hermitage, o Nord, Vauban, Saint-Paul e La Bégude. Em apenas quatro anos, os efetivos quase tinham duplicado.",
+    "subtitle": "Assumir a herança · L’Hermitage · 9x9",
+    "badge": "OS IRMÃOS DE VIVIERS · 9x9",
+    "rooms": {
+      "despacho": {
+        "name": "Gabinete do diretor-geral",
+        "shortName": "Gabinete",
+        "description": "Divisão de trabalho do irmão François em L’Hermitage."
+      },
+      "procura": {
+        "name": "Procuradoria de L’Hermitage",
+        "shortName": "Procuradoria",
+        "description": "Escritório das contas da casa."
+      },
+      "casa_colin": {
+        "name": "Residência do padre Colin",
+        "shortName": "Residência",
+        "description": "Casa do superior-geral da Sociedade de Maria."
+      },
+      "saint_paul": {
+        "name": "Casa de Saint-Paul-Trois-Châteaux",
+        "shortName": "Saint-Paul",
+        "description": "Casa-mãe dos Irmãos da Instrução Cristã."
+      },
+      "caminos_midi": {
+        "name": "Caminhos do Midi",
+        "shortName": "Caminhos",
+        "description": "Estradas para as novas casas do sul."
+      },
+      "noviciado_begude": {
+        "name": "Noviciado de La Bégude",
+        "shortName": "Noviciado",
+        "description": "Casa de formação aberta depois da união."
+      },
+      "capilla_begude": {
+        "name": "Capela de La Bégude",
+        "shortName": "Capela",
+        "description": "Onde os irmãos de Viviers fizeram os seus votos."
+      }
+    },
+    "blockedObjects": {
+      "0,4": {
+        "name": "Carta de Viviers",
+        "description": "Proposta de união de 23 de junho de 1842."
+      },
+      "0,8": {
+        "name": "Livro de contas",
+        "description": "Dívidas de 60.000 francos depois da morte do fundador."
+      },
+      "4,0": {
+        "name": "Assinatura «Colin Sup»",
+        "description": "Aprovação do contrato de união."
+      },
+      "1,6": {
+        "name": "Autorização de 1823",
+        "description": "Licença oficial dos irmãos de Valence."
+      },
+      "7,5": {
+        "name": "Cordão",
+        "description": "Sinal entregue no voto de obediência."
+      }
+    },
+    "suspects": {
+      "FR": {
+        "name": "Irmão François (Gabriel Rivat)",
+        "role": "Diretor-geral",
+        "clueText": "Sucessor do fundador, muitas vezes doente, preferia a prudência."
+      },
+      "GU": {
+        "name": "D. Guibert",
+        "role": "Bispo de Viviers",
+        "clueText": "Os seus irmãos diocesanos não prosperavam e procurava quem os acolhesse."
+      },
+      "LM": {
+        "name": "Irmão Louis-Marie",
+        "role": "Assistente, encarregado das finanças",
+        "clueText": "Desde 1842 tratava das contas de uma casa endividada."
+      },
+      "CO": {
+        "name": "Padre Jean-Claude Colin",
+        "role": "Superior-geral da Sociedade de Maria",
+        "clueText": "Superior dos irmãos até 1845, nada de importante se fazia sem ele."
+      },
+      "MZ": {
+        "name": "Sr. Mazelier",
+        "role": "Superior dos irmãos de Saint-Paul",
+        "clueText": "A sua congregação estava autorizada, mas faltavam-lhe vocações."
+      },
+      "JB": {
+        "name": "Irmão Jean-Baptiste",
+        "role": "Assistente para o Midi",
+        "clueText": "Encarregava-se das províncias do sul e viajava sem descanso."
+      },
+      "LB": {
+        "name": "Irmão Louis-Bernardin",
+        "role": "Provincial",
+        "clueText": "Chegou como provincial para formar os novos noviços."
+      },
+      "BE": {
+        "name": "Padre Besson",
+        "role": "Capelão",
+        "clueText": "Acompanhou os irmãos como capelão durante trinta anos."
+      },
+      "EV": {
+        "name": "Antigo irmão de Viviers",
+        "role": "Irmão diocesano",
+        "clueText": "A 2 de outubro de 1844 prometeu obediência ao novo Instituto."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "Desde março de 1842, quatro Irmãos Maristas foram enviados para Saint-Paul para desenvolver o noviciado."
+      },
+      "c2": {
+        "text": "O contrato de união de 15 de abril de 1844 foi aprovado pelo superior da Sociedade de Maria."
+      },
+      "c3": {
+        "text": "Um provincial e um capelão chegaram para a nova província."
+      },
+      "c4": {
+        "text": "A 2 de outubro de 1844, 22 antigos irmãos de Viviers fizeram voto de obediência."
+      },
+      "c5": {
+        "text": "A proposta chegou ao Rev.do irmão François quando mal se tinha assinado o acordo com Valence."
+      }
+    }
+  },
+  "022-HM": {
+    "nombre": "O segundo nascimento",
+    "categoria": "A autorização legal",
+    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, cap. 10",
+    "textoClave": "A 20 de junho de 1851, o príncipe-presidente Louis-Napoléon assinou o decreto que reconhecia os Irmãozinhos de Maria como estabelecimento de utilidade pública.",
+    "contextoHistorico": "Champagnat tinha fracassado uma e outra vez na obtenção da autorização legal. Depois da sua morte houve novas tentativas em 1841-1842 e em 1846, também falhadas. Caída a Monarquia de Julho em 1848, o irmão François retomou as diligências a 28 de fevereiro de 1849 junto do conde de Montalembert, defensor da liberdade de ensino, e do Sr. Falloux, promotor da lei que em breve suprimiria o monopólio universitário. Em janeiro de 1851, D. Parisis, bispo de Langres e deputado, abraçou a causa marista.",
+    "solucionExplicacion": "O responsável pela assinatura foi o príncipe-presidente Louis-Napoléon. Em março de 1851, os irmãos François e Louis-Marie foram a Paris para fazer avançar o assunto e, a 20 de junho, o decreto ficou assinado. Para o Instituto foi «como um segundo nascimento»: chegou mesmo a tempo de dar bases sólidas a uma congregação que tinha quase triplicado o seu pessoal.",
+    "storyIntro": "Primavera de 1851. O que Marcelino não conseguiu em vida está prestes a acontecer: dois irmãos viajaram até Paris, um bispo deputado defende a sua causa e uma assinatura pode mudar tudo. Descobre onde estava cada um e quem assinou, finalmente, a autorização.",
+    "epilogue": "Caso resolvido! Com a autorização na mão, o Instituto celebrou o seu primeiro capítulo geral (1852-1854) e deu-se umas Regras de governo. A 11 de junho de 1852, a carta do capítulo a todos os irmãos levava como primeira assinatura a do «irmão François, superior-geral».",
+    "subtitle": "A autorização legal · L’Hermitage · 9x9",
+    "badge": "O SEGUNDO NASCIMENTO · 9x9",
+    "rooms": {
+      "eliseo": {
+        "name": "Gabinete do príncipe-presidente",
+        "shortName": "Presidência",
+        "description": "Onde se assinavam os decretos do governo."
+      },
+      "posada": {
+        "name": "Alojamento em Paris",
+        "shortName": "Alojamento",
+        "description": "Quarto modesto dos irmãos durante a viagem."
+      },
+      "asamblea": {
+        "name": "Assembleia Nacional",
+        "shortName": "Assembleia",
+        "description": "Câmara dos deputados da Segunda República."
+      },
+      "salon_falloux": {
+        "name": "Salão do Sr. Falloux",
+        "shortName": "Salão",
+        "description": "Onde se preparava a lei da liberdade de ensino."
+      },
+      "hermitage": {
+        "name": "Casa de L’Hermitage",
+        "shortName": "L’Hermitage",
+        "description": "Casa-mãe, já pequena demais para tantos irmãos."
+      },
+      "casa_colin": {
+        "name": "Residência do padre Colin",
+        "shortName": "Residência",
+        "description": "Casa do superior-geral dos Padres Maristas."
+      },
+      "caminos": {
+        "name": "Caminhos das visitas",
+        "shortName": "Caminhos",
+        "description": "Estradas entre as casas do Centro e do Midi."
+      }
+    },
+    "blockedObjects": {
+      "1,5": {
+        "name": "Mala de viagem",
+        "description": "Bagagem dos dois irmãos chegados em março."
+      },
+      "5,3": {
+        "name": "Rascunho da Regra",
+        "description": "Os superiores trabalhavam nela havia anos."
+      },
+      "7,7": {
+        "name": "Cavalo",
+        "description": "Montada do visitador."
+      }
+    },
+    "suspects": {
+      "FR": {
+        "name": "Irmão François (Gabriel Rivat)",
+        "role": "Superior dos irmãos",
+        "clueText": "Desde 1849 que batia a todas as portas pela causa do Instituto."
+      },
+      "LN": {
+        "name": "Louis-Napoléon Bonaparte",
+        "role": "Príncipe-presidente",
+        "clueText": "Tinha na mão a assinatura que os maristas esperavam havia décadas."
+      },
+      "LM": {
+        "name": "Irmão Louis-Marie",
+        "role": "Assistente",
+        "clueText": "Viajou para Paris em março de 1851 para fazer avançar o assunto."
+      },
+      "PA": {
+        "name": "D. Parisis",
+        "role": "Bispo de Langres e deputado",
+        "clueText": "Desde janeiro de 1851 tinha abraçado a causa marista."
+      },
+      "MO": {
+        "name": "Conde de Montalembert",
+        "role": "Defensor da liberdade de ensino",
+        "clueText": "Tinha recebido o irmão François em 1849."
+      },
+      "FA": {
+        "name": "Sr. Falloux",
+        "role": "Promotor da lei de 1850",
+        "clueText": "A sua lei ia suprimir o monopólio da Universidade."
+      },
+      "JB": {
+        "name": "Irmão Jean-Baptiste",
+        "role": "Assistente",
+        "clueText": "Trabalhava com os outros superiores na futura regra."
+      },
+      "CO": {
+        "name": "Padre Jean-Claude Colin",
+        "role": "Superior-geral dos Padres Maristas",
+        "clueText": "Tinha deixado os irmãos governarem-se com o seu próprio superior."
+      },
+      "AV": {
+        "name": "Irmão Avit",
+        "role": "Visitador do Centro e do Midi",
+        "clueText": "Desde 1848 percorria quase todas as casas do Instituto."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "A 28 de fevereiro de 1849, o irmão François retomou as diligências junto de um conde e de um futuro legislador."
+      },
+      "c2": {
+        "text": "Em janeiro de 1851, um bispo deputado tomou a peito a causa marista."
+      },
+      "c3": {
+        "text": "Em março, dois irmãos dirigiram-se a Paris para fazer avançar o assunto."
+      },
+      "c4": {
+        "text": "Desde 1845 o superior dos Padres Maristas tinha libertado os irmãos da sua dependência."
+      },
+      "c5": {
+        "text": "Em setembro de 1848, um irmão foi nomeado visitador único do Centro e do Midi."
+      }
+    }
   }
 };
