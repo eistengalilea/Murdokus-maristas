@@ -52,110 +52,113 @@ export const SuspectsToolbar: React.FC<SuspectsToolbarProps> = ({
   return (
     <div id="character-panel" className="w-full bg-theme-panel text-theme-primary border-2 border-theme rounded-xl p-3 sm:p-4 shadow-lg transition-colors">
       {/* Panel Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2 pb-2.5 mb-3 border-b-2 border-theme/20">
-        <div className="flex items-center gap-2">
-          <span className="text-lg" role="img" aria-label="Police badge">📁</span>
-          <div>
-            <h3 className="text-xs sm:text-sm font-bold font-murdoku-sans tracking-wide text-theme-title uppercase flex items-center gap-1.5">
+      <div className="flex items-start justify-between gap-3 pb-2.5 mb-3 border-b-2 border-theme/20">
+        <div className="flex items-start gap-2 min-w-0">
+          <span className="text-lg leading-none mt-0.5" role="img" aria-label="Police badge">📁</span>
+          <div className="min-w-0">
+            <h3 className="text-sm font-bold font-murdoku-sans tracking-wide text-theme-title uppercase flex flex-wrap items-center gap-x-2 gap-y-1">
               <span>{t.toolbarTitle}</span>
-              <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-theme-tools text-theme-secondary font-normal normal-case border border-theme/20">
+              <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-theme-tools text-theme-secondary font-normal normal-case border border-theme/20">
                 {currentCase.suspects.length - 1} {t.toolbarSuspectsCount}
               </span>
             </h3>
-            <p className="text-[11px] text-theme-secondary font-sans italic">
+            <p className="text-xs text-theme-secondary font-sans italic mt-1 leading-snug">
               {t.toolbarInstruction}
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 text-xs font-mono">
+        <div className="flex items-center gap-2 text-xs font-mono shrink-0">
           <span className="text-theme-secondary hidden sm:inline">
             {porIdioma(language, { es: 'COLOCADOS:', gl: 'COLOCADOS:', pt: 'COLOCADOS:' })}
           </span>
-          <span className="px-2 py-0.5 rounded bg-[#3d2e24] text-amber-300 font-bold tracking-wider">
+          <span
+            className="px-2 py-0.5 rounded bg-[#3d2e24] text-amber-300 font-bold tracking-wider whitespace-nowrap"
+            title={porIdioma(language, { es: 'Personajes colocados', gl: 'Personaxes situados', pt: 'Personagens colocadas' })}
+          >
             {placedSuspectLocations.size} / {currentCase.suspects.length}
           </span>
         </div>
       </div>
 
-      {/* Suspects & Victim Cards Grid (scales dynamically based on suspects count) */}
-      <div 
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-2.5 mb-3"
-        style={currentCase.suspects.length > 7 ? { gridTemplateColumns: 'repeat(auto-fit, minmax(135px, 1fr))' } : undefined}
+      {/* Tarjetas de personajes: columnas de al menos ~210 px para que nombres y pistas
+          respiren (1 columna en móvil, 2-3 en tableta y escritorio). */}
+      <div
+        className="grid gap-3 mb-3"
+        style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 210px), 1fr))' }}
       >
         {currentCase.suspects.map((suspect: Suspect) => {
           const isSelected = activeTool === 'place' && activeSuspectId === suspect.id;
           const location = placedSuspectLocations.get(suspect.id);
           const isPlaced = Boolean(location);
+          const seleccionar = () => {
+            sounds.playClick();
+            onChangeTool('place');
+            onSelectSuspect(suspect.id);
+          };
 
           return (
             <div
               key={suspect.id}
-              className={`relative flex flex-col items-center text-center p-2 rounded-lg border-2 transition-all duration-150 ${
+              className={`relative flex flex-col gap-2 p-2.5 sm:p-3 rounded-lg border-2 min-w-0 transition-all duration-150 ${
                 isSelected
-                  ? 'bg-amber-100 dark:bg-amber-950/60 border-[#c6007e] shadow-md scale-[1.02] ring-2 ring-[#c6007e]/50 text-stone-900 dark:text-amber-100'
+                  ? 'bg-panel-seleccion border-[#c6007e] shadow-md ring-2 ring-[#c6007e]/40'
                   : isPlaced
-                  ? 'bg-theme-tools border-theme/50 shadow-inner text-theme-secondary'
-                  : 'bg-theme-card hover:bg-theme-panel border-theme/40 hover:border-theme shadow-xs text-theme-primary'
+                  ? 'bg-theme-tools border-theme/40 shadow-inner'
+                  : 'bg-theme-card hover:bg-theme-panel border-theme/40 hover:border-theme shadow-xs'
               }`}
             >
-              {/* Top Status Tag */}
-              <div className="w-full flex items-center justify-between gap-1 mb-1">
-                <span className="text-[9px] font-mono font-bold px-1 bg-theme-tools text-theme-primary rounded border border-theme/20">
-                  [{suspect.id}]
-                </span>
-
-                {isPlaced ? (
-                  <span 
-                    className="inline-flex items-center gap-0.5 text-[8px] font-mono font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950/60 px-1 py-0.5 rounded border border-emerald-300 dark:border-emerald-700"
-                    title={porIdioma(language, { es: 'Ubicado en el tablero', gl: 'Situado no taboleiro', pt: 'Colocado no tabuleiro' })}
-                  >
-                    <CheckCircle2 className="w-2.5 h-2.5 text-emerald-600 dark:text-emerald-400" />
-                    <span>{porIdioma(language, { es: 'En tablero', gl: 'No taboleiro', pt: 'No tabuleiro' })}</span>
-                  </span>
-                ) : (
-                  <span className="text-[8px] font-mono text-theme-secondary italic">
-                    {porIdioma(language, { es: 'En panel', gl: 'No panel', pt: 'No painel' })}
-                  </span>
-                )}
-              </div>
-
-              {/* Character Avatar Icon & Select Button */}
+              {/* Cabecera: avatar + nombre + papel */}
               <button
                 id={`btn-select-character-${suspect.id}`}
-                onClick={() => {
-                  sounds.playClick();
-                  onChangeTool('place');
-                  onSelectSuspect(suspect.id);
-                }}
-                className="w-full flex flex-col items-center cursor-pointer group"
+                onClick={seleccionar}
+                className="w-full flex items-start gap-2.5 text-left cursor-pointer group"
                 title={
                   isPlaced
                     ? `${suspect.name} ${porIdioma(language, { es: 'está en el tablero. Haz clic para seleccionarlo y moverlo.', gl: 'está no taboleiro. Fai clic para seleccionalo e movelo.', pt: 'está no tabuleiro. Clica para a selecionar e mover.' })}`
                     : `${porIdioma(language, { es: 'Seleccionar a', gl: 'Seleccionar a', pt: 'Selecionar' })} ${suspect.name} ${t.toolbarSelectToPlace}`
                 }
               >
-                <div 
-                  className={`w-11 h-11 rounded-full bg-gradient-to-b ${suspect.color} border-2 flex items-center justify-center text-xl shadow-sm mb-1.5 transition-transform group-hover:scale-110 ${
+                <div
+                  className={`w-11 h-11 shrink-0 rounded-full bg-gradient-to-b ${suspect.color} border-2 flex items-center justify-center text-xl shadow-sm transition-transform group-hover:scale-110 ${
                     isSelected ? 'ring-2 ring-amber-500 scale-105' : ''
-                  }`}
+                  } ${isPlaced && !isSelected ? 'opacity-70' : ''}`}
                 >
                   <span>{suspect.avatar}</span>
                 </div>
-
-                <span className="font-murdoku-sans font-bold text-xs text-theme-title leading-tight">
-                  {suspect.name}
-                </span>
-                
-                <span className="text-[10px] text-theme-secondary truncate max-w-[95%]">
-                  {suspect.isVictim ? (porIdioma(language, { es: '💀 Víctima', gl: '💀 Vítima', pt: '💀 Vítima' })) : suspect.role}
-                </span>
+                <div className="min-w-0 flex-1">
+                  <span className="block font-murdoku-sans font-bold text-sm text-theme-title leading-snug break-words">
+                    {suspect.name}
+                  </span>
+                  <span className="block text-xs text-theme-secondary leading-snug mt-0.5 break-words">
+                    {suspect.isVictim ? (porIdioma(language, { es: '💀 Víctima', gl: '💀 Vítima', pt: '💀 Vítima' })) : suspect.role}
+                  </span>
+                </div>
               </button>
 
-              {/* Action Buttons: Selected state or Unplace button */}
-              <div className="w-full mt-2 pt-1.5 border-t border-theme/20 flex items-center justify-center">
+              {/* Estado + acción en una sola línea */}
+              <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1.5 pt-2 border-t border-theme/20">
+                <span className="flex items-center gap-1.5 min-w-0">
+                  <span className="text-[10px] font-mono font-bold px-1 bg-theme-tools text-theme-primary rounded border border-theme/20">
+                    {suspect.id}
+                  </span>
+                  {isPlaced ? (
+                    <span
+                      className="inline-flex items-center gap-0.5 whitespace-nowrap text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-1 py-0.5 rounded border border-emerald-300"
+                      title={porIdioma(language, { es: 'Ubicado en el tablero', gl: 'Situado no taboleiro', pt: 'Colocado no tabuleiro' })}
+                    >
+                      <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                      <span>{porIdioma(language, { es: 'En tablero', gl: 'No taboleiro', pt: 'No tabuleiro' })}</span>
+                    </span>
+                  ) : (
+                    <span className="text-[10px] font-mono text-theme-secondary italic whitespace-nowrap">
+                      {porIdioma(language, { es: 'En panel', gl: 'No panel', pt: 'No painel' })}
+                    </span>
+                  )}
+                </span>
+
                 {isSelected ? (
-                  <span className="text-[9px] font-typewriter font-bold text-[#c6007e] dark:text-amber-300 animate-pulse">
+                  <span className="text-[10px] font-typewriter font-bold text-theme-title-accent animate-pulse whitespace-nowrap">
                     ● {porIdioma(language, { es: 'LISTO P/ COLOCAR', gl: 'LISTO P/ SITUAR', pt: 'PRONTO A COLOCAR' })}
                   </span>
                 ) : isPlaced ? (
@@ -166,27 +169,23 @@ export const SuspectsToolbar: React.FC<SuspectsToolbarProps> = ({
                         onUnplaceSuspect(suspect.id);
                       }
                     }}
-                    className="w-full py-0.5 px-1 bg-theme-tools hover:bg-red-100 hover:text-red-800 text-theme-primary rounded text-[9px] font-mono font-semibold flex items-center justify-center gap-1 transition-colors border border-theme/20"
+                    className="shrink-0 py-1 px-2 bg-theme-card hover:bg-red-100 hover:text-red-800 text-theme-primary rounded text-[11px] font-mono font-semibold flex items-center gap-1 transition-colors border border-theme/30"
                     title={porIdioma(language, { es: 'Devolver este personaje al panel', gl: 'Devolver esta personaxe ao panel', pt: 'Devolver esta personagem ao painel' })}
                   >
-                    <RotateCcw className="w-2.5 h-2.5" />
+                    <RotateCcw className="w-3 h-3" />
                     <span>{porIdioma(language, { es: 'Devolver', gl: 'Devolver', pt: 'Devolver' })}</span>
                   </button>
                 ) : (
                   <button
-                    onClick={() => {
-                      sounds.playClick();
-                      onChangeTool('place');
-                      onSelectSuspect(suspect.id);
-                    }}
-                    className="w-full py-0.5 px-1 bg-amber-200/80 hover:bg-amber-300 dark:bg-amber-900/60 dark:hover:bg-amber-800 dark:text-amber-100 text-amber-950 rounded text-[9px] font-typewriter font-bold transition-colors"
+                    onClick={seleccionar}
+                    className="shrink-0 py-1 px-2.5 bg-amber-200 hover:bg-amber-300 text-amber-950 rounded text-[11px] font-typewriter font-bold transition-colors"
                   >
                     {porIdioma(language, { es: 'Seleccionar', gl: 'Seleccionar', pt: 'Selecionar' })}
                   </button>
                 )}
               </div>
 
-              {/* Deduction Clue assigned under this character */}
+              {/* Pista de deducción del personaje */}
               {(suspect.clueText || suspect.pistasPosicion?.length) && (
                 <div
                   id={`clue-box-${suspect.id}`}
@@ -203,33 +202,28 @@ export const SuspectsToolbar: React.FC<SuspectsToolbarProps> = ({
                       onHighlightCells(matchingClue.highlightCells);
                     }
                   }}
-                  className="w-full mt-2 p-1.5 rounded-md bg-theme-clue hover:bg-theme-panel border border-theme/30 hover:border-theme text-left shadow-2xs transition-all cursor-pointer group/clue"
+                  className="flex-1 w-full min-w-0 px-2.5 py-2 rounded-md bg-theme-clue border border-theme/25 hover:border-theme text-left transition-colors cursor-pointer"
                   title={`${porIdioma(language, { es: 'Pista de deducción para', gl: 'Pista de dedución para', pt: 'Pista de dedução para' })} ${suspect.name}: ${pistaCompletaPersonaje({ ...suspect, clueText: removeCoordinateHints(suspect.clueText) }, currentCase, language)}`}
                 >
-                  <div className="flex items-center justify-between text-[8px] font-mono font-bold text-theme-title-accent uppercase tracking-wider mb-0.5">
-                    <span className="flex items-center gap-0.5">
-                      <span>📜</span>
-                      <span>{porIdioma(language, { es: 'PISTA:', gl: 'PISTA:', pt: 'PISTA:' })}</span>
-                    </span>
-                    <span className="text-[8px] text-theme-secondary font-sans font-normal opacity-70 group-hover/clue:opacity-100">
-                      {porIdioma(language, { es: 'ver', gl: 'ver', pt: 'ver' })}
-                    </span>
+                  <div className="flex items-center gap-1 text-[10px] font-mono font-bold text-theme-title-accent uppercase tracking-wider mb-1">
+                    <span aria-hidden="true">📜</span>
+                    <span>{porIdioma(language, { es: 'Pista', gl: 'Pista', pt: 'Pista' })}</span>
                   </div>
                   {suspect.clueText && (
-                    <p className="text-[10px] sm:text-[11px] font-murdoku-sans font-semibold text-theme-title leading-tight">
+                    <p className="text-[13px] font-sans font-medium text-theme-title leading-snug break-words">
                       {removeCoordinateHints(suspect.clueText)}
                     </p>
                   )}
                   {/* Pistas de posición verificables (estancia, fila/columna de objetos, orientación...) */}
                   {suspect.pistasPosicion && suspect.pistasPosicion.length > 0 && (
-                    <ul className="mt-1 space-y-0.5">
+                    <ul className="mt-2 pt-2 border-t border-theme/15 space-y-1">
                       {suspect.pistasPosicion.map((p, i) => (
                         <li
                           key={i}
-                          className="text-[9.5px] sm:text-[10.5px] font-sans text-theme-title leading-tight flex gap-1"
+                          className="text-xs font-sans text-theme-primary leading-snug flex gap-1.5 break-words"
                         >
-                          <span aria-hidden="true">🔎</span>
-                          <span>{describirPistaPosicion(p, currentCase, language)}</span>
+                          <span aria-hidden="true" className="shrink-0">🔎</span>
+                          <span className="min-w-0">{describirPistaPosicion(p, currentCase, language)}</span>
                         </li>
                       ))}
                     </ul>
@@ -256,7 +250,7 @@ export const SuspectsToolbar: React.FC<SuspectsToolbarProps> = ({
             className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border-2 text-xs font-typewriter font-bold transition-all shadow-xs cursor-pointer ${
               activeTool === 'x'
                 ? 'bg-red-800 text-white border-red-950 shadow-md ring-2 ring-red-500/50 scale-[1.03]'
-                : 'bg-theme-card hover:bg-theme-panel border-theme/40 hover:border-red-500 text-red-600 dark:text-red-400'
+                : 'bg-theme-card hover:bg-theme-panel border-theme/40 hover:border-red-500 text-red-500'
             }`}
             title={t.toolbarToolX}
           >
