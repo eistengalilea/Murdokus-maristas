@@ -729,3 +729,11 @@ body {
   }
 }
 
+
+/* Rejilla del panel de personajes: hasta 6 personajes en una sola fila en pantallas anchas;
+   con 7 o más, filas de 4 para que ninguna tarjeta quede demasiado estrecha. */
+.rejilla-personajes { grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); }
+@media (min-width: 1200px) {
+  .rejilla-personajes { grid-template-columns: repeat(var(--n), minmax(0, 1fr)); }
+  .rejilla-personajes[data-n="7"], .rejilla-personajes[data-n="8"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
