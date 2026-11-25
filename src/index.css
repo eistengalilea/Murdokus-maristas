@@ -43,6 +43,9 @@
   --room-porche: #d4cee8;
   --room-lab: #e5e8e8;
   --room-default: #f3f4f6;
+
+  /* Tarjeta de personaje seleccionada en el panel */
+  --bg-panel-seleccion: #fdf1dc;
 }
 
 /* ========================================================================= */
@@ -88,6 +91,8 @@
   --room-porche: #332f45;
   --room-lab: #293238;
   --room-default: #262626;
+
+  --bg-panel-seleccion: #3d2440;
 }
 
 /* Identidad de marca MarCha: Montserrat (títulos) y Roboto (texto).
@@ -129,6 +134,9 @@ body {
   }
   .bg-theme-clue {
     background-color: var(--bg-clue);
+  }
+  .bg-panel-seleccion {
+    background-color: var(--bg-panel-seleccion);
   }
   .bg-theme-tools {
     background-color: var(--bg-tools);
