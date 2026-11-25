@@ -84,8 +84,9 @@ export const SuspectsToolbar: React.FC<SuspectsToolbarProps> = ({
       {/* Tarjetas de personajes: columnas de al menos ~210 px para que nombres y pistas
           respiren (1 columna en móvil, 2-3 en tableta y escritorio). */}
       <div
-        className="grid gap-3 mb-3"
-        style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 210px), 1fr))' }}
+        className="grid gap-3 mb-3 rejilla-personajes"
+        style={{ ['--n' as string]: Math.min(currentCase.suspects.length, 6) } as React.CSSProperties}
+        data-n={currentCase.suspects.length}
       >
         {currentCase.suspects.map((suspect: Suspect) => {
           const isSelected = activeTool === 'place' && activeSuspectId === suspect.id;

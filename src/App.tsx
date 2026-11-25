@@ -832,20 +832,6 @@ export default function App() {
                 conflictFlash={conflictFlash}
               />
 
-              {/* Suspects & Evidence Selection Tray */}
-              <SuspectsToolbar
-                currentCase={displayCase}
-                grid={grid}
-                activeSuspectId={activeSuspectId}
-                onSelectSuspect={(id) => setActiveSuspectId(id)}
-                onUnplaceSuspect={handleUnplaceSuspect}
-                activeTool={activeTool}
-                onChangeTool={(tool) => setActiveTool(tool)}
-                isNotesMode={isNotesMode}
-                onToggleNotesMode={() => setIsNotesMode((prev) => !prev)}
-                onHighlightCells={(cells) => setHighlightedCells(cells)}
-              />
-
               {/* Action Resolution Buttons */}
               <div className="flex flex-wrap items-center justify-between gap-2.5 bg-theme-panel p-3 rounded-xl border-2 border-theme transition-colors shadow-md">
                 <button
@@ -911,6 +897,19 @@ export default function App() {
 
           </div>
 
+          {/* Panel de personajes: debajo del plano y del cuaderno, con el mismo ancho que el informe policial */}
+          <SuspectsToolbar
+            currentCase={displayCase}
+            grid={grid}
+            activeSuspectId={activeSuspectId}
+            onSelectSuspect={(id) => setActiveSuspectId(id)}
+            onUnplaceSuspect={handleUnplaceSuspect}
+            activeTool={activeTool}
+            onChangeTool={(tool) => setActiveTool(tool)}
+            isNotesMode={isNotesMode}
+            onToggleNotesMode={() => setIsNotesMode((prev) => !prev)}
+            onHighlightCells={(cells) => setHighlightedCells(cells)}
+          />
         </main>
 
         {/* 3. Footer */}
