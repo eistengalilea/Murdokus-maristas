@@ -847,5 +847,352 @@ export const RETOS_MARISTA_GL: Record<string, RetoTraduccion> = {
         "text": "En 1920 un papa mencionou esta imaxe ao falar das primeiras casas dos Irmáns Pequenos de María."
       }
     }
+  },
+  "010-HM": {
+    "nombre": "O mozo de Les Palais",
+    "categoria": "Fundación",
+    "fuenteHistorica": "La Valla · Lanfrey T. 1, cap. 3",
+    "textoClave": "A finais de outubro de 1816, Marcelino asistiu en Les Palais a un mozo moribundo, Jean-Baptiste Montagne, que non sabía nada de Deus.",
+    "contextoHistorico": "Les Palais era unha aldea da parroquia de La Valla, nas ladeiras do Pilat. Segundo a biografía do irmán Jean-Baptiste (1856), aquel encontro convenceu a Marcelino de que non podía agardar máis para fundar irmáns que educasen os nenos do rural. A data tradicional é o 28 de outubro de 1816, aínda que o relato se escribiu décadas despois.",
+    "solucionExplicacion": "O responsable daquela última lección foi o propio Marcelino: pasou preto de dúas horas ensinándolle ao mozo as verdades da fe e confesouno. Logo foi ver outro enfermo e, ao volver, Montagne morrera. De aí naceu a súa convicción: «Precisamos irmáns!».",
+    "storyIntro": "La Valla, outono de 1816. Chaman con urxencia o novo vigario: nun caserío da montaña, un rapaz morre sen saber quen é Deus. Reconstrúe onde estaba cada quen aquela tarde para descubrir quen lle deu a súa primeira e última lección.",
+    "epilogue": "Caso resolto! Marcelino non chegou a tempo de salvar a vida de Montagne, pero si de acompañalo. Dous meses despois, o 2 de xaneiro de 1817, instalaba os seus primeiros discípulos en La Valla.",
+    "subtitle": "Fundación · La Valla · 7x7",
+    "badge": "O MOZO DE LES PALAIS · 7x7",
+    "rooms": {
+      "casa_montagne": {
+        "name": "Casa dos Montagne",
+        "shortName": "Casa Montagne",
+        "description": "Fogar labrego onde agonizaba o mozo."
+      },
+      "cuadra": {
+        "name": "Corte do caserío",
+        "shortName": "Corte",
+        "description": "Establo onde se gardaban os animais da familia."
+      },
+      "senda_palais": {
+        "name": "Carreiro de Les Palais",
+        "shortName": "Carreiro",
+        "description": "Camiño de montaña entre La Valla e a aldea."
+      },
+      "casa_vecina": {
+        "name": "Casa do outro enfermo",
+        "shortName": "Casa veciña",
+        "description": "Vivenda próxima onde foi o vigario despois."
+      },
+      "casa_parroquial": {
+        "name": "Casa reitoral de La Valla",
+        "shortName": "Reitoral",
+        "description": "Residencia do párroco e do seu vigario."
+      },
+      "iglesia_lavalla": {
+        "name": "Igrexa de La Valla",
+        "shortName": "Igrexa",
+        "description": "Templo parroquial no val do Gier."
+      }
+    },
+    "blockedObjects": {
+      "0,1": {
+        "name": "Vela acesa",
+        "description": "Luz xunto ao leito do enfermo."
+      },
+      "4,2": {
+        "name": "Vaca",
+        "description": "Animal da pequena explotación familiar."
+      },
+      "2,2": {
+        "name": "Marco de pedra",
+        "description": "Sinal do camiño de montaña."
+      },
+      "3,0": {
+        "name": "Rosario",
+        "description": "Oración que Marcelino rezaba nas súas camiñadas."
+      }
+    },
+    "suspects": {
+      "MO": {
+        "name": "Jean-Baptiste Montagne",
+        "role": "Mozo de 17 anos",
+        "clueText": "Gravemente enfermo, ignoraba ata o máis básico da fe."
+      },
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Vigario de La Valla",
+        "clueText": "Sentou xunto ao leito e explicoulle a fe con palabras sinxelas."
+      },
+      "PM": {
+        "name": "Pai de Montagne",
+        "role": "Labrego de Les Palais",
+        "clueText": "Atendía os animais para non oír a agonía do seu fillo."
+      },
+      "VG": {
+        "name": "Veciño guía",
+        "role": "Mensaxeiro da aldea",
+        "clueText": "Baixara buscar o vigario e indicáballe o camiño."
+      },
+      "EN": {
+        "name": "Outro enfermo",
+        "role": "Veciño do caserío",
+        "clueText": "Marcelino foi velo xusto despois de confesar o mozo."
+      },
+      "RE": {
+        "name": "Párroco Rebod",
+        "role": "Párroco de La Valla",
+        "clueText": "Enviara o seu vigario a atender os enfermos das aldeas."
+      },
+      "JM": {
+        "name": "Jean-Marie Granjon",
+        "role": "Futuro primeiro irmán",
+        "clueText": "Marcelino coñecérao días antes e estáballe ensinando a ler."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "O rapaz tiña uns dezasete anos e ninguén lle falara nunca de Deus."
+      },
+      "c2": {
+        "text": "O vigario pasou preto de dúas horas instruíndoo e despois confesouno."
+      },
+      "c3": {
+        "text": "Ao saír, Marcelino foi visitar outro enfermo da veciñanza."
+      },
+      "c4": {
+        "text": "Poucos días antes, o 26 de outubro, Marcelino coñecera a Granjon ao visitar outro enfermo."
+      }
+    }
+  },
+  "011-HM": {
+    "nombre": "A febre de L’Hermitage",
+    "categoria": "Crise e crecemento",
+    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1, cap. 7",
+    "textoClave": "A finais de 1825, Marcelino caeu gravemente enfermo en L’Hermitage, unha casa recén construída e cargada de débedas.",
+    "contextoHistorico": "Jean-Claude Courveille, que propuxera o proxecto marista en Fourvière, vivía en L’Hermitage e considerábase superior da obra. Durante a enfermidade do fundador intentou dirixir os irmáns con severidade, mentres os acredores temían perder os seus cartos. Os irmáns permaneceron fieis a Marcelino, e en 1826 Courveille retirouse á trapa de Aiguebelle. O padre Terraillon tamén deixou a casa.",
+    "solucionExplicacion": "O responsable da crise foi Jean-Claude Courveille: aproveitou a enfermidade de Marcelino para impoñerse aos irmáns con dureza. Eles non o aceptaron como guía, Marcelino recuperouse en 1826 e a comunidade saíu da proba máis unida arredor do seu fundador.",
+    "storyIntro": "L’Hermitage, inverno de 1825. O fundador arde en febre, a casa nova aínda non está pagada e alguén quere aproveitar o momento para mandar sobre os irmáns. Descobre onde estaba cada quen e quen puxo en perigo o espírito de familia.",
+    "epilogue": "Caso resolto! Courveille quedou ao descuberto e deixou a obra en 1826. Marcelino, xa recuperado, volveu guiar os seus irmáns coa bondade dun pai.",
+    "subtitle": "Crise e crecemento · L’Hermitage · 7x7",
+    "badge": "A FEBRE DE L’HERMITAGE · 7x7",
+    "rooms": {
+      "cuarto_fundador": {
+        "name": "Cuarto do fundador",
+        "shortName": "Cuarto",
+        "description": "Habitación onde Marcelino gardaba cama."
+      },
+      "capilla_hermitage": {
+        "name": "Capela de L’Hermitage",
+        "shortName": "Capela",
+        "description": "Lugar de oración da comunidade."
+      },
+      "cocina": {
+        "name": "Cociña da comunidade",
+        "shortName": "Cociña",
+        "description": "Onde se preparaban as comidas da casa."
+      },
+      "sala_estudio": {
+        "name": "Sala de estudo",
+        "shortName": "Estudo",
+        "description": "Aula onde os irmáns novos se formaban."
+      },
+      "obras": {
+        "name": "Obras da casa",
+        "shortName": "Obras",
+        "description": "Muros e dependencias aínda por rematar."
+      },
+      "rectoria_stchamond": {
+        "name": "Reitoral de Saint-Chamond",
+        "shortName": "Saint-Chamond",
+        "description": "Casa do párroco da cidade veciña."
+      }
+    },
+    "blockedObjects": {
+      "2,6": {
+        "name": "Cama do enfermo",
+        "description": "Leito onde Marcelino pasou semanas con febre."
+      },
+      "2,2": {
+        "name": "Crucifixo",
+        "description": "Cruz diante da que rezaba a comunidade."
+      },
+      "4,4": {
+        "name": "Pota de caldo",
+        "description": "Comida quente para o enfermo."
+      },
+      "1,0": {
+        "name": "Morea de pedras",
+        "description": "Material que os propios irmáns acarrexaban."
+      },
+      "5,6": {
+        "name": "Pagarés",
+        "description": "Papeis das débedas da construción."
+      }
+    },
+    "suspects": {
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Fundador enfermo",
+        "clueText": "Esgotado polo traballo, temía deixar os irmáns sen rumbo."
+      },
+      "CV": {
+        "name": "Jean-Claude Courveille",
+        "role": "Sacerdote da casa",
+        "clueText": "Críase o verdadeiro superior e quería mandar con man dura."
+      },
+      "TE": {
+        "name": "Étienne Terraillon",
+        "role": "Sacerdote auxiliar",
+        "clueText": "Viñera axudar, pero apoiou pouco a Marcelino na crise."
+      },
+      "FR": {
+        "name": "Irmán François (Gabriel Rivat)",
+        "role": "Irmán novo",
+        "clueText": "Entrara de neno en La Valla e sería o sucesor de Marcelino."
+      },
+      "ST": {
+        "name": "Irmán Stanislas",
+        "role": "Irmán da casa",
+        "clueText": "Moi unido ao fundador, preparáballe algo quente e rezaba por el."
+      },
+      "LU": {
+        "name": "Irmán Louis (Jean-Baptiste Audras)",
+        "role": "Un dos primeiros irmáns",
+        "clueText": "Seguía co traballo da casa e defendía a fidelidade ao fundador."
+      },
+      "DE": {
+        "name": "Párroco Dervieux",
+        "role": "Párroco de Saint-Chamond",
+        "clueText": "Tranquilizaba os acredores, preocupados polas débedas da obra."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "Marcelino caeu enfermo cara ao Nadal de 1825 e moitos temeron pola súa vida."
+      },
+      "c2": {
+        "text": "Os acredores inquietáronse: a casa nova aínda non estaba pagada."
+      },
+      "c3": {
+        "text": "Un dos sacerdotes da casa quixo impoñer aos irmáns unha disciplina severa."
+      },
+      "c4": {
+        "text": "Os irmáns seguiron unidos a Marcelino; en 1826, Courveille e Terraillon deixaron a casa."
+      }
+    }
+  },
+  "012-HM": {
+    "nombre": "Rumbo a Oceanía",
+    "categoria": "Misión",
+    "fuenteHistorica": "L’Hermitage · Lanfrey T. 1",
+    "textoClave": "En 1836, Roma aprobou a Sociedade de María e confioulle Oceanía occidental; tres irmáns de Marcelino partiron cos primeiros padres maristas.",
+    "contextoHistorico": "O papa Gregorio XVI aprobou a Sociedade de María o 29 de abril de 1836. En setembro, Jean-Claude Colin foi elixido superior xeral e Marcelino fixo a súa profesión como padre marista. A primeira expedición, guiada polo bispo Pompallier, saíu de Le Havre a véspera de Nadal de 1836; nela viaxaba Pierre Chanel, que morrería mártir en Futuna en 1841.",
+    "solucionExplicacion": "O responsable de que os irmáns chegasen a Oceanía foi Marcelino: el mesmo soñara con ir ás misións, pero o seu lugar estaba cos seus irmáns, así que propuxo a tres deles. O irmán Marie-Nizier aceptou con alegría e partiu cos irmáns Michel e Joseph-Xavier.",
+    "storyIntro": "L’Hermitage, outono de 1836. Roma acaba de confiarlles aos maristas unhas illas afastadas e descoñecidas. Alguén ten que decidir que irmáns irán. Descobre onde estaba cada quen e quen escolleu os primeiros misioneiros.",
+    "epilogue": "Caso resolto! Marcelino enviou os seus irmáns ao outro lado do mundo. Desde entón, os irmáns maristas están presentes en Oceanía.",
+    "subtitle": "Misión · L’Hermitage · 7x7",
+    "badge": "RUMBO A OCEANÍA · 7x7",
+    "rooms": {
+      "despacho": {
+        "name": "Despacho do superior",
+        "shortName": "Despacho",
+        "description": "Pequena habitación de Marcelino en L’Hermitage."
+      },
+      "capilla_hermitage": {
+        "name": "Capela de L’Hermitage",
+        "shortName": "Capela",
+        "description": "Alí a comunidade encomendáballe a María a misión."
+      },
+      "huerto": {
+        "name": "Horta da casa",
+        "shortName": "Horta",
+        "description": "Terra cultivada polos irmáns xunto ao Gier."
+      },
+      "belley": {
+        "name": "Colexio de Belley",
+        "shortName": "Belley",
+        "description": "Casa onde residía o padre Colin."
+      },
+      "puerto_havre": {
+        "name": "Porto de Le Havre",
+        "shortName": "Le Havre",
+        "description": "Porto atlántico desde o que zarpou a expedición."
+      },
+      "navio": {
+        "name": "Navío da expedición",
+        "shortName": "Navío",
+        "description": "Veleiro que levaría os misioneiros ao Pacífico."
+      }
+    },
+    "blockedObjects": {
+      "1,5": {
+        "name": "Mapa de Oceanía",
+        "description": "Illas afastadas que ninguén da casa coñecía."
+      },
+      "2,4": {
+        "name": "Rosario",
+        "description": "Oración a María polos misioneiros."
+      },
+      "0,1": {
+        "name": "Sementeira",
+        "description": "Plantas que os irmáns coidaban cada día."
+      },
+      "3,2": {
+        "name": "Áncora",
+        "description": "Ferro do peirao atlántico."
+      },
+      "4,5": {
+        "name": "Compás",
+        "description": "Instrumento para cruzar dous océanos."
+      }
+    },
+    "suspects": {
+      "MN": {
+        "name": "Irmán Marie-Nizier (Jean-Marie Delorme)",
+        "role": "Irmán misioneiro",
+        "clueText": "Aceptou con alegría partir cara a terras descoñecidas."
+      },
+      "MC": {
+        "name": "Marcelino Champagnat",
+        "role": "Superior dos irmáns",
+        "clueText": "Quixera ir el mesmo, pero o seu lugar estaba cos irmáns."
+      },
+      "MI": {
+        "name": "Irmán Michel (Antoine Colombon)",
+        "role": "Irmán misioneiro",
+        "clueText": "Preparábase en oración antes da longa viaxe."
+      },
+      "JX": {
+        "name": "Irmán Joseph-Xavier (Jean-Xavier Luzy)",
+        "role": "Irmán misioneiro",
+        "clueText": "Home práctico: as súas mans serían útiles na misión."
+      },
+      "CO": {
+        "name": "Jean-Claude Colin",
+        "role": "Superior xeral marista",
+        "clueText": "Elixido en setembro de 1836, organizaba a expedición desde Belley."
+      },
+      "PO": {
+        "name": "Bispo Pompallier",
+        "role": "Vigario apostólico",
+        "clueText": "Encabezaba a expedición que zarpou de Le Havre."
+      },
+      "CH": {
+        "name": "Padre Pierre Chanel",
+        "role": "Sacerdote marista",
+        "clueText": "Morrería mártir na illa de Futuna en 1841."
+      }
+    },
+    "clues": {
+      "c1": {
+        "text": "Gregorio XVI aprobou a Sociedade de María o 29 de abril de 1836."
+      },
+      "c2": {
+        "text": "En setembro de 1836, Marcelino fixo a súa profesión como padre marista."
+      },
+      "c3": {
+        "text": "Tres irmáns foron elixidos para acompañar os primeiros padres misioneiros."
+      },
+      "c4": {
+        "text": "A expedición zarpou a véspera de Nadal de 1836 rumbo ao Pacífico."
+      }
+    }
   }
 };
